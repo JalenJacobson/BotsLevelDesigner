@@ -13,6 +13,6 @@ public class Example : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print("Hello Jalen. I hope this works");
     }
 }
