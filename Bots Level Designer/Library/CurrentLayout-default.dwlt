@@ -377,8 +377,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 303e0000
-    m_LastClickedID: 15920
+    m_SelectedIDs: d83d0000
+    m_LastClickedID: 15832
     m_ExpandedIDs: 0000000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300007a340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -529,10 +529,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 428}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 689dffff
+      m_ExpandedIDs: 3afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -592,9 +592,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 58.84628, y: 1.7392635, z: 2.365162}
+    m_Target: {x: 57.380547, y: 5.716834, z: 3.7927723}
     speed: 2
-    m_Value: {x: 58.84628, y: 1.7392635, z: 2.365162}
+    m_Value: {x: 57.380547, y: 5.716834, z: 3.7927723}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -640,13 +640,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.13
   m_Rotation:
-    m_Target: {x: 0.29560387, y: -0.005036408, z: 0.0041164714, w: 0.9556694}
+    m_Target: {x: 0.16427983, y: -0.00997501, z: 0.0041894927, w: 0.98676443}
     speed: 2
-    m_Value: {x: 0.29406303, y: -0.0050407513, z: 0.0041074064, w: 0.9557639}
+    m_Value: {x: 0.16420697, y: -0.011450514, z: 0.004434115, w: 0.9863495}
   m_Size:
-    m_Target: 17.282442
+    m_Target: 13.818608
     speed: 2
-    m_Value: 16.538221
+    m_Value: 14.469747
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -720,10 +720,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -501.5
-    m_HBaseRangeMax: 501.5
-    m_VBaseRangeMin: -282
-    m_VBaseRangeMax: 282
+    m_HBaseRangeMin: -520
+    m_HBaseRangeMax: 520
+    m_VBaseRangeMin: -292.5
+    m_VBaseRangeMax: 292.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -740,11 +740,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1282
-      height: 564
+      height: 585
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 641, y: 282}
+    m_Translation: {x: 641, y: 292.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -752,9 +752,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -641
-      y: -282
+      y: -292.5
       width: 1282
-      height: 564
+      height: 585
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1282, y: 585}
