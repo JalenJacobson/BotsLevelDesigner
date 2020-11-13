@@ -2452,8 +2452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e618b3cce8e433a93edf63f293a98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 327282379}
-  movementForce: 2000
+  _controller: {fileID: 327282384}
+  _speed: 10
+  _rotationSpeed: 180
 --- !u!122 &327282383
 Halo:
   m_ObjectHideFlags: 0
@@ -2466,6 +2467,24 @@ Halo:
     serializedVersion: 2
     rgba: 4278190335
   m_Size: 2.5
+--- !u!143 &327282384
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327282378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.01
+  m_Radius: 0.005
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &332792986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 790000492352653179, guid: 8b516e3614220a34ca19cf298e96d130,
@@ -9615,8 +9634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e618b3cce8e433a93edf63f293a98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  movementForce: 1000
+  _controller: {fileID: 0}
+  _speed: 10
+  _rotationSpeed: 180
 --- !u!54 &1305119669
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16875,8 +16895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e618b3cce8e433a93edf63f293a98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  movementForce: 500
+  _controller: {fileID: 0}
+  _speed: 10
+  _rotationSpeed: 180
 --- !u!54 &2047977120
 Rigidbody:
   m_ObjectHideFlags: 0
