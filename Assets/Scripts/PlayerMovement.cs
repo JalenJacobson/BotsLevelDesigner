@@ -4,33 +4,28 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    public Rigidbody rb; 
-    public float movementForce = 1000f;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    
+    public CharacterController _controller;
+    public float _speed = 10;
+    public float _rotationSpeed = 180;
+ 
+    private Vector3 rotation;
+ 
+    public void Update()
     {
-        print("move");
-        if( Input.GetKey("l")){
-            rb.AddForce(movementForce * Time.deltaTime , 0,0);
-        }
-        if( Input.GetKey("i")){
-            rb.AddForce(0, 0, movementForce * Time.deltaTime );
-        }
-        if( Input.GetKey("j")){
-            rb.AddForce(-movementForce * Time.deltaTime , 0,0);
-        }
-        if( Input.GetKey("k")){
-            rb.AddForce(0, 0, -movementForce * Time.deltaTime );
-        }
-            
-       
+        this.rotation = new Vector3(0, Input.GetAxisRaw("Horizontal") * _rotationSpeed * Time.deltaTime, 0);
+ 
+        Vector3 move = new Vector3(0, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime);
+        move = this.transform.TransformDirection(move);
+        _controller.Move(move * _speed);
+        this.transform.Rotate(this.rotation);
     }
 }
+
