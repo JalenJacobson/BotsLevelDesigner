@@ -18,10 +18,21 @@ public class MoveBruteW : MonoBehaviour {
         {
             anim.Play("Movement");
         }
+        if (Input.GetKeyDown("a"))
+        {
+            anim.Play("Movement");
+        }
+        if (Input.GetKeyDown("s"))
+        {
+            anim.Play("Movement");
+        }
+        if (Input.GetKeyDown("d"))
+        {
+            anim.Play("Movement");
         if (Input.GetKeyDown("k"))
         {
             anim.Play("Push");
         }
-        
+        }
     }
 }
