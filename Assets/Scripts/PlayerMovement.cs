@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeed = 5;
 
-    public float rotateSpeed;
+    public float rotateSpeed = 10;
 
     public Rigidbody rb;
 
@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // rb = GetComponent<Rigidbody>();
+
     }
 
     void FixedUpdate()
