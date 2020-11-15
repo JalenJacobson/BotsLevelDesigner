@@ -16,23 +16,24 @@ public class MoveBruteW : MonoBehaviour {
  void Update () {
         if (Input.GetKeyDown("w"))
         {
-            anim.Play("Movement");
+            anim.Play("BruteWalk");
         }
         if (Input.GetKeyDown("a"))
         {
-            anim.Play("Movement");
+            anim.Play("BruteWalk");
         }
         if (Input.GetKeyDown("s"))
         {
-            anim.Play("Movement");
+            anim.Play("BruteWalk");
         }
         if (Input.GetKeyDown("d"))
         {
-            anim.Play("Movement");
-        if (Input.GetKeyDown("k"))
+            anim.Play("BruteWalk");
+        }
+        if (Input.GetKey("k"))
         {
             anim.Play("Push");
         }
-        }
+        
     }
 }
