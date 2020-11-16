@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gearbox1 : MonoBehaviour
+public class PowerConnection : MonoBehaviour
 {
+
     public float pos = 0;
     public GameObject GateDoors;
     Doors doorsOpen_script;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,12 @@ public class Gearbox1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 
-    public void changeGearPos(float postion)
+    public void changePowerConnectionPos(float postion)
     {
         pos = postion; 
-        doorsOpen_script.changeGearBox1();
+        doorsOpen_script.changePowerConnection1();
     }
 }

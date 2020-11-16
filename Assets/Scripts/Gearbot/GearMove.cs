@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class GearMove : MonoBehaviour
 {
     public float moveSpeed = 5;
 
     public float rotateSpeed = 10;
 
     public Rigidbody rb;
+
+    public bool toggleSelected;
 
     private Vector3 direction;
 
@@ -19,7 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
+        if (toggleSelected == true){
+            Movement();
+        }
     }
 
     void Movement()
@@ -36,5 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
     }
-}
 
+    public void toggleSelectedState (){
+        toggleSelected = !toggleSelected;
+    }
+}
