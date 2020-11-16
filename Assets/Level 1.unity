@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0
+  GateDoors: {fileID: 1727446765}
 --- !u!65 &10059511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1927,6 +1928,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9166814452525053093, guid: dad7af19e1f2806419aba6ea3fb65ee0, type: 3}
+--- !u!114 &237071107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237071102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef4e05e7f2f14a17bd1881e98676777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gears: {fileID: 1901047986}
+  Luz: {fileID: 1805754132}
+  Brute: {fileID: 1825741818}
+  Pump: {fileID: 2124096392}
+  Sat: {fileID: 2047977117}
 --- !u!1001 &241367096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3914,7 +3932,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 82320ccb86f158344a11f409016d9bb9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82320ccb86f158344a11f409016d9bb9,
         type: 3}
@@ -4552,7 +4570,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 175bf412faabc254bb746a0e2bf98519,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 175bf412faabc254bb746a0e2bf98519,
         type: 3}
@@ -8702,7 +8720,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 02c2ba418f9df66478aac30f56ab6a33,
         type: 3}
       propertyPath: m_Name
-      value: GearAnim2
+      value: Gears
       objectReference: {fileID: 0}
     - target: {fileID: 3566390031902043909, guid: 02c2ba418f9df66478aac30f56ab6a33,
         type: 3}
@@ -9333,6 +9351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0
+  GateDoors: {fileID: 0}
 --- !u!4 &1082713851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0da965fd6f109d545a12fa800e76d6ba,
@@ -9567,7 +9586,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4c817955fe4350147b61bfc23a840243,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c817955fe4350147b61bfc23a840243,
         type: 3}
@@ -9592,7 +9611,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c817955fe4350147b61bfc23a840243,
         type: 3}
       propertyPath: m_Name
-      value: Power Connection 1 (1)
+      value: level_luz_powerconnection_1
       objectReference: {fileID: 0}
     - target: {fileID: 1170970068873931921, guid: 4c817955fe4350147b61bfc23a840243,
         type: 3}
@@ -12002,6 +12021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0
+  GateDoors: {fileID: 0}
 --- !u!1 &1408892973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9622c488743022f4db7c108422b03b8a,
@@ -15155,6 +15175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  gearBox1: 0
+  gearBox2: 0
+  powerConnection1: 0
+  powerConnection2: 0
 --- !u!95 &1727446767
 Animator:
   serializedVersion: 3
@@ -16069,14 +16093,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805754132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e618b3cce8e433a93edf63f293a98b, type: 3}
+  m_Script: {fileID: 11500000, guid: 00468b73ef24448c3be0d48975318dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   rotateSpeed: 10
   rb: {fileID: 1805754134}
+  toggleSelected: 0
 --- !u!54 &1805754134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16125,6 +16150,39 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.016
   m_Center: {x: 0, y: 0.015, z: 0}
+--- !u!114 &1805754138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805754132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427579ae5b6764b6f858a9a5beecbee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level_luz_powerconnection_1: {fileID: 1807892248}
+--- !u!1 &1807892248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c817955fe4350147b61bfc23a840243,
+    type: 3}
+  m_PrefabInstance: {fileID: 1092607305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1807892250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807892248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: 0
+  GateDoors: {fileID: 1727446765}
 --- !u!1 &1815716854 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9622c488743022f4db7c108422b03b8a,
@@ -16178,12 +16236,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825741818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e618b3cce8e433a93edf63f293a98b, type: 3}
+  m_Script: {fileID: 11500000, guid: e85c41687d5dd4dbc91033939012ff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotateSpeed: 10
   rb: {fileID: 1825741823}
+  toggleSelected: 0
 --- !u!114 &1825741821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16992,14 +17051,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901047986}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e618b3cce8e433a93edf63f293a98b, type: 3}
+  m_Script: {fileID: 11500000, guid: 132f315ba5fa1441e9d0f7b1c84596b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 5
   rotateSpeed: 10
   rb: {fileID: 1901047989}
+  toggleSelected: 1
 --- !u!65 &1901047988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17567,7 +17627,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8b516e3614220a34ca19cf298e96d130,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b516e3614220a34ca19cf298e96d130,
         type: 3}
@@ -19307,7 +19367,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4e3da6e50c635e446b23e11663488b30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e3da6e50c635e446b23e11663488b30,
         type: 3}
@@ -19367,6 +19427,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2047977116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047977119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047977117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68de1c9382bdb4fefae8af46ae9984e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rotateSpeed: 10
+  rb: {fileID: 2047977120}
+  toggleSelected: 0
 --- !u!54 &2047977120
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19972,3 +20048,19 @@ Halo:
     serializedVersion: 2
     rgba: 4284681232
   m_Size: 2
+--- !u!114 &2124096397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124096392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8aabf3e8a0e44e181e07dc6c9723af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rotateSpeed: 10
+  rb: {fileID: 2124096395}
+  toggleSelected: 0
