@@ -1671,7 +1671,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 151464345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1641c4b23658e46a4ce07c5b24f12d, type: 3}
+  m_Script: {fileID: 11500000, guid: 49849cb1e1e01014cae11483210da286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slowSpeed: 1
@@ -20638,6 +20638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427579ae5b6764b6f858a9a5beecbee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleSelected: 0
   level_luz_powerconnection_1: {fileID: 1807892248}
 --- !u!1 &1807892248 stripped
 GameObject:
@@ -20832,10 +20833,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825741818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34dcf620e88d3d4ea5496e0292a92a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 520e5eed17f9e4f4ba792ebb5667c3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  toggleSelected: 0
 --- !u!65 &1825741822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22001,6 +22002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418a4aafd76da4f97be705726f4260be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleSelected: 1
   GearBoxTrigger: {fileID: 10059506}
 --- !u!95 &1901047992
 Animator:

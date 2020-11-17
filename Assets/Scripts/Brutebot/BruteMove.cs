@@ -24,7 +24,6 @@ public class BruteMove : MonoBehaviour
         if (toggleSelected == true){
             Movement();
         }
-        
     }
 
     void Movement()

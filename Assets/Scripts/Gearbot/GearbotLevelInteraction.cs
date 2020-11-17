@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GearbotLevelInteraction : MonoBehaviour
 {
+
+    public bool toggleSelected = true;
     public GameObject GearBoxTrigger;
     Gearbox1 GearBoxTrigger_script;
     // Start is called before the first frame update
@@ -15,10 +17,18 @@ public class GearbotLevelInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("z"))
+        if(toggleSelected == true)
         {
-            GearBoxTrigger_script.changeGearPos(1);
+            if (Input.GetKeyDown("z"))
+                {
+                    GearBoxTrigger_script.changeGearPos(1);
+                }
         }
         
+        
+    }
+
+    public void toggleSelectedState (){
+        toggleSelected = !toggleSelected;
     }
 }

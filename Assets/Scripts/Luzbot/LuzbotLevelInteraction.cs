@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LuzbotLevelInteraction : MonoBehaviour
 {
+
+    public bool toggleSelected = false;
     public GameObject level_luz_powerconnection_1;
     PowerConnection powerConnectionTrigger_script;
     // Start is called before the first frame update
@@ -15,10 +17,17 @@ public class LuzbotLevelInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("z"))
-        {
-            powerConnectionTrigger_script.changePowerConnectionPos(1);
+        if(toggleSelected == true){
+            if (Input.GetKeyDown("z"))
+                {
+                    powerConnectionTrigger_script.changePowerConnectionPos(1);
+                }
         }
         
+        
+    }
+
+    public void toggleSelectedState (){
+        toggleSelected = !toggleSelected;
     }
 }
