@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GearMove : MonoBehaviour
 {
-    public float moveSpeed = 5;
+    public float moveSpeed = 7;
 
     public float rotateSpeed = 10;
 
@@ -51,6 +51,6 @@ public class GearMove : MonoBehaviour
     }
     public void highGravityExit ()
     {
-        moveSpeed = 5;
+        moveSpeed = 7;
     }
 }

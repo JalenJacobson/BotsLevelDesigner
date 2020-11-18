@@ -44,4 +44,12 @@ public class BruteMove : MonoBehaviour
     public void toggleSelectedState (){
         toggleSelected = !toggleSelected;
     }
+        public void highGravityEnter ()
+    {
+        moveSpeed = 5;
+    }
+    public void highGravityExit ()
+    {
+        moveSpeed = 5;
+    }
 }

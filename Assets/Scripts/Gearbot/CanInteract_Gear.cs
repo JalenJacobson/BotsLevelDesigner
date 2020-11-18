@@ -24,6 +24,7 @@ public class CanInteract_Gear : MonoBehaviour
      {
         print(other.name);
         if(other.name == "Gears"){
+            displayMessage = false;
             other.gameObject.SendMessage("canInteractExit");
         }        
         else{

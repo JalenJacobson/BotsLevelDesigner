@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PumpMove : MonoBehaviour
 {
-    public float moveSpeed = 5;
+    public float moveSpeed = 7;
 
     public float rotateSpeed = 10;
 
@@ -52,6 +52,6 @@ public class PumpMove : MonoBehaviour
     }
     public void highGravityExit ()
     {
-        moveSpeed = 5;
+        moveSpeed = 7;
     }
 }
