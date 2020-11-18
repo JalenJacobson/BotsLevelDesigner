@@ -6,6 +6,7 @@ public class GearbotLevelInteraction : MonoBehaviour
 {
 
     public bool toggleSelected = true;
+    public bool canInteract = false;
     public GameObject GearBoxTrigger;
     Gearbox1 GearBoxTrigger_script;
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class GearbotLevelInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(toggleSelected == true)
+        if(toggleSelected == true && canInteract == true)
         {
             if (Input.GetKeyDown("z"))
                 {
@@ -31,4 +32,12 @@ public class GearbotLevelInteraction : MonoBehaviour
     public void toggleSelectedState (){
         toggleSelected = !toggleSelected;
     }
+
+    public void canInteractEnter(){
+        canInteract = true;
+    }
+    public void canInteractExit(){
+        canInteract = false;
+    }
+
 }

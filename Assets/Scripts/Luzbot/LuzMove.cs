@@ -45,4 +45,13 @@ public class LuzMove : MonoBehaviour
     public void toggleSelectedState (){
         toggleSelected = !toggleSelected;
     }
+
+    public void highGravityEnter ()
+    {
+        moveSpeed = 1;
+    }
+    public void highGravityExit ()
+    {
+        moveSpeed = 5;
+    }
 }

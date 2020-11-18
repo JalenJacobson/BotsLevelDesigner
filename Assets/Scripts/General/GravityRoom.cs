@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GravityRoom : MonoBehaviour
-
-
 {
-     public float slowSpeed = 1;
-     private float normSpeed = 7;
-     void OnTriggerEnter(UnityEngine.Collider other)
+     void OnTriggerEnter(Collider other)
      {
-    
-         other.GetComponent<PumpMove>().moveSpeed = slowSpeed;    
+         print(other.name);
+         if(other.name != "Brute" || other.name != "polySurface63" || other.name != "polySurface57"){
+             other.gameObject.SendMessage("highGravityEnter"); 
+         }
+            
      }
-     void OnTriggerExit(UnityEngine.Collider other)
+     void OnTriggerExit(Collider other)
      {
-         other.GetComponent<PumpMove>().moveSpeed = normSpeed;
+        print(other.name);
+        if(other.name != "Brute" || other.name != "polySurface63" || other.name != "polySurface57"){
+            other.gameObject.SendMessage("highGravityExit");
+        }        
      }
  }
  
