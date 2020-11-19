@@ -36,6 +36,6 @@ public class CanInteract_Gear : MonoBehaviour
      if (displayMessage) {
          print("worked");
          GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200f, 200f), message);
-     }
-}
+        }
+    }
 }
