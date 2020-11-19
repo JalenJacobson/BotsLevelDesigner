@@ -28,7 +28,7 @@ public class CanInteract_Gear : MonoBehaviour
             other.gameObject.SendMessage("canInteractExit");
         }        
         else{
-            print("not gears");
+            print("not gears!");
         }
      }
 
