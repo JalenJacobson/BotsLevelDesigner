@@ -20,9 +20,9 @@ public class PowerConnection : MonoBehaviour
         
     }
 
-    public void changePowerConnectionPos(float postion)
+    public void changePowerConnectionPos()
     {
-        pos = postion; 
+        pos = 1; 
         doorsOpen_script.changePowerConnection1();
     }
 }

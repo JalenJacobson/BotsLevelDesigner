@@ -29,7 +29,7 @@ public class LuzbotLevelInteraction : MonoBehaviour
         if(toggleSelected == true && canInteract == true){
             if (Input.GetKeyDown("z"))
                 {
-                    powerConnectionTrigger_script1.changePowerConnectionPos(1);
+                    // powerConnectionTrigger_script1.changePowerConnectionPos(1);
                     
                 }
         }

@@ -6619,6 +6619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9a59fbf1b914d8db94b562ad668d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEntered: 0
+  touching: {fileID: 0}
 --- !u!1 &400690774 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 80af0abeb53a5074699cfa2c90f9a697,

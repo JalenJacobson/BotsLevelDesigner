@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class LuzTriggerCube : MonoBehaviour
 {
+    public bool triggerEntered = false;
+    public GameObject touching = null;
+
     void OnTriggerEnter(Collider other)
      {
-         print(other.name.Contains("Sat"));
-         if(other.name.Contains("Sat")){
-             print("it worked");
-         print(other.name);
-         }
          
      }
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.name.Contains("luz")){
+             touching = other.gameObject;
+        }
+    }
+
      void OnTriggerExit(Collider other)
      {
+         
+            touching = null;
+        
        
+     }
+
+     void Update()
+     {
+         if(touching != null && Input.GetKeyDown("z"))
+         {
+             touching.SendMessage("changePowerConnectionPos");
+         }
      }
 }
