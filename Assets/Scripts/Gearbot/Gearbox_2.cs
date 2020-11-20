@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gearbox_2 : MonoBehaviour
 {
+    public Animator anim;
     public float pos = 0;
     public GameObject GateDoors;
     Doors doorsOpen_script;
@@ -12,6 +13,7 @@ public class Gearbox_2 : MonoBehaviour
     void Start()
     {
         doorsOpen_script = GateDoors.GetComponent<Doors>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,5 +25,6 @@ public class Gearbox_2 : MonoBehaviour
     {
         pos = postion; 
         doorsOpen_script.changeGearBox2();
+        anim.Play("GearTrigger");
     }
 }
