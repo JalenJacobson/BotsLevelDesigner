@@ -8,6 +8,8 @@ public class Gearbox1 : MonoBehaviour
     public float pos = 0;
     public GameObject GateDoors;
     Doors doorsOpen_script;
+    public GameObject GateGearObj;
+    GateGear gategearactivate_script;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,7 @@ public class Gearbox1 : MonoBehaviour
     {
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
+        gategearactivate_script = GateGearObj.GetComponent<GateGear>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class Gearbox1 : MonoBehaviour
     {
         pos = postion; 
         doorsOpen_script.changeGearBox1();
+        gategearactivate_script.changeGearBox1();
         anim.Play("GearTrigger");
     }
 }

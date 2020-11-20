@@ -6,6 +6,8 @@ public class GateGear : MonoBehaviour
 {
    public Animator anim;
 
+   public bool gearBox1 = false;
+
  // Use this for initialization
  void Start () {
         anim = GetComponent<Animator>();
@@ -13,10 +15,16 @@ public class GateGear : MonoBehaviour
  
  // Update is called once per frame
  void Update () {
-        if (Input.GetKeyDown("z"))
+        if (gearBox1 == true)
         {
             anim.Play("GateGear");
 
         }
+    }
+
+    public void changeGearBox1()
+    {
+        print("worked");
+        gearBox1 = !gearBox1; 
     }
 }
