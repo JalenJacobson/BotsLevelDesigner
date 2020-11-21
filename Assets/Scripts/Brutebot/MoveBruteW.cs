@@ -30,7 +30,7 @@ public class MoveBruteW : MonoBehaviour {
         {
             anim.Play("BruteWalk");
         }
-        if (Input.GetKey("k"))
+        if (Input.GetKey("z"))
         {
             anim.Play("Push");
         }
