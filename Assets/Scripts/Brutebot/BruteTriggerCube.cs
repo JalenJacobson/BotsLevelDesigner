@@ -6,42 +6,55 @@ public class BruteTriggerCube : MonoBehaviour
 {
     public bool triggerEntered = false;
     public GameObject touching = null;
-    // public GameObject Brute;
     public Vector3 liftPos;
+    private bool lifting;
 
     void Start()
     {
-        liftPos = new Vector3(0.0f, 1.0f, 0.0f);
-        print(GameObject.FindGameObjectWithTag("Brute").transform.position);
+        liftPos = new Vector3(0.0f, -0.5f, -1.0f);
+        
     }
 
     void OnTriggerEnter(Collider other)
      {
-         
+          
      }
 
     void OnTriggerStay(Collider other)
     {
-        // if(other.name.Contains("box")){
-             touching = other.gameObject;
-            //  Brute = Collider.gameObject;
-        // }
+        if(other.name == "IdleLuz")
+        {
+        touching = other.gameObject; 
+        }
+              
     }
 
      void OnTriggerExit(Collider other)
      {
          
-            touching = null;
-        
+        // touching = null;
+        // lifting = false;
        
      }
 
      void Update()
      {
+         
+
          if(touching != null && Input.GetKeyDown("z"))
          {
-             // need state "lifting" and function if(lifting = true){do the following thing}
-            touching.transform.position = GameObject.FindGameObjectWithTag("Brute").transform.position + liftPos;
+             lift();
          }
+         
+         if(lifting == true)
+        {
+            touching.transform.position = transform.TransformPoint(liftPos);
+        }
+        
      }
+    
+    void lift() 
+    {
+        lifting = !lifting;
+    }
 }
