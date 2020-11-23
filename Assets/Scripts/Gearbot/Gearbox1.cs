@@ -10,6 +10,7 @@ public class Gearbox1 : MonoBehaviour
     Doors doorsOpen_script;
     public GameObject GateGearObj;
     GateGear gategearactivate_script;
+    public AudioSource mySound;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,8 @@ public class Gearbox1 : MonoBehaviour
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
         gategearactivate_script = GateGearObj.GetComponent<GateGear>();
+        var audioClip = Resources.Load<AudioClip>("GearTrigger");  //Load the AudioClip from the Resources Folder
+        mySound.clip = audioClip;  //Assign it as AudioSource's clip
     }
 
     // Update is called once per frame
@@ -31,5 +34,6 @@ public class Gearbox1 : MonoBehaviour
         doorsOpen_script.changeGearBox1();
         gategearactivate_script.changeGearBox1();
         anim.Play("GearTrigger");
+        mySound.Play();
     }
 }
