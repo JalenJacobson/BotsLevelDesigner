@@ -30,10 +30,18 @@ public class MoveBruteW : MonoBehaviour {
         {
             anim.Play("BruteWalk");
         }
-        if (Input.GetKey("z"))
-        {
-            anim.Play("Push");
-        }
         
     }
+        void OnTriggerEnter(Collider other)
+        {
+        anim.Play("Push");
+        }
+        void OnTriggerStay(Collider other)
+        {
+        anim.Play("Push");
+        }
+        void OnTriggerExit(Collider other)
+        {
+        anim.Play("BruteWalk");
+        }
 }

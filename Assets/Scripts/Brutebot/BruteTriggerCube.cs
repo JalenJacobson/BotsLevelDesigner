@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BruteTriggerCube : MonoBehaviour
 {
+    public Animator anim;
     public bool triggerEntered = false;
     public GameObject touching = null;
     public bool canLift = false;
@@ -13,12 +14,14 @@ public class BruteTriggerCube : MonoBehaviour
     void Start()
     {
         liftPos = new Vector3(0.0f, -0.5f, -1.0f);
+        anim = GetComponent<Animator>();
         
     }
 
     void OnTriggerEnter(Collider other)
      {
           canLift = true;
+        anim.Play("Push");
      }
 
     void OnTriggerStay(Collider other)
