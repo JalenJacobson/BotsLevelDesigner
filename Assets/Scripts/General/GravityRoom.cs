@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class GravityRoom : MonoBehaviour
 {
+
      void OnTriggerEnter(Collider other)
      {
-         print(other.name);
-         if(other.name != "Brute" || other.name != "polySurface63" || other.name != "polySurface57"){
+         var characterName = other.name;
+         print(characterName);
+         if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump"){
              other.gameObject.SendMessage("highGravityEnter"); 
          }
             
      }
      void OnTriggerExit(Collider other)
      {
-        print(other.name);
-        if(other.name != "Brute" || other.name != "polySurface63" || other.name != "polySurface57"){
-            other.gameObject.SendMessage("highGravityExit");
-        }        
+         var characterName = other.name;
+        print(characterName);
+        if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump"){
+             other.gameObject.SendMessage("highGravityExit"); 
+         }     
      }
  }
  

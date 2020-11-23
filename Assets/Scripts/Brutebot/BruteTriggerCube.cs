@@ -6,8 +6,9 @@ public class BruteTriggerCube : MonoBehaviour
 {
     public bool triggerEntered = false;
     public GameObject touching = null;
+    public bool canLift = false;
     public Vector3 liftPos;
-    private bool lifting;
+    public bool lifting;
 
     void Start()
     {
@@ -17,31 +18,38 @@ public class BruteTriggerCube : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
      {
-          
+          canLift = true;
      }
 
     void OnTriggerStay(Collider other)
     {
-        if(other.name == "IdleLuz")
+        var characterName = other.name;
+        if(characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump" || characterName.Contains("Box"))
         {
-        touching = other.gameObject; 
+            if(touching == null)
+            {
+                touching = other.gameObject; 
+            }
+            
         }
               
     }
 
      void OnTriggerExit(Collider other)
      {
-         
-        // touching = null;
+        if(lifting == false)
+        {
+            canLift = false;
+            touching = null;
+        }
+        
         // lifting = false;
        
      }
 
      void Update()
      {
-         
-
-         if(touching != null && Input.GetKeyDown("z"))
+         if(touching != null && Input.GetKeyDown("z") && canLift == true)
          {
              lift();
          }

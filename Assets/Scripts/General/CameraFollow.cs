@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-public Vector3 myPos;
-public Transform myPlay;
+    public Vector3 myPos;
+    public Transform myPlay;
  
-public void Update()
-{
-   transform.position = myPlay.position + myPos;
+    public void Update()
+        {
+            transform.position = myPlay.position + myPos;
+        }
+
+    public void togglePlayerFollow(GameObject character)
+    {
+        myPlay = character.transform;
     }
 }
