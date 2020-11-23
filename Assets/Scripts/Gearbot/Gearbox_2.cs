@@ -21,9 +21,9 @@ public class Gearbox_2 : MonoBehaviour
     {
     }
 
-    public void changeGearPos(float postion)
+    public void changeGearPos()
     {
-        pos = postion; 
+        pos = 1; 
         doorsOpen_script.changeGearBox2();
         anim.Play("GearTrigger");
     }

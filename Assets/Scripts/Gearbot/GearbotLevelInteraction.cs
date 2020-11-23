@@ -29,14 +29,14 @@ public class GearbotLevelInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown("z"))
                 {
-                    GearBoxTrigger_script.changeGearPos(1);
+                    GearBoxTrigger_script.changeGearPos();
                 }
         }
         else if(toggleSelected == true && canInteract2 == true)
         {
             if(Input.GetKeyDown("z"))
             {
-                GearBoxTrigger_script2.changeGearPos(1);
+                GearBoxTrigger_script2.changeGearPos();
             }
             
         }
