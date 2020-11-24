@@ -30,5 +30,5 @@ public class BubbleScript : MonoBehaviour
        displayBubble = !displayBubble;
    }
 
-    
+   
 }
