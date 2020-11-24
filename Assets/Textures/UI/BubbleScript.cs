@@ -6,7 +6,7 @@ public class BubbleScript : MonoBehaviour
 {
    public GameObject ActionBubbles;
    public Animator anim;
-    public bool displayBubble = false;
+    // public bool displayBubble = false;
     public GameObject touching = null;
 
 
@@ -18,17 +18,18 @@ public class BubbleScript : MonoBehaviour
  // Update is called once per frame
     void Update()
     {
-        if(displayBubble == true)
-        {
-            anim.Play("ActionBubbleAnim");
-        }
+
     }
     
 
-   void toggleDisplayAction()
+   public void actionBubbleStart()
    {
-       displayBubble = !displayBubble;
+       anim.Play("ActionBubbleAnim");
+       print("start");
    }
-
+   public void actionBubbleStop()
+   {
+       print("actionBubbleStop");
+   }
    
 }
