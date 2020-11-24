@@ -14,6 +14,8 @@ public class GearMove : MonoBehaviour
 
     private Vector3 direction;
 
+    public bool fixPosition = false;
+
     void Start()
     {
 
@@ -21,7 +23,7 @@ public class GearMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (toggleSelected == true){
+        if (toggleSelected == true && fixPosition == false){
             Movement();
         }
     }
@@ -43,6 +45,12 @@ public class GearMove : MonoBehaviour
 
     public void toggleSelectedState (){
         toggleSelected = !toggleSelected;
+    }
+
+    public void toggleFixPosition()
+    {
+        print("togglefixpos");
+        fixPosition = !fixPosition;
     }
 
     public void highGravityEnter ()

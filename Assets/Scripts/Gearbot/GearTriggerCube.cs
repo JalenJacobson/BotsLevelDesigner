@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class GearTriggerCube : MonoBehaviour
 {
+    public GameObject Gears;
+    GearMove GearMove_Script;
+
     public bool triggerEntered = false;
+    public bool connected = false;
     public GameObject touching = null;
+    public Vector3 connectPos;
+
+    void Start()
+    {
+        GearMove_Script = Gears.GetComponent<GearMove>();
+        connectPos = new Vector3(0.0f, -0.5f, -1.0f);
+    }
 
     void OnTriggerEnter(Collider other)
      {
@@ -21,17 +32,45 @@ public class GearTriggerCube : MonoBehaviour
 
      void OnTriggerExit(Collider other)
      {
-         
             touching = null;
-        
-       
      }
 
      void Update()
      {
-         if(touching != null && Input.GetKeyDown("z"))
+         if(touching != null && Input.GetKeyDown("c"))
          {
-             touching.SendMessage("changeGearPos");
+             Connect();
          }
+         if(touching != null && Input.GetKeyDown("d"))
+         {
+             Disconnect();
+         }
+
+        //  if(connected == true)
+        //  {
+        //      GearMove_Script.fixPosition = true;
+        //  }
+
+         if(connected == true && Input.GetKeyDown("z"))
+         {
+             Activate();
+         }
+     }
+
+     void Activate()
+     {
+             touching.SendMessage("changeGearPos");
+     }
+
+     void Connect()
+     {
+             connected = true;  
+             GearMove_Script.toggleFixPosition();     
+     }
+     
+     void Disconnect()
+     {
+             connected = false;  
+             GearMove_Script.toggleFixPosition();     
      }
 }

@@ -21,7 +21,7 @@ public class BruteTriggerCube : MonoBehaviour
     void OnTriggerEnter(Collider other)
      {
           canLift = true;
-        anim.Play("Push");
+        
      }
 
     void OnTriggerStay(Collider other)
@@ -59,6 +59,7 @@ public class BruteTriggerCube : MonoBehaviour
          
          if(lifting == true)
         {
+            anim.Play("Push");
             touching.transform.position = transform.TransformPoint(liftPos);
         }
         
