@@ -6,7 +6,7 @@ public class BubbleScript : MonoBehaviour
 {
    public GameObject ActionBubbles;
    public Animator anim;
-    public bool triggerEntered = false;
+    public bool displayBubble = false;
     public GameObject touching = null;
 
 
@@ -16,18 +16,19 @@ public class BubbleScript : MonoBehaviour
  }
  
  // Update is called once per frame
-
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if(other.name.Contains("Gear")){
-             touching = other.gameObject;
+        if(displayBubble == true)
+        {
+            anim.Play("ActionBubbleAnim");
         }
     }
-     void Update()
-     {
-         if(touching != null)
-         {
-        anim.Play("ActionBubbleAnim");
-         }
-    }
+    
+
+   void toggleDisplayAction()
+   {
+       displayBubble = !displayBubble;
+   }
+
+    
 }

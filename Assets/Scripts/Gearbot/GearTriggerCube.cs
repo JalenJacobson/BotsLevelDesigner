@@ -12,6 +12,8 @@ public class GearTriggerCube : MonoBehaviour
     public GameObject touching = null;
     public Vector3 connectPos;
 
+    //bring in animator and script here. like you have done with other animations
+
     void Start()
     {
         GearMove_Script = Gears.GetComponent<GearMove>();
@@ -27,12 +29,14 @@ public class GearTriggerCube : MonoBehaviour
     {
         if(other.name.Contains("Gear")){
              touching = other.gameObject;
+             // animator_script.toggleDisplayAction();
         }
     }
 
      void OnTriggerExit(Collider other)
      {
             touching = null;
+            // animator_script.toggleDisplayAction();
      }
 
      void Update()
