@@ -7556,6 +7556,7 @@ GameObject:
   - component: {fileID: 388650056}
   - component: {fileID: 388650057}
   - component: {fileID: 388650058}
+  - component: {fileID: 388650059}
   m_Layer: 0
   m_Name: ActionLight
   m_TagString: Untagged
@@ -7646,6 +7647,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &388650059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388650055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246aa28586c081b4eb4ea4adab97015d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionCircles: {fileID: 0}
+  ActionLight: {fileID: 0}
+  ActionBubbles: {fileID: 0}
+  anim: {fileID: 0}
+  touching: {fileID: 0}
 --- !u!1 &399056014
 GameObject:
   m_ObjectHideFlags: 0
@@ -13429,6 +13447,8 @@ MonoBehaviour:
   touching: {fileID: 0}
   connectPos: {x: 0, y: 0, z: 0}
   ActionBubbles: {fileID: 748045543}
+  ActionLight: {fileID: 388650055}
+  ActionCircles: {fileID: 1359173182}
 --- !u!1 &684028620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d38961f05a585034eb33c88a91e6f11f,
@@ -14765,6 +14785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246aa28586c081b4eb4ea4adab97015d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActionCircles: {fileID: 0}
+  ActionLight: {fileID: 0}
   ActionBubbles: {fileID: 0}
   anim: {fileID: 0}
   touching: {fileID: 0}
@@ -26510,6 +26532,7 @@ GameObject:
   - component: {fileID: 1359173183}
   - component: {fileID: 1359173185}
   - component: {fileID: 1359173184}
+  - component: {fileID: 1359173186}
   m_Layer: 0
   m_Name: ActionCircles
   m_TagString: Untagged
@@ -26525,8 +26548,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359173182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.67, y: -2.36, z: 8.64}
-  m_LocalScale: {x: 0.23189832, y: 0.2318983, z: 0.2318983}
+  m_LocalPosition: {x: 6.67, y: -4.28, z: 8.64}
+  m_LocalScale: {x: -0.026468873, y: -0.026468871, z: -0.026468871}
   m_Children: []
   m_Father: {fileID: 963194228}
   m_RootOrder: 2
@@ -26600,6 +26623,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1359173186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359173182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246aa28586c081b4eb4ea4adab97015d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionCircles: {fileID: 0}
+  ActionLight: {fileID: 0}
+  ActionBubbles: {fileID: 0}
+  anim: {fileID: 0}
+  touching: {fileID: 0}
 --- !u!1 &1363202222
 GameObject:
   m_ObjectHideFlags: 0

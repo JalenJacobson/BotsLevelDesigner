@@ -14,6 +14,10 @@ public class GearTriggerCube : MonoBehaviour
 
     public GameObject ActionBubbles;
     BubbleScript Bubble_Script;
+    public GameObject ActionLight;
+    BubbleScript Light_Script;
+    public GameObject ActionCircles;
+    BubbleScript Circle_Script;
 
     //bring in animator and script here. like you have done with other animations
 
@@ -22,25 +26,34 @@ public class GearTriggerCube : MonoBehaviour
         GearMove_Script = Gears.GetComponent<GearMove>();
         connectPos = new Vector3(0.0f, -0.5f, -1.0f);
         Bubble_Script = ActionBubbles.GetComponent<BubbleScript>();
+        Light_Script = ActionLight.GetComponent<BubbleScript>();
+        Circle_Script = ActionCircles.GetComponent<BubbleScript>();
     }
 
     void OnTriggerEnter(Collider other)
      {
-         
+    if(other.name.Contains("Gear")){
+            Bubble_Script.actionBubbleStart();
+            Light_Script.actionBubbleStart();
+            Circle_Script.actionBubbleStart();
+        }
      }
 
     void OnTriggerStay(Collider other)
     {
         if(other.name.Contains("Gear")){
              touching = other.gameObject;
-             Bubble_Script.actionBubbleStart();
         }
     }
 
      void OnTriggerExit(Collider other)
      {
+            if(other.name.Contains("Gear")){
             touching = null;
             Bubble_Script.actionBubbleStop();
+            Light_Script.actionBubbleStop();
+            Circle_Script.actionBubbleStop();
+        }
      }
 
      void Update()

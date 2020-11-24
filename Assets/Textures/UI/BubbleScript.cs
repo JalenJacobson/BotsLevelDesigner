@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BubbleScript : MonoBehaviour
 {
+   public GameObject ActionCircles;
+   public GameObject ActionLight;
    public GameObject ActionBubbles;
    public Animator anim;
     // public bool displayBubble = false;
@@ -24,11 +26,16 @@ public class BubbleScript : MonoBehaviour
 
    public void actionBubbleStart()
    {
+       anim.Play("ActionLightAnim");
+       anim.Play("ActionCirclesAnim");
        anim.Play("ActionBubbleAnim");
        print("start");
    }
    public void actionBubbleStop()
    {
+       anim.Play("ActionLightStop");
+       anim.Play("ActionCirclesStop");
+        anim.Play("ActionBubbleClose");
        print("actionBubbleStop");
    }
    
