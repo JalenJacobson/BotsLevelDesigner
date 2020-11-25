@@ -5,14 +5,11 @@ using UnityEngine;
 public class SatMove : MonoBehaviour
 {
     public float moveSpeed = 7;
-
     public float rotateSpeed = 10;
-
     public Rigidbody rb;
-
     public bool toggleSelected;
-
     private Vector3 direction;
+    public bool fixPosition = false;
 
     void Start()
     {
@@ -21,7 +18,7 @@ public class SatMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (toggleSelected == true){
+        if (toggleSelected == true && fixPosition == false){
             Movement();
         }
         
@@ -44,6 +41,12 @@ public class SatMove : MonoBehaviour
 
     public void toggleSelectedState (){
         toggleSelected = !toggleSelected;
+    }
+
+    public void toggleFixPosition()
+    {
+        print("togglefixpos");
+        fixPosition = !fixPosition;
     }
 
     public void highGravityEnter ()

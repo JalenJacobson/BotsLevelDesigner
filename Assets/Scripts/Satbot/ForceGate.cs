@@ -6,17 +6,20 @@ public class ForceGate : MonoBehaviour
 {
    public Animator anim;
 
- // Use this for initialization
- void Start () {
+    // Use this for initialization
+    void Start () 
+    {
         anim = GetComponent<Animator>();
- }
+    }
  
- // Update is called once per frame
- void Update () {
-        if (Input.GetKeyDown("e"))
-        {
-            anim.Play("ForceGateDown");
+    // Update is called once per frame
+    void Update () 
+    {
+        
+    }
 
-        }
+    void forceGateDown()
+    {
+        anim.Play("ForceGateDown");
     }
 }

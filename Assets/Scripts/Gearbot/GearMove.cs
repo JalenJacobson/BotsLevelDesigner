@@ -5,15 +5,10 @@ using UnityEngine;
 public class GearMove : MonoBehaviour
 {
     public float moveSpeed = 7;
-
     public float rotateSpeed = 10;
-
     public Rigidbody rb;
-
     public bool toggleSelected;
-
     private Vector3 direction;
-
     public bool fixPosition = false;
 
     void Start()

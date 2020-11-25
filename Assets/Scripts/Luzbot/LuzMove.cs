@@ -5,14 +5,11 @@ using UnityEngine;
 public class LuzMove : MonoBehaviour
 {
     public float moveSpeed = 7;
-
     public float rotateSpeed = 10;
-
     public Rigidbody rb;
-
     public bool toggleSelected;
-
     private Vector3 direction;
+    public bool fixPosition = false;
 
     void Start()
     {
@@ -21,7 +18,7 @@ public class LuzMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (toggleSelected == true){
+        if (toggleSelected == true && fixPosition == false){
             Movement();
         }
         
@@ -46,6 +43,11 @@ public class LuzMove : MonoBehaviour
         toggleSelected = !toggleSelected;
     }
 
+    public void toggleFixPosition()
+    {
+        print("togglefixpos");
+        fixPosition = !fixPosition;
+    }
     public void highGravityEnter ()
     {
         moveSpeed = 1;
