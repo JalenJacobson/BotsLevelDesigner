@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 1
+  forcegate_gate: {fileID: 1769906098}
 --- !u!1001 &6982237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27421,7 +27422,7 @@ MonoBehaviour:
   touchingToken: 
   connected: 0
   connectPos: {x: 0, y: 0, z: 0}
-  token: 1
+  token: 
 --- !u!65 &1406039432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29094,7 +29095,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 62349f3c98d878c48a88a154c6710d3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 76.8
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62349f3c98d878c48a88a154c6710d3a,
         type: 3}
@@ -29104,7 +29105,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 62349f3c98d878c48a88a154c6710d3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.35
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62349f3c98d878c48a88a154c6710d3a,
         type: 3}
@@ -29446,7 +29447,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0da965fd6f109d545a12fa800e76d6ba,
         type: 3}
       propertyPath: m_Name
-      value: Download Box 1 (4)
+      value: Sat_Download
       objectReference: {fileID: 0}
     - target: {fileID: 2929640277652407947, guid: 0da965fd6f109d545a12fa800e76d6ba,
         type: 3}
@@ -36859,6 +36860,38 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d0fbe65a942e7a546a43b83104f20560, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 630c7905711507d4fac4861e8329a4a6, type: 3}
+--- !u!1 &1882152476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0da965fd6f109d545a12fa800e76d6ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1513878009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1882152477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882152476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8908e24c69d448f8a2fb18ac8033f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  token: 1
+--- !u!65 &1882152478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882152476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 3, z: 1.9}
+  m_Center: {x: 0.6, y: 1.7, z: 0}
 --- !u!1 &1886509913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d91fdc5e0ba6c4b44b6e738a9e9e24b0,
@@ -40333,6 +40366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 154.08783
+      objectReference: {fileID: 0}
+    - target: {fileID: -3957782524123411102, guid: 93abfd8510aaa95499dac065bcd0677f,
+        type: 3}
+      propertyPath: m_Name
+      value: forcegate_gate
       objectReference: {fileID: 0}
     - target: {fileID: -3737757902984381172, guid: 93abfd8510aaa95499dac065bcd0677f,
         type: 3}

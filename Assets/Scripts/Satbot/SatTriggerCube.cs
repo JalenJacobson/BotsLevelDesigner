@@ -12,7 +12,7 @@ public class SatTriggerCube : MonoBehaviour
     public string touchingToken;
     public bool connected = false;
     public Vector3 connectPos;
-    public string token = "1";
+    public string token;
 
     void Start(){
         SatMove_Script = SatBot.GetComponent<SatMove>();
@@ -27,13 +27,17 @@ public class SatTriggerCube : MonoBehaviour
     {
         if(other.name.Contains("Sat")){
              touching = other.gameObject;
-             touchingToken = touching.GetComponent<Sat_Upload_1>().token;
+             if(other.name.Contains("Upload"))
+             {
+                 touchingToken = touching.GetComponent<Sat_Upload_1>().token;
+             }
         }
     }
 
      void OnTriggerExit(Collider other)
      {
             touching = null;
+            touchingToken = null;
      }
 
       void Update()
@@ -47,16 +51,30 @@ public class SatTriggerCube : MonoBehaviour
              Disconnect();
          }
 
+         if(touching != null && connected == true && Input.GetKeyDown("z"))
+        {
+            if(touching.name.Contains("Download"))
+            {
+                DownloadToken();
+            }
+                
+        }
+
          if(token == touchingToken && connected == true && Input.GetKeyDown("z"))
          {
              Activate();
          }
      }
 
-     void Activate()
+    void DownloadToken()
+    {
+        token = touching.GetComponent<Sat_Download_1>().token;
+                print("download");
+    }
+
+    void Activate()
      {
-            //  touching.SendMessage("Activate");
-            print(touchingToken);
+             touching.SendMessage("Activate");
      }
 
      void Connect()

@@ -18,7 +18,7 @@ public class ForceGate : MonoBehaviour
         
     }
 
-    void forceGateDown()
+    public void forceGateDown()
     {
         anim.Play("ForceGateDown");
     }
