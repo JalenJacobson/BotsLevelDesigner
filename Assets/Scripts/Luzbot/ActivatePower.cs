@@ -18,5 +18,10 @@ public class ActivatePower : MonoBehaviour
             anim.Play("ActivatePower");
 
         }
+        if (Input.GetKeyUp("z"))
+        {
+            anim.Play("ReleasePower");
+
+        }
     }
 }
