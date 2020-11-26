@@ -30,12 +30,12 @@ public class LuzTriggerCube : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
      {
-    if(other.name.Contains("luz")){
-             
+        if(other.name.Contains("luz"))
+        {
             Bubble_Script.actionBubbleStart();
             Light_Script.actionBubbleStart();
             Circle_Script.actionBubbleStart();    
-       }
+        }
      }
 
     void OnTriggerStay(Collider other)
@@ -85,7 +85,7 @@ public class LuzTriggerCube : MonoBehaviour
 
      void Connect()
      {
-             connected = true;  
+             connected = !connected;  
              LuzMove_Script.toggleFixPosition();     
      }
      

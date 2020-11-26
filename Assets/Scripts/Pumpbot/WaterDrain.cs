@@ -7,16 +7,19 @@ public class WaterDrain : MonoBehaviour
    public Animator anim;
 
  // Use this for initialization
- void Start () {
+    void Start () 
+    {
         anim = GetComponent<Animator>();
- }
+    }
  
  // Update is called once per frame
- void Update () {
-        if (Input.GetKeyDown("f"))
-        {
-            anim.Play("WaterDrain");
+    void Update () 
+    {
 
-        }
+    }
+
+    public void drainWater()
+    {
+        anim.Play("WaterDrain");
     }
 }

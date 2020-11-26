@@ -7,16 +7,18 @@ public class WaterRaise : MonoBehaviour
    public Animator anim;
 
  // Use this for initialization
- void Start () {
+    void Start () {
         anim = GetComponent<Animator>();
- }
+    }
  
  // Update is called once per frame
- void Update () {
-        if (Input.GetKeyDown("f"))
-        {
-            anim.Play("WaterRaise");
+    void Update () 
+    {
 
-        }
+    }
+
+    public void raiseWater()
+    {
+        anim.Play("WaterRaise");
     }
 }

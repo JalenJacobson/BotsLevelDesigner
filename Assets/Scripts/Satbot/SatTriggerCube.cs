@@ -102,7 +102,7 @@ public class SatTriggerCube : MonoBehaviour
 
      void Connect()
      {
-             connected = true;  
+             connected = !connected;  
              SatMove_Script.toggleFixPosition();     
      }
      

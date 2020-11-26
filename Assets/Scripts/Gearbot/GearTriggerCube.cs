@@ -85,7 +85,7 @@ public class GearTriggerCube : MonoBehaviour
 
      void Connect()
      {
-             connected = true;  
+             connected = !connected;  
              GearMove_Script.toggleFixPosition();     
      }
      
