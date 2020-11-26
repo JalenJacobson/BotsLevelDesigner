@@ -14,14 +14,30 @@ public class SatTriggerCube : MonoBehaviour
     public Vector3 connectPos;
     public string token;
 
+    public GameObject ActionDownload;
+    DownloadBubbleScript Bubble_Script;
+    public GameObject ActionLight;
+    DownloadBubbleScript Light_Script;
+    public GameObject ActionCircles;
+    DownloadBubbleScript Circle_Script;
+
     void Start(){
         SatMove_Script = SatBot.GetComponent<SatMove>();
+        Bubble_Script = ActionDownload.GetComponent<DownloadBubbleScript>();
+        Light_Script = ActionLight.GetComponent<DownloadBubbleScript>();
+        Circle_Script = ActionCircles.GetComponent<DownloadBubbleScript>();
     }
 
     void OnTriggerEnter(Collider other)
      {
-
-     }
+        if(other.name.Contains("Sat")){
+             
+            Bubble_Script.actionBubbleStart();
+            Light_Script.actionBubbleStart();
+            Circle_Script.actionBubbleStart();
+             
+        }
+    }
 
     void OnTriggerStay(Collider other)
     {
@@ -38,6 +54,13 @@ public class SatTriggerCube : MonoBehaviour
      {
             touching = null;
             touchingToken = null;
+    if(other.name.Contains("Sat")){
+             
+            Bubble_Script.actionBubbleStop();
+            Light_Script.actionBubbleStop();
+            Circle_Script.actionBubbleStop();
+             
+        }
      }
 
       void Update()
