@@ -9,11 +9,13 @@ public class PumpMove : MonoBehaviour
     public Rigidbody rb;
     public bool toggleSelected;
     private Vector3 direction;
+    public Vector3 startPos;
     public bool fixPosition = false;
 
     void Start()
     {
-
+        startPos = new Vector3(38f, 0.19f, 6f);
+        transform.position = startPos;
     }
 
     void FixedUpdate()

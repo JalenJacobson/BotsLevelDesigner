@@ -10,10 +10,13 @@ public class LuzMove : MonoBehaviour
     public bool toggleSelected;
     private Vector3 direction;
     public bool fixPosition = false;
+    public Vector3 startPos;
+    public float timeRemaining = .1f;
 
     void Start()
     {
-
+        startPos = new Vector3(38f, 0.58f, 3f);
+        transform.position = startPos;
     }
 
     void FixedUpdate()
@@ -22,6 +25,14 @@ public class LuzMove : MonoBehaviour
             Movement();
         }
         
+    }
+    void Update()
+    {
+        if(timeRemaining <= 0f)
+        {
+            returnToStart();
+            resetBreath();
+        }
     }
 
     void Movement()
@@ -55,5 +66,20 @@ public class LuzMove : MonoBehaviour
     public void highGravityExit ()
     {
         moveSpeed = 7;
+    }
+    public void waterEnter()
+    {
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+    }
+    void returnToStart()
+    {
+        transform.position = startPos;
+    }
+    public void resetBreath()
+    {
+        timeRemaining = .1f;
     }
 }

@@ -10,16 +10,27 @@ public class GearMove : MonoBehaviour
     public bool toggleSelected;
     private Vector3 direction;
     public bool fixPosition = false;
+    public Vector3 startPos;
+    public float timeRemaining = 5f;
 
     void Start()
     {
-
+        startPos = new Vector3(38f, 1.29f, 1.8f);
+        transform.position = startPos;
     }
 
     void FixedUpdate()
     {
         if (toggleSelected == true && fixPosition == false){
             Movement();
+        }
+    }
+    void Update()
+    {
+        if(timeRemaining <= 0f)
+        {
+            returnToStart();
+            resetBreath();
         }
     }
 
@@ -55,5 +66,20 @@ public class GearMove : MonoBehaviour
     public void highGravityExit ()
     {
         moveSpeed = 7;
+    }
+    public void waterEnter()
+    {
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+    }
+    void returnToStart()
+    {
+        transform.position = startPos;
+    }
+    public void resetBreath()
+    {
+        timeRemaining = 5f;
     }
 }

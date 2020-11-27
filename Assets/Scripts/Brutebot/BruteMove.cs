@@ -5,24 +5,31 @@ using UnityEngine;
 public class BruteMove : MonoBehaviour
 {
     public float moveSpeed = 5;
-
     public float rotateSpeed = 10;
-
     public Rigidbody rb;
-
     public bool toggleSelected;
-
     private Vector3 direction;
+    public Vector3 startPos;
+    public float timeRemaining = 5f;
 
     void Start()
     {
-
+        startPos = new Vector3(38f, 0.18f, -7f);
+        transform.position = startPos;
     }
 
     void FixedUpdate()
     {
         if (toggleSelected == true){
             Movement();
+        }
+    }
+    void Update()
+    {
+        if(timeRemaining <= 0f)
+        {
+            returnToStart();
+            resetBreath();
         }
     }
 
@@ -51,5 +58,20 @@ public class BruteMove : MonoBehaviour
     public void highGravityExit ()
     {
         moveSpeed = 5;
+    }
+    public void waterEnter()
+    {
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+    }
+    void returnToStart()
+    {
+        transform.position = startPos;
+    }
+    public void resetBreath()
+    {
+        timeRemaining = 5f;
     }
 }

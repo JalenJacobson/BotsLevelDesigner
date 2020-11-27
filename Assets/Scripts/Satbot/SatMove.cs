@@ -10,10 +10,13 @@ public class SatMove : MonoBehaviour
     public bool toggleSelected;
     private Vector3 direction;
     public bool fixPosition = false;
+    public Vector3 startPos;
+    public float timeRemaining = 5f;
 
     void Start()
     {
-
+        startPos = new Vector3(38f, 0.9f, -4f);
+        transform.position = startPos;
     }
 
     void FixedUpdate()
@@ -22,6 +25,15 @@ public class SatMove : MonoBehaviour
             Movement();
         }
         
+    }
+
+    void Update()
+    {
+        if(timeRemaining <= 0f)
+        {
+            returnToStart();
+            resetBreath();
+        }
     }
 
     void Movement()
@@ -56,5 +68,21 @@ public class SatMove : MonoBehaviour
     public void highGravityExit ()
     {
         moveSpeed = 7;
+    }
+    public void waterEnter()
+    {
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+    }
+    void returnToStart()
+    {
+        transform.position = startPos;
+        
+    }
+    public void resetBreath()
+    {
+        timeRemaining = 5f;
     }
 }
