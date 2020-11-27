@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
+    public GameObject TimerBarGear;
+    TimeBarGear TimerBar_Script;
+
+    void Start()
+    {
+    TimerBar_Script = TimerBarGear.GetComponent<TimeBarGear>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        
     }
 
     void OnTriggerStay(Collider other)
@@ -16,6 +23,7 @@ public class Water : MonoBehaviour
         if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot")
         {
             other.gameObject.SendMessage("waterEnter"); 
+            TimerBar_Script.timerStart();  
         }
     }
 
@@ -25,7 +33,8 @@ public class Water : MonoBehaviour
         print(characterName);
         if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot")
         {
-            other.gameObject.SendMessage("resetBreath"); 
+            other.gameObject.SendMessage("resetBreath");
+            TimerBar_Script.timerStop();
         }
      }
 }
