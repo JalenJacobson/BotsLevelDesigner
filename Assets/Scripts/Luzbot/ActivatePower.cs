@@ -13,12 +13,12 @@ public class ActivatePower : MonoBehaviour
  
  // Update is called once per frame
  void Update () {
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("c"))
         {
             anim.Play("ActivatePower");
 
         }
-        if (Input.GetKeyUp("z"))
+        if (Input.GetKeyDown("z"))
         {
             anim.Play("ReleasePower");
 
