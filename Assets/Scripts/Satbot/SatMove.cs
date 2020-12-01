@@ -12,10 +12,11 @@ public class SatMove : MonoBehaviour
     public bool fixPosition = false;
     public Vector3 startPos;
     public float timeRemaining = 5f;
+    public Joystick joystick;
 
     void Start()
     {
-        startPos = new Vector3(38f, 0.9f, -4f);
+        startPos = new Vector3(40f, 0.9f, -240f);
         transform.position = startPos;
     }
 
@@ -38,8 +39,8 @@ public class SatMove : MonoBehaviour
 
     void Movement()
     {
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
-        float verticalMove = Input.GetAxisRaw("Vertical");
+        float horizontalMove = joystick.Horizontal;
+        float verticalMove = joystick.Vertical;
 
         direction = new Vector3(horizontalMove, 0.0f, verticalMove);
 

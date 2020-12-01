@@ -16,7 +16,7 @@ public class LuzMove : MonoBehaviour
 
     void Start()
     {
-        startPos = new Vector3(38f, 0.58f, 3f);
+        startPos = new Vector3(55f, 0.58f, -240f);
         transform.position = startPos;
     }
 

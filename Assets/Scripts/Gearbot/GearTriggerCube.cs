@@ -19,6 +19,7 @@ public class GearTriggerCube : MonoBehaviour
     public GameObject ActionCircles;
     BubbleScript Circle_Script;
 
+
     //bring in animator and script here. like you have done with other animations
 
     void Start()
@@ -36,6 +37,7 @@ public class GearTriggerCube : MonoBehaviour
             Bubble_Script.actionBubbleStart();
             Light_Script.actionBubbleStart();
             Circle_Script.actionBubbleStart();
+
         }
      }
 

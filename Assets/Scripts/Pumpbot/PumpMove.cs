@@ -11,10 +11,11 @@ public class PumpMove : MonoBehaviour
     private Vector3 direction;
     public Vector3 startPos;
     public bool fixPosition = false;
+    public Joystick joystick;
 
     void Start()
     {
-        startPos = new Vector3(38f, 0.19f, 6f);
+        startPos = new Vector3(46f, 0.19f, -238f);
         transform.position = startPos;
     }
 
@@ -28,8 +29,8 @@ public class PumpMove : MonoBehaviour
 
     void Movement()
     {
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
-        float verticalMove = Input.GetAxisRaw("Vertical");
+        float horizontalMove = joystick.Horizontal;
+        float verticalMove = joystick.Vertical;
 
         direction = new Vector3(horizontalMove, 0.0f, verticalMove);
 

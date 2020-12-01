@@ -17,7 +17,7 @@ public class GearMove : MonoBehaviour
 
     void Start()
     {
-        startPos = new Vector3(38f, 1.29f, 1.8f);
+        startPos = new Vector3(47f, 1.29f, -246f);
         transform.position = startPos;
     }
 

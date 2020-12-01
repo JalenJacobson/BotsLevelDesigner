@@ -13,10 +13,11 @@ public class BruteMove : MonoBehaviour
     public float timeRemaining = 5f;
 
     public Joystick joystick;
+    public Animator anim;
 
     void Start()
     {
-        startPos = new Vector3(38f, 0.18f, -7f);
+        startPos = new Vector3(41f, 0.18f, -248f);
         transform.position = startPos;
     }
 
