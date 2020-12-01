@@ -13,6 +13,8 @@ public class GearMove : MonoBehaviour
     public Vector3 startPos;
     public float timeRemaining = 5f;
 
+    public Joystick joystick;
+
     void Start()
     {
         startPos = new Vector3(38f, 1.29f, 1.8f);
@@ -36,8 +38,8 @@ public class GearMove : MonoBehaviour
 
     void Movement()
     {
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
-        float verticalMove = Input.GetAxisRaw("Vertical");
+        float horizontalMove = joystick.Horizontal;
+        float verticalMove = joystick.Vertical;
 
         direction = new Vector3(horizontalMove, 0.0f, verticalMove);
 
