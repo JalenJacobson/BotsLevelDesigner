@@ -12,6 +12,7 @@ public class LuzMove : MonoBehaviour
     public bool fixPosition = false;
     public Vector3 startPos;
     public float timeRemaining = .1f;
+    public Joystick joystick;
 
     void Start()
     {
@@ -37,8 +38,8 @@ public class LuzMove : MonoBehaviour
 
     void Movement()
     {
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
-        float verticalMove = Input.GetAxisRaw("Vertical");
+        float horizontalMove = joystick.Horizontal;
+        float verticalMove = joystick.Vertical;
 
         direction = new Vector3(horizontalMove, 0.0f, verticalMove);
 

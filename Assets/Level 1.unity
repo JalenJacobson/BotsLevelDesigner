@@ -39457,6 +39457,7 @@ MonoBehaviour:
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
   timeRemaining: 0.1
+  joystick: {fileID: 1542152551}
 --- !u!54 &1805754134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39800,6 +39801,7 @@ MonoBehaviour:
   toggleSelected: 0
   startPos: {x: 0, y: 0, z: 0}
   timeRemaining: 5
+  joystick: {fileID: 1542152551}
 --- !u!114 &1825741821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39848,19 +39850,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1959735758}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1825741825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825741818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34dcf620e88d3d4ea5496e0292a92a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1825741819}
 --- !u!1001 &1835510472
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class BruteMove : MonoBehaviour
     public Vector3 startPos;
     public float timeRemaining = 5f;
 
+    public Joystick joystick;
+
     void Start()
     {
         startPos = new Vector3(38f, 0.18f, -7f);
@@ -35,8 +37,8 @@ public class BruteMove : MonoBehaviour
 
     void Movement()
     {
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
-        float verticalMove = Input.GetAxisRaw("Vertical");
+        float horizontalMove = joystick.Horizontal;
+        float verticalMove = joystick.Vertical;
 
         direction = new Vector3(horizontalMove, 0.0f, verticalMove);
 
