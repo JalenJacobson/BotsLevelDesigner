@@ -12,11 +12,13 @@ public class PumpMove : MonoBehaviour
     public Vector3 startPos;
     public bool fixPosition = false;
     public Joystick joystick;
+    public Animator anim;
 
     void Start()
     {
         startPos = new Vector3(46f, 0.19f, -238f);
         transform.position = startPos;
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -37,6 +39,7 @@ public class PumpMove : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotateSpeed * Time.deltaTime);
+            anim.Play("PumpWalk");
         }
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
