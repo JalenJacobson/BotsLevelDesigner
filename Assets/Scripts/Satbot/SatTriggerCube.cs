@@ -20,12 +20,18 @@ public class SatTriggerCube : MonoBehaviour
     DownloadBubbleScript Light_Script;
     public GameObject ActionCircles;
     DownloadBubbleScript Circle_Script;
+    public GameObject Activate1;
+    Act1Script Act1Button_Script;
+    public GameObject Cancel;
+    CancelButton CancelButton_Script;
 
     void Start(){
         SatMove_Script = SatBot.GetComponent<SatMove>();
         Bubble_Script = ActionDownload.GetComponent<DownloadBubbleScript>();
         Light_Script = ActionLight.GetComponent<DownloadBubbleScript>();
         Circle_Script = ActionCircles.GetComponent<DownloadBubbleScript>();
+        Act1Button_Script = Activate1.GetComponent<Act1Script>();
+        CancelButton_Script = Cancel.GetComponent<CancelButton>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -54,12 +60,10 @@ public class SatTriggerCube : MonoBehaviour
      {
             touching = null;
             touchingToken = null;
-    if(other.name.Contains("Sat")){
-             
+                        if(other.name.Contains("Sat")){
             Bubble_Script.actionBubbleStop();
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
-             
         }
      }
 
@@ -95,20 +99,27 @@ public class SatTriggerCube : MonoBehaviour
                 print("download");
     }
 
-    void Activate()
+    public void Activate()
      {
              touching.SendMessage("Activate");
      }
 
-     void Connect()
+     public void Connect()
      {
              connected = !connected;  
-             SatMove_Script.toggleFixPosition();     
+             SatMove_Script.toggleFixPosition();
+            Bubble_Script.actionBubbleStop();
+            Act1Button_Script.activate1();
+            CancelButton_Script.CancelStart();     
      }
      
-     void Disconnect()
+     public void Disconnect()
      {
              connected = false;  
-             SatMove_Script.toggleFixPosition();     
+             SatMove_Script.toggleFixPosition();
+            Light_Script.actionBubbleStop();
+            Circle_Script.actionBubbleStop();
+            Act1Button_Script.activate1Stop();
+            CancelButton_Script.CancelStop();      
      }
 }

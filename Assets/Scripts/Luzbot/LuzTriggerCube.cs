@@ -19,6 +19,10 @@ public class LuzTriggerCube : MonoBehaviour
     ActionPowerScript Light_Script;
     public GameObject ActionCircles;
     ActionPowerScript Circle_Script;
+    public GameObject Activate1;
+    Act1Script Act1Button_Script;
+    public GameObject Cancel;
+    CancelButton CancelButton_Script;
 
     void Start()
     {
@@ -26,6 +30,8 @@ public class LuzTriggerCube : MonoBehaviour
         Bubble_Script = ActionPower.GetComponent<ActionPowerScript>();
         Light_Script = ActionLight.GetComponent<ActionPowerScript>();
         Circle_Script = ActionCircles.GetComponent<ActionPowerScript>();
+        Act1Button_Script = Activate1.GetComponent<Act1Script>();
+        CancelButton_Script = Cancel.GetComponent<CancelButton>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -78,20 +84,27 @@ public class LuzTriggerCube : MonoBehaviour
          }
      }
 
-     void Activate()
+     public void Activate()
      {
              touching.SendMessage("changePowerConnectionPos");
      }
 
-     void Connect()
+     public void Connect()
      {
              connected = !connected;  
-             LuzMove_Script.toggleFixPosition();     
+             LuzMove_Script.toggleFixPosition();
+            Bubble_Script.actionBubbleStop();
+            Act1Button_Script.activate1();
+            CancelButton_Script.CancelStart();       
      }
      
-     void Disconnect()
+     public void Disconnect()
      {
              connected = false;  
-             LuzMove_Script.toggleFixPosition();     
+             LuzMove_Script.toggleFixPosition();
+            Light_Script.actionBubbleStop();
+            Circle_Script.actionBubbleStop();
+            Act1Button_Script.activate1Stop();
+            CancelButton_Script.CancelStop();        
      }
 }

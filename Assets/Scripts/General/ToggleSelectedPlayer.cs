@@ -43,10 +43,10 @@ public class ToggleSelectedPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Toggle()
     {
         // var playerScripts = new Component[] {gearMove_script, luzMove_script, bruteMove_script, pumpMove_script, satMove_script};
-        if (Input.GetKeyDown("t"))
+
         {
             //gear to luz
             if(gearMove_script.toggleSelected == true){

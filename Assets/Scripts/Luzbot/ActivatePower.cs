@@ -24,4 +24,13 @@ public class ActivatePower : MonoBehaviour
 
         }
     }
+
+public void Play()
+{
+   anim.Play("ActivatePower"); 
+}    
+public void Stop()
+{
+    anim.Play("ReleasePower");
+}
 }

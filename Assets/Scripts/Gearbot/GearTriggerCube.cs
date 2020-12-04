@@ -18,6 +18,10 @@ public class GearTriggerCube : MonoBehaviour
     BubbleScript Light_Script;
     public GameObject ActionCircles;
     BubbleScript Circle_Script;
+    public GameObject Activate1;
+    Act1Script Act1Button_Script;
+    public GameObject Cancel;
+    CancelButton CancelButton_Script;
 
 
     //bring in animator and script here. like you have done with other animations
@@ -29,6 +33,8 @@ public class GearTriggerCube : MonoBehaviour
         Bubble_Script = ActionBubbles.GetComponent<BubbleScript>();
         Light_Script = ActionLight.GetComponent<BubbleScript>();
         Circle_Script = ActionCircles.GetComponent<BubbleScript>();
+        Act1Button_Script = Activate1.GetComponent<Act1Script>();
+        CancelButton_Script = Cancel.GetComponent<CancelButton>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -80,20 +86,27 @@ public class GearTriggerCube : MonoBehaviour
          }
      }
 
-     void Activate()
+     public void Activate()
      {
              touching.SendMessage("changeGearPos");
      }
 
-     void Connect()
+     public void Connect()
      {
              connected = !connected;  
-             GearMove_Script.toggleFixPosition();     
+             GearMove_Script.toggleFixPosition();
+            Bubble_Script.actionBubbleStop();
+            Act1Button_Script.activate1();
+            CancelButton_Script.CancelStart();     
      }
      
-     void Disconnect()
+     public void Disconnect()
      {
              connected = false;  
-             GearMove_Script.toggleFixPosition();     
+             GearMove_Script.toggleFixPosition();
+            Light_Script.actionBubbleStop();
+            Circle_Script.actionBubbleStop();
+            Act1Button_Script.activate1Stop();
+            CancelButton_Script.CancelStop();       
      }
 }

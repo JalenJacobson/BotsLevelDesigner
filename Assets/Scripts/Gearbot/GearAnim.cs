@@ -6,6 +6,7 @@ public class GearAnim : MonoBehaviour
 {
    public Animator anim;
     public AudioSource mySound;
+    
 
  // Use this for initialization
  void Start () {
@@ -18,7 +19,7 @@ public class GearAnim : MonoBehaviour
  void Update () {
         if (Input.GetKeyDown("z"))
         {
-            anim.Play("Gears");
+            Play();
 
         }
         if (Input.GetKeyDown("z"))
@@ -27,4 +28,10 @@ public class GearAnim : MonoBehaviour
 
         }
     }
+public void Play()
+{
+  anim.Play("Gears");
+}
+
+
 }
