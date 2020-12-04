@@ -80,7 +80,7 @@ public class BruteTriggerCube : MonoBehaviour
         
      }
     
-    void lift() 
+    public void lift() 
     {
         lifting = !lifting;
     }
