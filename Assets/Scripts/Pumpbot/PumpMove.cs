@@ -62,4 +62,12 @@ public class PumpMove : MonoBehaviour
     {
         moveSpeed = 7;
     }
+         public void BlueWallOpen()
+     {
+         anim.Play("BlueWallOpen");
+     }
+          public void BlueWallClose()
+     {
+         anim.Play("BlueWallClose");
+     }
 }

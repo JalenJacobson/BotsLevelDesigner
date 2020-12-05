@@ -10,34 +10,61 @@ public class PumpTriggerCube : MonoBehaviour
     public bool connected = false;
     public Vector3 connectPos;
     public GameObject touching = null;
+    public Animator anim;
+    public GameObject ActionPump;
+    ActionPump Bubble_Script;
+    public GameObject ActionLight;
+    ActionPump Light_Script;
+    public GameObject ActionCircles;
+    ActionPump Circle_Script;
+    public GameObject Activate1;
+    Act1Script Act1Button_Script;
+    public GameObject Cancel;
+    CancelButton CancelButton_Script;
+    public GameObject BlueWall;
+    BlueWall BlueWall_Script;
 
     // Start is called before the first frame update
     void Start()
     {
         PumpMove_Script = Pump.GetComponent<PumpMove>();
+        Bubble_Script = ActionPump.GetComponent<ActionPump>();
+        Light_Script = ActionLight.GetComponent<ActionPump>();
+        Circle_Script = ActionCircles.GetComponent<ActionPump>();
+        Act1Button_Script = Activate1.GetComponent<Act1Script>();
+        CancelButton_Script = Cancel.GetComponent<CancelButton>();
+        BlueWall_Script = BlueWall.GetComponent<BlueWall>();
+        anim = GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
      {
-        if(other.name.Contains("pump"))
+        if(other.name.Contains("water"))
         {
-            //do stuff    
+            Bubble_Script.actionBubbleStart();
+            Light_Script.actionBubbleStart();
+            Circle_Script.actionBubbleStart();
         }
      }
 
     void OnTriggerStay(Collider other)
     {
-        if(other.name.Contains("pump")){
+        if(other.name.Contains("water")){
              touching = other.gameObject;
+  
         }
     }
 
      void OnTriggerExit(Collider other)
      {
         touching = null;
-        if(other.name.Contains("pump"))
+        if(other.name.Contains("water"))
         {
-           //do stuff     
+            touching = null;
+            Bubble_Script.actionBubbleStop();
+            Light_Script.actionBubbleStop();
+            Circle_Script.actionBubbleStop();
+            BlueWall_Script.Stop();
         }
      }
 
@@ -57,20 +84,21 @@ public class PumpTriggerCube : MonoBehaviour
          }
      }
 
-     void Activate()
+     public void Activate()
      {
              touching.SendMessage("Activate");
      }
 
-     void Connect()
+     public void Connect()
      {
              connected = !connected;  
              PumpMove_Script.toggleFixPosition();     
      }
      
-     void Disconnect()
+     public void Disconnect()
      {
              connected = false;  
              PumpMove_Script.toggleFixPosition();     
      }
+    
 }
