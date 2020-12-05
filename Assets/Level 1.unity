@@ -17815,8 +17815,10 @@ MonoBehaviour:
   toggleSelected: 0
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
-  timeRemaining: 5
+  breathRemaining: 5
   joystick: {fileID: 1542152551}
+  touchingAirBubble: 0
+  inWater: 0
 --- !u!65 &713974287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30768,6 +30770,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &1318679473
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318679466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.2399535
+  m_Center: {x: 0.00012254715, y: 0.7359406, z: -0.0009770393}
+--- !u!114 &1318679474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318679466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675cc914bd7ed4538ba655da380ad5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1320910198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42689,8 +42716,10 @@ MonoBehaviour:
   toggleSelected: 0
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
-  timeRemaining: 0.1
+  breathRemaining: 0.1
   joystick: {fileID: 1542152551}
+  touchingAirBubble: 0
+  inWater: 0
 --- !u!54 &1805754134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43032,10 +43061,14 @@ MonoBehaviour:
   rotateSpeed: 5
   rb: {fileID: 1825741823}
   toggleSelected: 0
+  fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
-  timeRemaining: 5
+  breathRemaining: 5
+  touchingAirBubble: 0
+  inWater: 0
   joystick: {fileID: 1542152551}
-  anim: {fileID: 0}
+  moveSpeed: 5
+  rotateSpeed: 5
 --- !u!114 &1825741821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44768,7 +44801,9 @@ MonoBehaviour:
   toggleSelected: 1
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
-  timeRemaining: 5
+  breathRemaining: 5
+  touchingAirBubble: 0
+  inWater: 0
   joystick: {fileID: 1542152551}
 --- !u!65 &1901047988
 BoxCollider:

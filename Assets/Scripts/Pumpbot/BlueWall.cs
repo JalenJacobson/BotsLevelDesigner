@@ -25,7 +25,7 @@ public class BlueWall : MonoBehaviour
 
      void OnTriggerExit(Collider other)
      {
-  anim.Play("BlueWallClose");
+  // anim.Play("BlueWallClose");
      }
  
  // Update is called once per frame

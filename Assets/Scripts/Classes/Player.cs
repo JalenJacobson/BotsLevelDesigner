@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LuzMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed = 7;
     public float rotateSpeed = 10;
@@ -11,14 +11,15 @@ public class LuzMove : MonoBehaviour
     private Vector3 direction;
     public bool fixPosition = false;
     public Vector3 startPos;
-    public float breathRemaining = .1f;
-    public Joystick joystick;
+    public float breathRemaining = 5f;
     public bool touchingAirBubble = false;
     public bool inWater = false;
 
+    public Joystick joystick;
+
     void Start()
     {
-        startPos = new Vector3(55f, 0.58f, -240f);
+        startPos = new Vector3(47f, 1.29f, -246f);
         transform.position = startPos;
     }
 
@@ -27,11 +28,10 @@ public class LuzMove : MonoBehaviour
         if (toggleSelected == true && fixPosition == false){
             Movement();
         }
-        
     }
     void Update()
     {
-       if(inWater == true && touchingAirBubble == false)
+        if(inWater == true && touchingAirBubble == false)
         {
             drowning();
         }
@@ -67,11 +67,12 @@ public class LuzMove : MonoBehaviour
         print("togglefixpos");
         fixPosition = !fixPosition;
     }
-    public void highGravityEnter ()
+
+    public virtual void highGravityEnter ()
     {
         moveSpeed = 1;
     }
-    public void highGravityExit ()
+    public virtual void highGravityExit ()
     {
         moveSpeed = 7;
     }
@@ -102,6 +103,6 @@ public class LuzMove : MonoBehaviour
     public void waterExit()
     {
         inWater = false;
-        breathRemaining = .1f;
+        breathRemaining = 5f;
     }
 }

@@ -11,8 +11,10 @@ public class SatMove : MonoBehaviour
     private Vector3 direction;
     public bool fixPosition = false;
     public Vector3 startPos;
-    public float timeRemaining = 5f;
+    public float breathRemaining = 5f;
     public Joystick joystick;
+    public bool touchingAirBubble = false;
+    public bool inWater = false;
 
     void Start()
     {
@@ -30,10 +32,15 @@ public class SatMove : MonoBehaviour
 
     void Update()
     {
-        if(timeRemaining <= 0f)
+        if(inWater == true && touchingAirBubble == false)
+        {
+            drowning();
+        }
+
+        if(breathRemaining <= 0f)
         {
             returnToStart();
-            resetBreath();
+            waterExit();
         }
     }
 
@@ -70,20 +77,33 @@ public class SatMove : MonoBehaviour
     {
         moveSpeed = 7;
     }
-    public void waterEnter()
+    public void drowning()
     {
-        if (timeRemaining > 0)
+        if (breathRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime;
+            breathRemaining -= Time.deltaTime;
         }
     }
+    public void waterEnter()
+    {
+        inWater = true;
+    }
+    void pumpAirBubbleEnter()
+    {
+        touchingAirBubble = true;
+    }
+    void pumpAirBubbleExit()
+    {
+        touchingAirBubble = false;
+    }
+
     void returnToStart()
     {
         transform.position = startPos;
-        
     }
-    public void resetBreath()
+    public void waterExit()
     {
-        timeRemaining = 5f;
+        inWater = false;
+        breathRemaining = 5f;
     }
 }

@@ -41,7 +41,7 @@ public class Water : MonoBehaviour
         print(characterName);
         if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot")
         {
-            other.gameObject.SendMessage("resetBreath");
+            other.gameObject.SendMessage("waterExit");
             TimerBar_Script.timerStop();
             TimerBarBrute_Script.timerStop();
             TimerBarSat_Script.timerStop();

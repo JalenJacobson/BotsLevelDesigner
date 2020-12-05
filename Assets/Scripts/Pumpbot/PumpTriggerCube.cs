@@ -107,7 +107,8 @@ public class PumpTriggerCube : MonoBehaviour
         CancelButton_Script.CancelStart();
 
      }
-               public void WaterWallClose()
+    
+    public void WaterWallClose()
      {
 
         CancelButton_Script.CancelStop();
