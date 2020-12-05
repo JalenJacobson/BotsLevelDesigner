@@ -65,6 +65,7 @@ public class PumpTriggerCube : MonoBehaviour
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
             BlueWall_Script.Stop();
+            CancelButton_Script.CancelStop();
         }
      }
 
@@ -99,6 +100,21 @@ public class PumpTriggerCube : MonoBehaviour
      {
              connected = false;  
              PumpMove_Script.toggleFixPosition();     
+     }
+          public void WaterWall()
+     {
+        Bubble_Script.actionBubbleStop();
+        CancelButton_Script.CancelStart();
+
+     }
+               public void WaterWallClose()
+     {
+
+        CancelButton_Script.CancelStop();
+        Light_Script.actionBubbleStop();
+        Circle_Script.actionBubbleStop();
+        BlueWall_Script.Stop();
+
      }
     
 }
