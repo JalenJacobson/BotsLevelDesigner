@@ -15,11 +15,15 @@ public class SatMove : MonoBehaviour
     public Joystick joystick;
     public bool touchingAirBubble = false;
     public bool inWater = false;
+    
+    public GameObject Rails;
+    SatBotAnim Rails_Script;
 
     void Start()
     {
         startPos = new Vector3(40f, 0.9f, -240f);
         transform.position = startPos;
+        Rails_Script = Rails.GetComponent<SatBotAnim>();
     }
 
     void FixedUpdate()
@@ -54,6 +58,7 @@ public class SatMove : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotateSpeed * Time.deltaTime);
+            Rails_Script.rails();
         }
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
