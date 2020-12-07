@@ -19,6 +19,7 @@ public class SatMove : MonoBehaviour
     public GameObject Rails;
     SatBotAnim Rails_Script;
 
+
     void Start()
     {
         startPos = new Vector3(40f, 0.9f, -240f);
