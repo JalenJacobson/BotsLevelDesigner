@@ -39,7 +39,7 @@ public class PumpTriggerCube : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
      {
-        if(other.name.Contains("water"))
+        if(other.name.Contains("Water"))
         {
             Bubble_Script.actionBubbleStart();
             Light_Script.actionBubbleStart();
@@ -49,7 +49,7 @@ public class PumpTriggerCube : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.name.Contains("water")){
+        if(other.name.Contains("Water")){
              touching = other.gameObject;
   
         }
@@ -58,7 +58,7 @@ public class PumpTriggerCube : MonoBehaviour
      void OnTriggerExit(Collider other)
      {
         touching = null;
-        if(other.name.Contains("water"))
+        if(other.name.Contains("Water"))
         {
             touching = null;
             Bubble_Script.actionBubbleStop();

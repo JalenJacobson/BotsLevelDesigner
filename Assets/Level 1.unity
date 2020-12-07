@@ -17819,6 +17819,7 @@ MonoBehaviour:
   joystick: {fileID: 1542152551}
   touchingAirBubble: 0
   inWater: 0
+  Rails: {fileID: 0}
 --- !u!65 &713974287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38704,7 +38705,7 @@ PrefabInstance:
     - target: {fileID: -3957782524123411102, guid: 630c7905711507d4fac4861e8329a4a6,
         type: 3}
       propertyPath: m_Name
-      value: water_surface
+      value: Water_surface
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 630c7905711507d4fac4861e8329a4a6,
         type: 3}
@@ -43067,8 +43068,6 @@ MonoBehaviour:
   touchingAirBubble: 0
   inWater: 0
   joystick: {fileID: 1542152551}
-  moveSpeed: 5
-  rotateSpeed: 5
 --- !u!114 &1825741821
 MonoBehaviour:
   m_ObjectHideFlags: 0
