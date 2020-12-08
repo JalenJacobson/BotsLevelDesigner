@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float rotateSpeed = 10;
     public Rigidbody rb;
     public bool toggleSelected;
-    private Vector3 direction;
+    public Vector3 direction;
     public bool fixPosition = false;
     public Vector3 startPos;
     public float breathRemaining = 5f;
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     {
         transform.position = startPos;
     }
-    public void waterExit()
+    public virtual void waterExit()
     {
         inWater = false;
         breathRemaining = 5f;

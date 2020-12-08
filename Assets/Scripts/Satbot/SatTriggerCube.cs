@@ -101,7 +101,19 @@ public class SatTriggerCube : MonoBehaviour
 
     public void Activate()
      {
-             touching.SendMessage("Activate");
+        if(touching.name.Contains("Download"))
+        {
+            DownloadToken();
+        }
+        else if(touching.name.Contains("Upload"))
+        {
+            if(token == touchingToken)
+            {
+                touching.SendMessage("Activate");
+            }
+            else{print("Need Token");}
+        } 
+             
      }
 
      public void Connect()

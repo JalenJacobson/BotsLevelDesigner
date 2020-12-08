@@ -23650,7 +23650,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -33030,7 +33030,7 @@ MonoBehaviour:
   touchingToken: 
   connected: 0
   connectPos: {x: 0, y: 0, z: 0}
-  token: 
+  token: '"0"'
   ActionDownload: {fileID: 726686435}
   ActionLight: {fileID: 1414651282}
   ActionCircles: {fileID: 1406227727}
@@ -42957,12 +42957,13 @@ MonoBehaviour:
   rotateSpeed: 10
   rb: {fileID: 1805754134}
   toggleSelected: 0
+  direction: {x: 0, y: 0, z: 0}
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
   breathRemaining: 0.1
-  joystick: {fileID: 1542152551}
   touchingAirBubble: 0
   inWater: 0
+  joystick: {fileID: 1542152551}
 --- !u!54 &1805754134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43300,10 +43301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85c41687d5dd4dbc91033939012ff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   rotateSpeed: 5
   rb: {fileID: 1825741823}
   toggleSelected: 0
+  direction: {x: 0, y: 0, z: 0}
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
   breathRemaining: 5
@@ -45083,10 +45085,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132f315ba5fa1441e9d0f7b1c84596b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 7
   rotateSpeed: 10
   rb: {fileID: 1901047989}
   toggleSelected: 1
+  direction: {x: 0, y: 0, z: 0}
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
   breathRemaining: 5
