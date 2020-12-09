@@ -17,6 +17,11 @@ public class BruteTriggerCube : MonoBehaviour
     BruteBubbleScript Light_Script;
     public GameObject ActionCircles;
     BruteBubbleScript Circle_Script;
+    
+    public GameObject Cancel;
+    CancelButton CancelButton_Script;
+    public GameObject Brute;
+    MoveBruteW AnimArms_Script;
 
     void Start()
     {
@@ -25,16 +30,14 @@ public class BruteTriggerCube : MonoBehaviour
         Bubble_Script = ActionBrute.GetComponent<BruteBubbleScript>();
         Light_Script = ActionLight.GetComponent<BruteBubbleScript>();
         Circle_Script = ActionCircles.GetComponent<BruteBubbleScript>();
+        CancelButton_Script = Cancel.GetComponent<CancelButton>();
+        AnimArms_Script = Brute.GetComponent<MoveBruteW>();
         
     }
 
     void OnTriggerEnter(Collider other)
      {
           canLift = true;
-
-            Bubble_Script.actionBubbleStart();
-            Light_Script.actionBubbleStart();
-            Circle_Script.actionBubbleStart();
      }
 
     void OnTriggerStay(Collider other)
@@ -46,6 +49,9 @@ public class BruteTriggerCube : MonoBehaviour
             {
                 touching = other.gameObject; 
             }
+            Bubble_Script.actionBubbleStart();
+            Light_Script.actionBubbleStart();
+            Circle_Script.actionBubbleStart();
             
         }
               
@@ -74,10 +80,22 @@ public class BruteTriggerCube : MonoBehaviour
          
          if(lifting == true)
         {
-            anim.Play("Push");
             touching.transform.position = transform.TransformPoint(liftPos);
+            CancelButton_Script.CancelStart();
+            Light_Script.actionBubbleStart();
+            Circle_Script.actionBubbleStart();
+            Bubble_Script.actionBubbleStop();
+            AnimArms_Script.Lift(); 
         }
         
+     }
+     public void drop()
+     {
+        Light_Script.actionBubbleStop();
+        Circle_Script.actionBubbleStop();
+        CancelButton_Script.CancelStop();
+        lifting = !lifting;
+        AnimArms_Script.Drop();  
      }
     
     public void lift() 

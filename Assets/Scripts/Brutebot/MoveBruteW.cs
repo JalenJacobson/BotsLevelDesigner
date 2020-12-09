@@ -16,16 +16,13 @@ public class MoveBruteW : MonoBehaviour {
  void Update () {
 
     }
-        void OnTriggerEnter(Collider other)
-        {
+
+   public void Lift()
+   {
         anim.Play("Push");
-        }
-        void OnTriggerStay(Collider other)
-        {
-        anim.Play("Push");
-        }
-        void OnTriggerExit(Collider other)
-        {
+   }
+      public void Drop()
+   {
         anim.Play("BruteWalk");
-        }
+   }
 }
