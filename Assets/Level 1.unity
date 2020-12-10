@@ -39436,7 +39436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85bed5f11ba3664e97bb2e710e251df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPos: {x: 0, y: 3, z: 3}
+  myPos: {x: 1.13, y: 3, z: 3}
   myPlay: {fileID: 1901047990}
 --- !u!114 &1632808361
 MonoBehaviour:
