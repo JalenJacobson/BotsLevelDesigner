@@ -58,7 +58,10 @@ public class BruteTriggerCube : MonoBehaviour
     }
 
      void OnTriggerExit(Collider other)
-     {
+     { 
+    var characterName = other.name;    
+    if(characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump" || characterName.Contains("Box"))
+    {
         if(lifting == false)
         {
             canLift = false;
@@ -68,7 +71,7 @@ public class BruteTriggerCube : MonoBehaviour
         Light_Script.actionBubbleStop();
         Circle_Script.actionBubbleStop();
         // lifting = false;
-       
+         }
      }
 
      void Update()
