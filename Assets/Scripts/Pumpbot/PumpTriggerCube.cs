@@ -37,7 +37,7 @@ public class PumpTriggerCube : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter(Collider other)
+   void OnTriggerEnter(Collider other)
      {
         if(other.name.Contains("Water"))
         {
@@ -85,6 +85,12 @@ public class PumpTriggerCube : MonoBehaviour
          }
      }
 
+         public void Reactivate()
+     {
+            Bubble_Script.actionBubbleStart();
+            Light_Script.actionBubbleStart();
+            Circle_Script.actionBubbleStart();
+     }
      public void Activate()
      {
              touching.SendMessage("Activate");
@@ -112,8 +118,6 @@ public class PumpTriggerCube : MonoBehaviour
      {
 
         CancelButton_Script.CancelStop();
-        Light_Script.actionBubbleStop();
-        Circle_Script.actionBubbleStop();
         BlueWall_Script.Stop();
 
      }
