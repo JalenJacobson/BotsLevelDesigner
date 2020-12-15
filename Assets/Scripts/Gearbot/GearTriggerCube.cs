@@ -22,6 +22,8 @@ public class GearTriggerCube : MonoBehaviour
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
+    public GameObject TimerBarGear;
+    TimeBarGear TimerBar_Script;
 
 
     //bring in animator and script here. like you have done with other animations
@@ -35,6 +37,7 @@ public class GearTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<BubbleScript>();
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
+        TimerBar_Script = TimerBarGear.GetComponent<TimeBarGear>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -45,12 +48,21 @@ public class GearTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStart();
 
         }
+                if(other.name.Contains("Water"))
+        {
+            TimerBar_Script.timerStart();
+        }
+
      }
 
     void OnTriggerStay(Collider other)
     {
         if(other.name.Contains("Gear")){
              touching = other.gameObject;
+        }
+        if(other.name.Contains("BlueWall"))
+        {
+            TimerBar_Script.enterbluewall();
         }
     }
 
@@ -62,6 +74,15 @@ public class GearTriggerCube : MonoBehaviour
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
         }
+            if(other.name.Contains("Water"))
+        {
+            TimerBar_Script.timerStop();
+        }
+            if(other.name.Contains("BlueWall"))
+        {
+            TimerBar_Script.exitbluewall();
+        }
+        
      }
 
      void Update()

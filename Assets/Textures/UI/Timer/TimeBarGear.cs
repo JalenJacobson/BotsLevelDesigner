@@ -30,5 +30,13 @@ public class TimeBarGear : MonoBehaviour
    {
        anim.Play("NonEnterIdle");
    }
+      public void enterbluewall()
+   {
+       anim.Play("EnterBlueWall");
+   }
+    public void exitbluewall()
+   {
+       anim.Play("Timer");
+   }
    
 }

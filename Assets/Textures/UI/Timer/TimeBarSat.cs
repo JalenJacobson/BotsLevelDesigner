@@ -30,5 +30,13 @@ public class TimeBarSat : MonoBehaviour
    {
        anim.Play("NonEnterIdle");
    }
+    public void enterbluewall()
+   {
+       anim.Play("EnterBlueWall");
+   }
+    public void exitbluewall()
+   {
+       anim.Play("Timer");
+   }
    
 }

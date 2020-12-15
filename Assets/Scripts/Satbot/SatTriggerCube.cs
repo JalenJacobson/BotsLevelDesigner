@@ -24,6 +24,9 @@ public class SatTriggerCube : MonoBehaviour
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
+    
+    public GameObject TimerBarSat;
+    TimeBarSat TimerBarSat_Script;
 
     void Start(){
         SatMove_Script = SatBot.GetComponent<SatMove>();
@@ -32,6 +35,7 @@ public class SatTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<DownloadBubbleScript>();
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
+        TimerBarSat_Script = TimerBarSat.GetComponent<TimeBarSat>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -43,6 +47,11 @@ public class SatTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStart();
              
         }
+        if(other.name.Contains("Water"))
+        {
+            TimerBarSat_Script.timerStart();
+        }
+
     }
 
     void OnTriggerStay(Collider other)
@@ -54,6 +63,10 @@ public class SatTriggerCube : MonoBehaviour
                  touchingToken = touching.GetComponent<Sat_Upload_1>().token;
              }
         }
+        if(other.name.Contains("BlueWall"))
+        {
+            TimerBarSat_Script.enterbluewall();
+        }
     }
 
      void OnTriggerExit(Collider other)
@@ -64,6 +77,14 @@ public class SatTriggerCube : MonoBehaviour
             Bubble_Script.actionBubbleStop();
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
+        }
+        if(other.name.Contains("Water"))
+        {
+            TimerBarSat_Script.timerStop();
+        }
+        if(other.name.Contains("BlueWall"))
+        {
+            TimerBarSat_Script.exitbluewall();
         }
      }
 
