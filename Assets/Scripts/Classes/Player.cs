@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     public float breathRemaining = 5f;
     public bool touchingAirBubble = false;
     public bool inWater = false;
+    public GameObject TimerBarGear;
+    public GameObject TimerBarBrute;
+    public TimeBarGear TimerBar_Script;
+
 
     public Joystick joystick;
 
@@ -31,9 +35,17 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if(inWater == true && touchingAirBubble == false)
+        if(inWater == true)
         {
-            drowning();
+            if(touchingAirBubble == true)
+            {
+                TimerBar_Script.enterbluewall();
+            }
+            else
+            {
+                drowning();
+            }
+            
         }
 
         if(breathRemaining <= 0f)
@@ -78,6 +90,8 @@ public class Player : MonoBehaviour
     }
     public void drowning()
     {
+        // print("drowning");
+        TimerBar_Script.timerStart();
         if (breathRemaining > 0)
         {
             breathRemaining -= Time.deltaTime;
@@ -89,6 +103,7 @@ public class Player : MonoBehaviour
     }
     void pumpAirBubbleEnter()
     {
+        breathRemaining = 5f;
         touchingAirBubble = true;
     }
     void pumpAirBubbleExit()
@@ -102,6 +117,7 @@ public class Player : MonoBehaviour
     }
     public virtual void waterExit()
     {
+        TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;
     }

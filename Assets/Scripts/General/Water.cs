@@ -21,7 +21,7 @@ public class Water : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
        var characterName = other.name;
-        print(characterName);
+        // print(characterName);
         if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot")
         {
             other.gameObject.SendMessage("waterEnter"); 

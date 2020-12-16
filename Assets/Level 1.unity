@@ -18581,7 +18581,6 @@ MonoBehaviour:
   ActionCircles: {fileID: 1406227727}
   Activate1: {fileID: 1122204151}
   Cancel: {fileID: 1275086904}
-  TimerBarGear: {fileID: 1632808356}
 --- !u!1 &684028620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d38961f05a585034eb33c88a91e6f11f,
@@ -47276,6 +47275,9 @@ MonoBehaviour:
   breathRemaining: 0.1
   touchingAirBubble: 0
   inWater: 0
+  TimerBarGear: {fileID: 0}
+  TimerBarBrute: {fileID: 0}
+  TimerBar_Script: {fileID: 0}
   joystick: {fileID: 1542152551}
 --- !u!54 &1805754134
 Rigidbody:
@@ -47803,6 +47805,9 @@ MonoBehaviour:
   breathRemaining: 5
   touchingAirBubble: 0
   inWater: 0
+  TimerBarGear: {fileID: 0}
+  TimerBarBrute: {fileID: 2121355038}
+  TimerBar_Script: {fileID: 0}
   joystick: {fileID: 1542152551}
 --- !u!114 &1825741821
 MonoBehaviour:
@@ -49693,6 +49698,9 @@ MonoBehaviour:
   breathRemaining: 5
   touchingAirBubble: 0
   inWater: 0
+  TimerBarGear: {fileID: 1632808356}
+  TimerBarBrute: {fileID: 0}
+  TimerBar_Script: {fileID: 0}
   joystick: {fileID: 1542152551}
 --- !u!65 &1901047988
 BoxCollider:

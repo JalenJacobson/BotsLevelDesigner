@@ -32,6 +32,7 @@ public class TimeBarGear : MonoBehaviour
    }
       public void enterbluewall()
    {
+       print("entered blue wall");
        anim.Play("EnterBlueWall");
    }
     public void exitbluewall()
