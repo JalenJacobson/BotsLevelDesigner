@@ -19363,12 +19363,13 @@ MonoBehaviour:
   rotateSpeed: 10
   rb: {fileID: 713974288}
   toggleSelected: 0
+  direction: {x: 0, y: 0, z: 0}
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
   breathRemaining: 5
-  joystick: {fileID: 1542152551}
   touchingAirBubble: 0
   inWater: 0
+  joystick: {fileID: 1542152551}
   Rails: {fileID: 681757844}
 --- !u!65 &713974287
 BoxCollider:
@@ -47275,9 +47276,6 @@ MonoBehaviour:
   breathRemaining: 0.1
   touchingAirBubble: 0
   inWater: 0
-  TimerBarGear: {fileID: 0}
-  TimerBarBrute: {fileID: 0}
-  TimerBar_Script: {fileID: 0}
   joystick: {fileID: 1542152551}
 --- !u!54 &1805754134
 Rigidbody:
@@ -47805,9 +47803,6 @@ MonoBehaviour:
   breathRemaining: 5
   touchingAirBubble: 0
   inWater: 0
-  TimerBarGear: {fileID: 0}
-  TimerBarBrute: {fileID: 2121355038}
-  TimerBar_Script: {fileID: 0}
   joystick: {fileID: 1542152551}
 --- !u!114 &1825741821
 MonoBehaviour:
@@ -49698,10 +49693,9 @@ MonoBehaviour:
   breathRemaining: 5
   touchingAirBubble: 0
   inWater: 0
-  TimerBarGear: {fileID: 1632808356}
-  TimerBarBrute: {fileID: 0}
-  TimerBar_Script: {fileID: 0}
   joystick: {fileID: 1542152551}
+  TimerBarGear: {fileID: 1632808356}
+  TimerBar_Script: {fileID: 0}
 --- !u!65 &1901047988
 BoxCollider:
   m_ObjectHideFlags: 0
