@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
     {
         inWater = true;
     }
-    void pumpAirBubbleEnter()
+    public virtual void pumpAirBubbleEnter()
     {
         breathRemaining = 5f;
         touchingAirBubble = true;

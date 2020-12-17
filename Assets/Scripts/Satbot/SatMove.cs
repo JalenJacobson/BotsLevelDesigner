@@ -15,6 +15,9 @@ public class SatMove : Player
     // public Joystick joystick;
     // public bool touchingAirBubble = false;
     // public bool inWater = false;
+
+    public GameObject TimerBarSat;
+    TimeBarSat TimerBar_Script;
     
     public GameObject Rails;
     SatBotAnim Rails_Script;
@@ -25,6 +28,7 @@ public class SatMove : Player
         startPos = new Vector3(40f, 0.9f, -240f);
         transform.position = startPos;
         Rails_Script = Rails.GetComponent<SatBotAnim>();
+        TimerBar_Script = TimerBarSat.GetComponent<TimeBarSat>();
     }
 
     public override void Movement()
@@ -41,5 +45,42 @@ public class SatMove : Player
         }
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
+    }
+
+    void Update()
+    {
+        if(inWater == true)
+        {
+            if(touchingAirBubble == true)
+            {
+                TimerBar_Script.enterbluewall();
+            }
+            else
+            {
+                drowning();
+            }
+            
+        }
+
+        if(breathRemaining <= 0f)
+        {
+            returnToStart();
+            waterExit();
+        }
+    }
+    public void drowning()
+    {
+        // print("drowning");
+        TimerBar_Script.timerStart();
+        if (breathRemaining > 0)
+        {
+            breathRemaining -= Time.deltaTime;
+        }
+    }
+    public virtual void waterExit()
+    {
+        TimerBar_Script.timerStop();
+        inWater = false;
+        breathRemaining = 5f;
     }
 }

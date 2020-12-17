@@ -87,10 +87,11 @@ public class LuzMove : Player
     // {
     //     inWater = true;
     // }
-    // void pumpAirBubbleEnter()
-    // {
-    //     touchingAirBubble = true;
-    // }
+    public override void pumpAirBubbleEnter()
+    {
+        breathRemaining = .1f;
+        touchingAirBubble = true;
+    }
     // void pumpAirBubbleExit()
     // {
     //     touchingAirBubble = false;
@@ -102,6 +103,7 @@ public class LuzMove : Player
     // }
     public override void waterExit()
     {
+        
         inWater = false;
         breathRemaining = .1f;
     }

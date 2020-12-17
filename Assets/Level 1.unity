@@ -19370,6 +19370,7 @@ MonoBehaviour:
   touchingAirBubble: 0
   inWater: 0
   joystick: {fileID: 1542152551}
+  TimerBarSat: {fileID: 53314743}
   Rails: {fileID: 681757844}
 --- !u!65 &713974287
 BoxCollider:
@@ -35986,7 +35987,6 @@ MonoBehaviour:
   ActionCircles: {fileID: 1406227727}
   Cancel: {fileID: 342482780}
   Brute: {fileID: 1825741818}
-  TimerBarBrute: {fileID: 2121355038}
 --- !u!65 &1366826068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37080,7 +37080,6 @@ MonoBehaviour:
   ActionCircles: {fileID: 1406227727}
   Activate1: {fileID: 1463487263}
   Cancel: {fileID: 1969868974}
-  TimerBarSat: {fileID: 53314743}
 --- !u!65 &1406039432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47804,6 +47803,7 @@ MonoBehaviour:
   touchingAirBubble: 0
   inWater: 0
   joystick: {fileID: 1542152551}
+  TimerBarBrute: {fileID: 2121355038}
 --- !u!114 &1825741821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47811,7 +47811,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825741818}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 520e5eed17f9e4f4ba792ebb5667c3e2, type: 3}
   m_Name: 
@@ -47859,7 +47859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825741818}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ba04d9d48f024e448b7a705d6e3121c, type: 3}
   m_Name: 

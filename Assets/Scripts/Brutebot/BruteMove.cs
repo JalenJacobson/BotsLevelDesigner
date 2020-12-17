@@ -6,6 +6,8 @@ public class BruteMove : Player
 {
     // public float moveSpeed = 5;
     //public float rotateSpeed = 10;
+    public GameObject TimerBarBrute;
+    TimeBarBrute TimerBar_Script;
     
 
     void Start()
@@ -13,7 +15,7 @@ public class BruteMove : Player
         moveSpeed = 5f;
         startPos = new Vector3(41f, 0.18f, -248f);
         transform.position = startPos;
-        // TimerBarBrute_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
+        TimerBar_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
     }
     public override void highGravityEnter ()
     {
@@ -22,5 +24,42 @@ public class BruteMove : Player
     public override void highGravityExit ()
     {
         moveSpeed = 5;
+    }
+
+    void Update()
+    {
+        if(inWater == true)
+        {
+            if(touchingAirBubble == true)
+            {
+                TimerBar_Script.enterbluewall();
+            }
+            else
+            {
+                drowning();
+            }
+            
+        }
+
+        if(breathRemaining <= 0f)
+        {
+            returnToStart();
+            waterExit();
+        }
+    }
+    public void drowning()
+    {
+        // print("drowning");
+        TimerBar_Script.timerStart();
+        if (breathRemaining > 0)
+        {
+            breathRemaining -= Time.deltaTime;
+        }
+    }
+    public virtual void waterExit()
+    {
+        TimerBar_Script.timerStop();
+        inWater = false;
+        breathRemaining = 5f;
     }
 }

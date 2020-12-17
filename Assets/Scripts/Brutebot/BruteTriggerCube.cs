@@ -22,8 +22,8 @@ public class BruteTriggerCube : MonoBehaviour
     CancelButton CancelButton_Script;
     public GameObject Brute;
     MoveBruteW AnimArms_Script;
-    public GameObject TimerBarBrute;
-    TimeBarBrute TimerBarBrute_Script;
+    // public GameObject TimerBarBrute;
+    // TimeBarBrute TimerBarBrute_Script;
 
     void Start()
     {
@@ -34,8 +34,7 @@ public class BruteTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<BruteBubbleScript>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
         AnimArms_Script = Brute.GetComponent<MoveBruteW>();
-        TimerBarBrute_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
-        
+        // TimerBarBrute_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -43,7 +42,7 @@ public class BruteTriggerCube : MonoBehaviour
           canLift = true;
         if(other.name.Contains("Water"))
         {
-            TimerBarBrute_Script.timerStart();
+            // TimerBarBrute_Script.timerStart();
         }
 
      }
@@ -64,7 +63,7 @@ public class BruteTriggerCube : MonoBehaviour
         }
         if(other.name.Contains("BlueWall"))
         {
-            TimerBarBrute_Script.enterbluewall();
+            // TimerBarBrute_Script.enterbluewall();
         }
               
     }
@@ -86,11 +85,11 @@ public class BruteTriggerCube : MonoBehaviour
          }
         if(other.name.Contains("Water"))
         {
-            TimerBarBrute_Script.timerStop();
+            // TimerBarBrute_Script.timerStop();
         }
         if(other.name.Contains("BlueWall"))
         {
-            TimerBarBrute_Script.exitbluewall();
+            // TimerBarBrute_Script.exitbluewall();
         }
      }
 
