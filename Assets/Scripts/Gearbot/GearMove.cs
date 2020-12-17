@@ -9,7 +9,7 @@ public class GearMove : Player
 
     void Start()
     {
-        startPos = new Vector3(47f, 0.58f, -246f);
+        startPos = new Vector3(47f, 1.44f, -231f);
         transform.position = startPos;
         TimerBar_Script = TimerBarGear.GetComponent<TimeBarGear>();
     }
@@ -35,7 +35,7 @@ public class GearMove : Player
             waterExit();
         }
     }
-    public void drowning()
+    public override void drowning()
     {
         // print("drowning");
         TimerBar_Script.timerStart();
@@ -44,7 +44,7 @@ public class GearMove : Player
             breathRemaining -= Time.deltaTime;
         }
     }
-    public virtual void waterExit()
+    public override void waterExit()
     {
         TimerBar_Script.timerStop();
         inWater = false;

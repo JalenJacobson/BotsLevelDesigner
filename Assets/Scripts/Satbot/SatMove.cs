@@ -25,7 +25,7 @@ public class SatMove : Player
 
     void Start()
     {
-        startPos = new Vector3(40f, 0.9f, -240f);
+        startPos = new Vector3(58f, 1.3f, -230f);
         transform.position = startPos;
         Rails_Script = Rails.GetComponent<SatBotAnim>();
         TimerBar_Script = TimerBarSat.GetComponent<TimeBarSat>();
@@ -68,7 +68,7 @@ public class SatMove : Player
             waterExit();
         }
     }
-    public void drowning()
+    public override void drowning()
     {
         // print("drowning");
         TimerBar_Script.timerStart();
@@ -77,7 +77,7 @@ public class SatMove : Player
             breathRemaining -= Time.deltaTime;
         }
     }
-    public virtual void waterExit()
+    public override void waterExit()
     {
         TimerBar_Script.timerStop();
         inWater = false;

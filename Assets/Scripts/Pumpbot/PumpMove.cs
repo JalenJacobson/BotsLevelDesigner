@@ -16,7 +16,7 @@ public class PumpMove : MonoBehaviour
 
     void Start()
     {
-        startPos = new Vector3(46f, 0.19f, -238f);
+        startPos = new Vector3(69f, 0.48f, -230f);
         transform.position = startPos;
         anim = GetComponent<Animator>();
     }

@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
     {
         moveSpeed = 7;
     }
-    public void drowning()
+    public virtual void drowning()
     {
         // print("drowning");
         // TimerBar_Script.timerStart();

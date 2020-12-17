@@ -13,7 +13,7 @@ public class BruteMove : Player
     void Start()
     {
         moveSpeed = 5f;
-        startPos = new Vector3(41f, 0.18f, -248f);
+        startPos = new Vector3(63.5f, 0.77f, -230f);
         transform.position = startPos;
         TimerBar_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
     }
@@ -47,7 +47,7 @@ public class BruteMove : Player
             waterExit();
         }
     }
-    public void drowning()
+    public override void drowning()
     {
         // print("drowning");
         TimerBar_Script.timerStart();
@@ -56,7 +56,7 @@ public class BruteMove : Player
             breathRemaining -= Time.deltaTime;
         }
     }
-    public virtual void waterExit()
+    public override void waterExit()
     {
         TimerBar_Script.timerStop();
         inWater = false;

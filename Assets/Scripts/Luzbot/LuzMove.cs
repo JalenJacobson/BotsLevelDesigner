@@ -19,7 +19,7 @@ public class LuzMove : Player
     void Start()
     {
         breathRemaining = .1f;
-        startPos = new Vector3(55f, 0.58f, -240f);
+        startPos = new Vector3(52.5f, 0.58f, -230f);
         transform.position = startPos;
     }
 
