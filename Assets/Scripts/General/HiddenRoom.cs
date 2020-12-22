@@ -9,7 +9,7 @@ public class HiddenRoom : MonoBehaviour
     {
  GetComponent<MeshRenderer>().enabled = true;       
     }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
     var characterName = other.name;
     if(characterName == "Brute" || characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump"){
