@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -14,10 +15,7 @@ public class Player : MonoBehaviour
     public float breathRemaining = 5f;
     public bool touchingAirBubble = false;
     public bool inWater = false;
-    // public GameObject TimerBarGear;
-    // public GameObject TimerBarBrute;
-    // public TimeBarGear TimerBar_Script;
-    // public TimeBarBrute TimerBarBrute_Script;
+    public Text ConsoleMessage;
 
 
     public Joystick joystick;
@@ -26,6 +24,7 @@ public class Player : MonoBehaviour
     {
         startPos = new Vector3(47f, 1.29f, -246f);
         transform.position = startPos;
+        
     }
 
     void FixedUpdate()
@@ -40,7 +39,7 @@ public class Player : MonoBehaviour
         {
             if(touchingAirBubble == true)
             {
-                // TimerBar_Script.enterbluewall();
+                
             }
             else
             {
@@ -84,10 +83,12 @@ public class Player : MonoBehaviour
     public virtual void highGravityEnter ()
     {
         moveSpeed = 1;
+        ConsoleMessage.text = "Message: Entered Gravity Field";
     }
     public virtual void highGravityExit ()
     {
         moveSpeed = 7;
+        ConsoleMessage.text = "Message: Exited Gravity Field";
     }
     public virtual void drowning()
     {
@@ -96,6 +97,7 @@ public class Player : MonoBehaviour
         if (breathRemaining > 0)
         {
             breathRemaining -= Time.deltaTime;
+            ConsoleMessage.text = "Message: In Water: Drowning";
         }
     }
     public void waterEnter()

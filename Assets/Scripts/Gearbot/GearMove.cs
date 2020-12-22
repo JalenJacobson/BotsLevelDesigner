@@ -20,10 +20,12 @@ public class GearMove : Player
         {
             if(touchingAirBubble == true)
             {
+                ConsoleMessage.text = "Message: In Water: Breathing";
                 TimerBar_Script.enterbluewall();
             }
             else
             {
+                ConsoleMessage.text = "Message: In Water: Drowning";
                 drowning();
             }
             

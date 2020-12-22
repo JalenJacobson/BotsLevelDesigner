@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class SatMove : Player
 {
-    // public float moveSpeed = 7;
-    // public float rotateSpeed = 10;
-    // public Rigidbody rb;
-    // public bool toggleSelected;
-    // private Vector3 direction;
-    // public bool fixPosition = false;
-    // public Vector3 startPos;
-    // public float breathRemaining = 5f;
-    // public Joystick joystick;
-    // public bool touchingAirBubble = false;
-    // public bool inWater = false;
+    
 
     public GameObject TimerBarSat;
     TimeBarSat TimerBar_Script;
@@ -53,10 +43,12 @@ public class SatMove : Player
         {
             if(touchingAirBubble == true)
             {
+                ConsoleMessage.text = "Message: In Water: Breathing";
                 TimerBar_Script.enterbluewall();
             }
             else
             {
+                ConsoleMessage.text = "Message: In Water: Drowning";
                 drowning();
             }
             
