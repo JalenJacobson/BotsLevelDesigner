@@ -43,12 +43,12 @@ public class SatMove : Player
         {
             if(touchingAirBubble == true)
             {
-                ConsoleMessage.text = "Message: In Water: Breathing";
+                DangerState.text = "Danger State: Short Circuit - Delayed";
                 TimerBar_Script.enterbluewall();
             }
             else
             {
-                ConsoleMessage.text = "Message: In Water: Drowning";
+                DangerState.text = "Danger State: Short Circuit - Danger";
                 drowning();
             }
             
@@ -71,6 +71,8 @@ public class SatMove : Player
     }
     public override void waterExit()
     {
+        DangerState.text = "Danger State: None";
+        DangerField.text = "Danger Area: None";
         TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;

@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     public float breathRemaining = 5f;
     public bool touchingAirBubble = false;
     public bool inWater = false;
-    public Text ConsoleMessage;
+    public Text DangerField;
+    public Text DangerState;
 
 
     public Joystick joystick;
@@ -83,12 +84,14 @@ public class Player : MonoBehaviour
     public virtual void highGravityEnter ()
     {
         moveSpeed = 1;
-        ConsoleMessage.text = "Message: Entered Gravity Field";
+        DangerField.text = "Danger Area: Gravity Field";
+        DangerState.text = "Danger State: Speed Reduced";
     }
     public virtual void highGravityExit ()
     {
         moveSpeed = 7;
-        ConsoleMessage.text = "Message: Exited Gravity Field";
+        DangerField.text = "Danger Area: None";
+        DangerState.text = "Danger State: None";
     }
     public virtual void drowning()
     {
@@ -97,11 +100,11 @@ public class Player : MonoBehaviour
         if (breathRemaining > 0)
         {
             breathRemaining -= Time.deltaTime;
-            ConsoleMessage.text = "Message: In Water: Drowning";
         }
     }
     public void waterEnter()
     {
+        DangerField.text = "Danger Area: Circuit Field";
         inWater = true;
     }
     public virtual void pumpAirBubbleEnter()
@@ -120,6 +123,7 @@ public class Player : MonoBehaviour
     }
     public virtual void waterExit()
     {
+        DangerField.text = "Danger Area: None";
         // TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;
