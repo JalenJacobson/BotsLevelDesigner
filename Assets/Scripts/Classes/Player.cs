@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public bool inWater = false;
     public Text DangerField;
     public Text DangerState;
+    public Color orangeGravityField;
+    public Color greenConsole;
+    public Color blueCircuitField;
 
 
     public Joystick joystick;
@@ -25,7 +28,6 @@ public class Player : MonoBehaviour
     {
         startPos = new Vector3(47f, 1.29f, -246f);
         transform.position = startPos;
-        
     }
 
     void FixedUpdate()
@@ -83,15 +85,18 @@ public class Player : MonoBehaviour
 
     public virtual void highGravityEnter ()
     {
+        print(orangeGravityField);
         moveSpeed = 1;
-        DangerField.text = "Danger Area: Gravity Field";
-        DangerState.text = "Danger State: Speed Reduced";
+        setConsoleDangerField("Gravity Filed", orangeGravityField);
+        setConsoleDangerState("Speed Reduced", orangeGravityField);
+        // DangerState.text = "Speed Reduced";
     }
     public virtual void highGravityExit ()
     {
         moveSpeed = 7;
-        DangerField.text = "Danger Area: None";
-        DangerState.text = "Danger State: None";
+        resetConsoleDangerField();
+        resetConsoleDangerState();
+        // DangerState.text = "None";
     }
     public virtual void drowning()
     {
@@ -104,7 +109,8 @@ public class Player : MonoBehaviour
     }
     public void waterEnter()
     {
-        DangerField.text = "Danger Area: Circuit Field";
+        // DangerField.text = "Circuit Field";
+        setConsoleDangerField("Circuit Field", blueCircuitField);
         inWater = true;
     }
     public virtual void pumpAirBubbleEnter()
@@ -123,9 +129,30 @@ public class Player : MonoBehaviour
     }
     public virtual void waterExit()
     {
-        DangerField.text = "Danger Area: None";
+        DangerField.text = "None";
         // TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;
+    }
+
+    public void setConsoleDangerField(string text, Color color)
+    {
+        DangerField.text = text;
+        DangerField.color = color;
+    }
+    public void resetConsoleDangerField()
+    {
+        DangerField.text = "None";
+        DangerField.color = greenConsole;
+    }
+    public void setConsoleDangerState(string text, Color color)
+    {
+        DangerState.text = text;
+        DangerState.color = color;
+    }
+    public void resetConsoleDangerState()
+    {
+        DangerState.text = "None";
+        DangerState.color = greenConsole;
     }
 }

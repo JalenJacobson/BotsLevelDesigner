@@ -16,6 +16,9 @@ public class BruteMove : Player
         startPos = new Vector3(63.5f, 0.77f, -230f);
         transform.position = startPos;
         TimerBar_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
+        orangeGravityField = new Color(0.689f, 0.452f, 0.016f, 1.000f);
+        greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
+        blueCircuitField = new Color(0.06799023f, 0.0f, 0.8584906f, 1.0f);
     }
     public override void highGravityEnter ()
     {
@@ -61,7 +64,8 @@ public class BruteMove : Player
     public override void waterExit()
     {
         DangerState.text = "Danger State: None";
-        DangerField.text = "Danger Area: None";
+        // DangerField.text = "Danger Area: None";
+        resetConsoleDangerField();
         TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;
