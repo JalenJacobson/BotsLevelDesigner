@@ -12,7 +12,7 @@ public class BruteMove : Player
 
     void Start()
     {
-        moveSpeed = 5f;
+        moveSpeed = 7f;
         startPos = new Vector3(63.5f, 0.77f, -230f);
         transform.position = startPos;
         TimerBar_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
@@ -22,11 +22,11 @@ public class BruteMove : Player
     }
     public override void highGravityEnter ()
     {
-        moveSpeed = 5;
+        moveSpeed = 7;
     }
     public override void highGravityExit ()
     {
-        moveSpeed = 5;
+        moveSpeed = 7;
     }
 
     void Update()

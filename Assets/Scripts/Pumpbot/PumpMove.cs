@@ -60,7 +60,7 @@ public class PumpMove : MonoBehaviour
     }
     public void highGravityExit ()
     {
-        moveSpeed = 7;
+        moveSpeed = 10;
     }
          public void BlueWallOpen()
      {

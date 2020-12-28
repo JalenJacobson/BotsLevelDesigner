@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 7;
+    public float moveSpeed = 10;
     public float rotateSpeed = 10;
     public Rigidbody rb;
     public bool toggleSelected;
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
     }
     public virtual void highGravityExit ()
     {
-        moveSpeed = 7;
+        moveSpeed = 10;
         resetConsoleDangerField();
         resetConsoleDangerState();
         // DangerState.text = "None";
