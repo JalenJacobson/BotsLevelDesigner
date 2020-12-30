@@ -15,6 +15,7 @@ public class GearMove : Player
         orangeGravityField = new Color(0.689f, 0.452f, 0.016f, 1.000f);
         greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
         blueCircuitField = new Color(0.06799023f, 0.0f, 0.8584906f, 1.0f);
+        redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
     }
 
     void Update()
@@ -23,12 +24,17 @@ public class GearMove : Player
         {
             if(touchingAirBubble == true)
             {
-                DangerState.text = "Danger State: Short Circuit - Delayed";
+                // DangerState.text = "Danger State: Short Circuit - Delayed";
+                setConsoleDangerField("Circuit Field", blueCircuitField);
+                setConsoleDangerState("Short Circuit - Delayed", greenConsole);
+                
                 TimerBar_Script.enterbluewall();
             }
             else
             {
-                DangerState.text = "Danger State: Short Circuit - Danger";
+                // DangerState.text = "Danger State: Short Circuit - Danger";
+                setConsoleDangerField("Circuit Field", blueCircuitField);
+                setConsoleDangerState("Short Circuit - Danger", redDanger);
                 drowning();
             }
             
@@ -51,9 +57,10 @@ public class GearMove : Player
     }
     public override void waterExit()
     {
-        DangerState.text = "Danger State: None";
+        // DangerState.text = "Danger State: None";
         // DangerField.text = "Danger Area: None";
         resetConsoleDangerField();
+        resetConsoleDangerState();
         TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;

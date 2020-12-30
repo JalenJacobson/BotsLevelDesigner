@@ -20065,6 +20065,7 @@ MonoBehaviour:
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   joystick: {fileID: 1542152551}
   TimerBarSat: {fileID: 53314743}
   Rails: {fileID: 681757844}
@@ -49144,6 +49145,7 @@ MonoBehaviour:
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   joystick: {fileID: 1542152551}
 --- !u!54 &1805754134
 Rigidbody:
@@ -49860,6 +49862,7 @@ MonoBehaviour:
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   joystick: {fileID: 1542152551}
   TimerBarBrute: {fileID: 2121355038}
 --- !u!114 &1825741821
@@ -51923,6 +51926,7 @@ MonoBehaviour:
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0.250528, b: 0.9056604, a: 1}
+  redDanger: {r: 1, g: 0.1, b: 0, a: 1}
   joystick: {fileID: 1542152551}
   TimerBarGear: {fileID: 1632808356}
   TimerBar_Script: {fileID: 0}

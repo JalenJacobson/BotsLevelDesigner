@@ -19,7 +19,9 @@ public class BruteMove : Player
         orangeGravityField = new Color(0.689f, 0.452f, 0.016f, 1.000f);
         greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
         blueCircuitField = new Color(0.06799023f, 0.0f, 0.8584906f, 1.0f);
+        redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
     }
+    
     public override void highGravityEnter ()
     {
         moveSpeed = 7;
@@ -35,12 +37,16 @@ public class BruteMove : Player
         {
             if(touchingAirBubble == true)
             {
-                DangerState.text = "Danger State: Short Circuit - Delayed";
+                // DangerState.text = "Danger State: Short Circuit - Delayed";
+                setConsoleDangerField("Circuit Field", blueCircuitField);
+                setConsoleDangerState("Short Circuit - Delayed", greenConsole);
                 TimerBar_Script.enterbluewall();
             }
             else
             {
-                DangerState.text = "Danger State: Short Circuit - Danger";;
+                // DangerState.text = "Danger State: Short Circuit - Danger";
+                setConsoleDangerField("Circuit Field", blueCircuitField);
+                setConsoleDangerState("Short Circuit - Danger", redDanger);
                 drowning();
             }
             

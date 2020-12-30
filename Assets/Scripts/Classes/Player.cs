@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Color orangeGravityField;
     public Color greenConsole;
     public Color blueCircuitField;
+    public Color redDanger;
 
 
     public Joystick joystick;
@@ -87,7 +88,7 @@ public class Player : MonoBehaviour
     {
         print(orangeGravityField);
         moveSpeed = 1;
-        setConsoleDangerField("Gravity Filed", orangeGravityField);
+        setConsoleDangerField("Gravity Field", orangeGravityField);
         setConsoleDangerState("Speed Reduced", orangeGravityField);
         // DangerState.text = "Speed Reduced";
     }
