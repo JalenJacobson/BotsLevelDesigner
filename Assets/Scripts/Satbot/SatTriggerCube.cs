@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SatTriggerCube : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class SatTriggerCube : MonoBehaviour
     public Vector3 connectPos;
     public string token;
 
+    public Text Connection;
+    public Text ErrorMessage;
+
     public GameObject ActionDownload;
     DownloadBubbleScript Bubble_Script;
     public GameObject ActionLight;
@@ -24,6 +28,11 @@ public class SatTriggerCube : MonoBehaviour
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
+
+     public Color orangeGravityField;
+    public Color greenConsole;
+    public Color blueCircuitField;
+    public Color redDanger;
     
     // public GameObject TimerBarSat;
     // TimeBarSat TimerBarSat_Script;
@@ -35,7 +44,7 @@ public class SatTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<DownloadBubbleScript>();
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
-        // TimerBarSat_Script = TimerBarSat.GetComponent<TimeBarSat>();
+        redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -47,11 +56,6 @@ public class SatTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStart();
              
         }
-        if(other.name.Contains("Water"))
-        {
-            // TimerBarSat_Script.timerStart();
-        }
-
     }
 
     void OnTriggerStay(Collider other)
@@ -62,10 +66,6 @@ public class SatTriggerCube : MonoBehaviour
              {
                  touchingToken = touching.GetComponent<Sat_Upload_1>().token;
              }
-        }
-        if(other.name.Contains("BlueWall"))
-        {
-            // TimerBarSat_Script.enterbluewall();
         }
     }
 
@@ -125,24 +125,32 @@ public class SatTriggerCube : MonoBehaviour
         if(touching.name.Contains("Download"))
         {
             DownloadToken();
+            ErrorMessage.text = "Token Downloaded";
         }
         else if(touching.name.Contains("Upload"))
         {
             if(token == touchingToken)
             {
                 touching.SendMessage("Activate");
+                ErrorMessage.text = "Token Uploaded";
             }
-            else{print("Need Token");}
+            else
+            {
+                ErrorMessage.text = "Activation Failed - Token Required";
+                ErrorMessage.color = redDanger;
+            }
         } 
              
      }
 
      public void Connect()
      {
+         print("should work");
              connected = !connected;  
              SatMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
+            Connection.text = "T";
             CancelButton_Script.CancelStart();     
      }
      
@@ -153,6 +161,7 @@ public class SatTriggerCube : MonoBehaviour
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
             Act1Button_Script.activate1Stop();
+            Connection.text = "F";
             CancelButton_Script.CancelStop();      
      }
 }

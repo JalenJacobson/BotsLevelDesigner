@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GearTriggerCube : MonoBehaviour
 {
     public GameObject Gears;
     GearMove GearMove_Script;
 
+    public Text Connection;
+    public Text ErrorMessage;
+    
     public bool triggerEntered = false;
     public bool connected = false;
     public GameObject touching = null;
@@ -22,11 +26,7 @@ public class GearTriggerCube : MonoBehaviour
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
-    // public GameObject TimerBarGear;
-    // TimeBarGear TimerBar_Script;
-
-
-    //bring in animator and script here. like you have done with other animations
+    
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class GearTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<BubbleScript>();
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
-        // TimerBar_Script = TimerBarGear.GetComponent<TimeBarGear>();
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,10 +48,6 @@ public class GearTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStart();
 
         }
-                if(other.name.Contains("Water"))
-        {
-            // TimerBar_Script.timerStart();
-        }
 
      }
 
@@ -59,10 +55,6 @@ public class GearTriggerCube : MonoBehaviour
     {
         if(other.name.Contains("Gear")){
              touching = other.gameObject;
-        }
-        if(other.name.Contains("BlueWall"))
-        {
-            // TimerBar_Script.enterbluewall();
         }
     }
 
@@ -74,15 +66,6 @@ public class GearTriggerCube : MonoBehaviour
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
         }
-            if(other.name.Contains("Water"))
-        {
-            // TimerBar_Script.timerStop();
-        }
-            if(other.name.Contains("BlueWall"))
-        {
-            // TimerBar_Script.exitbluewall();
-        }
-        
      }
 
      void Update()
@@ -96,11 +79,6 @@ public class GearTriggerCube : MonoBehaviour
              Disconnect();
          }
 
-        //  if(connected == true)
-        //  {
-        //      GearMove_Script.fixPosition = true;
-        //  }
-
          if(connected == true && Input.GetKeyDown("z"))
          {
              Activate();
@@ -109,25 +87,30 @@ public class GearTriggerCube : MonoBehaviour
 
      public void Activate()
      {
-             touching.SendMessage("changeGearPos");
+            touching.SendMessage("Activate", ErrorMessage);
+            
      }
 
      public void Connect()
      {
-             connected = !connected;  
-             GearMove_Script.toggleFixPosition();
+            connected = !connected;  
+            GearMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
-            CancelButton_Script.CancelStart();     
+            Connection.text = "T"; 
+            CancelButton_Script.CancelStart();    
+            
      }
      
      public void Disconnect()
      {
-             connected = false;  
-             GearMove_Script.toggleFixPosition();
+            connected = false;  
+            GearMove_Script.toggleFixPosition();
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
             Act1Button_Script.activate1Stop();
-            CancelButton_Script.CancelStop();       
+            Connection.text= "F";
+            CancelButton_Script.CancelStop();   
+                
      }
 }

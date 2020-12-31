@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Gearbox_2 : MonoBehaviour
+public class Gearbox_2 : CDI_Class
 {
-    public Animator anim;
-    public float pos = 0;
+    // public Animator anim;
+    // public float pos = 0;
     public GameObject GateDoors;
     Doors doorsOpen_script;
     
@@ -18,6 +19,7 @@ public class Gearbox_2 : MonoBehaviour
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
         gategearactivate_script = GateGearObj2.GetComponent<GateGear2>();
+        message = "Gate Gear 2 Activated";
     }
 
     // Update is called once per frame
@@ -25,11 +27,12 @@ public class Gearbox_2 : MonoBehaviour
     {
     }
 
-    public void changeGearPos()
+    public void Activate(Text sndMessage)
     {
         pos = 1; 
         doorsOpen_script.changeGearBox2();
         gategearactivate_script.changeGearBox2();
         anim.Play("GearTrigger");
+        sndMessage.text = message;
     }
 }
