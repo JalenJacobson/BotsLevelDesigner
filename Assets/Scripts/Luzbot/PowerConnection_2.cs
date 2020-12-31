@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PowerConnection_2 : MonoBehaviour
+public class PowerConnection_2 : CDI_Class
 {
     public float pos = 0;
     public GameObject GateDoors;
@@ -17,6 +18,7 @@ public class PowerConnection_2 : MonoBehaviour
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         lightactivate_script = GateLight2.GetComponent<LightOn2>();
         powerlight_script = PowerLight2.GetComponent<LightOn2>();
+        message = "Gate Power 2 Activated";
     }
 
     // Update is called once per frame
@@ -25,11 +27,12 @@ public class PowerConnection_2 : MonoBehaviour
         
     }
 
-    public void changePowerConnectionPos()
+    public void Activate(Text sndMessage)
     {
         pos = 1; 
         doorsOpen_script.changePowerConnection2();
         lightactivate_script.changePowerConnection2();
         powerlight_script.changePowerConnection2();
+        sndMessage.text = message;
     }
 }

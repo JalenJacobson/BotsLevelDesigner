@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LuzTriggerCube : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class LuzTriggerCube : MonoBehaviour
     public Vector3 connectPos;
     public GameObject touching = null;
 
+    public Text Connection;
+    public Text ErrorMessage;
+
     public GameObject ActionPower;
     ActionPowerScript Bubble_Script;
     public GameObject ActionLight;
@@ -23,6 +27,10 @@ public class LuzTriggerCube : MonoBehaviour
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
+    public Color orangeGravityField;
+    public Color greenConsole;
+    public Color blueCircuitField;
+    public Color redDanger;
 
     void Start()
     {
@@ -32,6 +40,8 @@ public class LuzTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<ActionPowerScript>();
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
+        redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
+        greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -86,7 +96,7 @@ public class LuzTriggerCube : MonoBehaviour
 
      public void Activate()
      {
-             touching.SendMessage("changePowerConnectionPos");
+             touching.SendMessage("Activate", ErrorMessage);
      }
 
      public void Connect()
@@ -95,16 +105,25 @@ public class LuzTriggerCube : MonoBehaviour
              LuzMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
+             Connection.text = "T";
             CancelButton_Script.CancelStart();       
      }
      
      public void Disconnect()
      {
-             connected = false;  
-             LuzMove_Script.toggleFixPosition();
+            connected = false;  
+            LuzMove_Script.toggleFixPosition();
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
             Act1Button_Script.activate1Stop();
+            Connection.text = "T";
+            resetConsoleMessage();
             CancelButton_Script.CancelStop();        
+     }
+
+     public void resetConsoleMessage()
+     {
+         ErrorMessage.text = "";
+         ErrorMessage.color = greenConsole;
      }
 }

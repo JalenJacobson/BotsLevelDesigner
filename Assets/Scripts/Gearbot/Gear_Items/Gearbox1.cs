@@ -26,7 +26,7 @@ public class Gearbox1 : CDI_Class
 
     public override void Activate(Text sndMessage)
     {
-        pos = 1; 
+        // pos = 1; 
         doorsOpen_script.changeGearBox1();
         gategearactivate_script.changeGearBox1();
         anim.Play("GearTrigger");

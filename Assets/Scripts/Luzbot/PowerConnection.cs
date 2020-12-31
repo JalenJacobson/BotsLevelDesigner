@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PowerConnection : MonoBehaviour
+public class PowerConnection : CDI_Class
 {
 
     public float pos = 0;
@@ -18,6 +19,7 @@ public class PowerConnection : MonoBehaviour
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         lightactivate_script = GateLight1.GetComponent<LightOn1>();
         powerlight_script = PowerLight1.GetComponent<LightOn1>();
+        message = "Gate Power 1 Activated";
     }
 
     // Update is called once per frame
@@ -26,11 +28,12 @@ public class PowerConnection : MonoBehaviour
         
     }
 
-    public void changePowerConnectionPos()
+    public void Activate(Text sndMessage)
     {
         pos = 1; 
         doorsOpen_script.changePowerConnection1();
         lightactivate_script.changePowerConnection1();
         powerlight_script.changePowerConnection1();
+        sndMessage.text = message;
     }
 }

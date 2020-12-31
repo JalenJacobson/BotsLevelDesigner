@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Gearbox_2 : CDI_Class
 {
     // public Animator anim;
-    // public float pos = 0;
+    public float pos = 0;
     public GameObject GateDoors;
     Doors doorsOpen_script;
     

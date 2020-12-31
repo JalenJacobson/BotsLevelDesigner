@@ -814,7 +814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  pos: 0
   message: 
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
@@ -10686,11 +10685,17 @@ MonoBehaviour:
   connected: 0
   connectPos: {x: 0, y: 0, z: 0}
   touching: {fileID: 0}
+  Connection: {fileID: 191708034}
+  ErrorMessage: {fileID: 1033438111}
   ActionPower: {fileID: 1609139826}
   ActionLight: {fileID: 1414651282}
   ActionCircles: {fileID: 1406227727}
   Activate1: {fileID: 912667359}
   Cancel: {fileID: 750110616}
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &400690774 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 80af0abeb53a5074699cfa2c90f9a697,
@@ -12530,12 +12535,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  pos: 0
   message: 
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
+  pos: 0
   GateDoors: {fileID: 1727446765}
   GateGearObj2: {fileID: 1964763454}
 --- !u!95 &487587476
@@ -19259,6 +19264,10 @@ MonoBehaviour:
   ActionCircles: {fileID: 1406227727}
   Activate1: {fileID: 1122204151}
   Cancel: {fileID: 0}
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &684028620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d38961f05a585034eb33c88a91e6f11f,
@@ -24293,12 +24302,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  pos: 0
   message: 
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
+  pos: 0
   GateDoors: {fileID: 1727446765}
   GateGearObj2: {fileID: 1964763454}
 --- !u!95 &904753142
@@ -35216,12 +35225,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  pos: 0
   message: 
   orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
+  pos: 0
   GateDoors: {fileID: 1727446765}
   GateGearObj2: {fileID: 1964763454}
 --- !u!95 &1283670421
@@ -36609,6 +36618,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 1727446765}
   GateLight1: {fileID: 1517262035}
@@ -43710,6 +43725,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 1727446765}
   GateLight1: {fileID: 1517262035}
@@ -49260,6 +49281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 1727446765}
   GateLight1: {fileID: 1517262035}
@@ -58104,6 +58131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e373cee1c524b50b71ec64ffe4ff01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 1727446765}
   GateLight2: {fileID: 1520800728}

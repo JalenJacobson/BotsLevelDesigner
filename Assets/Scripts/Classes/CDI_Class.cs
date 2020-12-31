@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CDI_Class : MonoBehaviour
 {
     public Animator anim;
-    public float pos = 0;
+    // public float pos = 0;
     // public GameObject GateDoors;
     // Doors doorsOpen_script;
     // public GameObject GateGearObj;

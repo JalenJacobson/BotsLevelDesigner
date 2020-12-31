@@ -26,6 +26,11 @@ public class GearTriggerCube : MonoBehaviour
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
+
+    public Color orangeGravityField;
+    public Color greenConsole;
+    public Color blueCircuitField;
+    public Color redDanger;
     
 
     void Start()
@@ -37,6 +42,8 @@ public class GearTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<BubbleScript>();
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
+        redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
+        greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
         
     }
 
@@ -110,7 +117,14 @@ public class GearTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStop();
             Act1Button_Script.activate1Stop();
             Connection.text= "F";
+            resetConsoleMessage();
             CancelButton_Script.CancelStop();   
                 
+     }
+
+     public void resetConsoleMessage()
+     {
+         ErrorMessage.text = "";
+         ErrorMessage.color = greenConsole;
      }
 }

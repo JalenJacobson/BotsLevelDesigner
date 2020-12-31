@@ -21,7 +21,7 @@ public class SatMove : Player
         TimerBar_Script = TimerBarSat.GetComponent<TimeBarSat>();
         orangeGravityField = new Color(0.689f, 0.452f, 0.016f, 1.000f);
         greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
-        blueCircuitField = new Color(0.06799023f, 0.0f, 0.8584906f, 1.0f);
+        blueCircuitField = new Color(0.06799023f, 0.5f, 0.8584906f, 1.0f);
         redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
     }
 

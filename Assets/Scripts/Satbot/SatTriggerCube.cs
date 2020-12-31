@@ -45,6 +45,7 @@ public class SatTriggerCube : MonoBehaviour
         Act1Button_Script = Activate1.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
         redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
+        greenConsole = new Color(0.0f, 1.0f, 0.1144f, 1.0f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -162,6 +163,13 @@ public class SatTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStop();
             Act1Button_Script.activate1Stop();
             Connection.text = "F";
+            resetConsoleMessage();
             CancelButton_Script.CancelStop();      
+     }
+
+     public void resetConsoleMessage()
+     {
+         ErrorMessage.text = "";
+         ErrorMessage.color = greenConsole;
      }
 }
