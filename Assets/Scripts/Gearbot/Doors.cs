@@ -17,7 +17,7 @@ public class Doors : MonoBehaviour
  }
  
  // Update is called once per frame
- void Update () {
+ public virtual void Update () {
         if (gearBox1 == true && gearBox2 == true && powerConnection1 == true && powerConnection2 == true)
         {
             anim.Play("Doors");
