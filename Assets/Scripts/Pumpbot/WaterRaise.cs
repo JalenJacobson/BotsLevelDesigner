@@ -21,4 +21,8 @@ public class WaterRaise : MonoBehaviour
     {
         anim.Play("WaterRaise");
     }
+        public void emptyWater()
+    {
+        anim.Play("Drained");
+    }
 }

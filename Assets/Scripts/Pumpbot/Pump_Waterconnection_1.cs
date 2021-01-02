@@ -12,7 +12,7 @@ public class Pump_Waterconnection_1 : MonoBehaviour
     WaterDrain waterdrain_script;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         waterraise_script = Water_raise_1.GetComponent<WaterRaise>();
         waterdrain_script = Water_drain_1.GetComponent<WaterDrain>();
@@ -28,5 +28,10 @@ public class Pump_Waterconnection_1 : MonoBehaviour
     {
         waterraise_script.raiseWater();
         waterdrain_script.drainWater();
+    }
+    public void Deactivate()
+    {
+        waterraise_script.emptyWater();
+        waterdrain_script.refillWater();
     }
 }

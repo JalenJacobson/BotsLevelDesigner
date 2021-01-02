@@ -17,10 +17,10 @@ public class Portal : MonoBehaviour
         other_portal_script = OtherPortal.GetComponent<Portal>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         var characterName = other.name;
-        if(characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump" || characterName == "Brute")
+        if(characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump" || characterName == "Brute" || characterName.Contains("Push"))
         {
            if(portalIsActive && canPortal)
            {

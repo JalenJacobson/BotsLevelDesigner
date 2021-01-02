@@ -22,4 +22,8 @@ public class WaterDrain : MonoBehaviour
     {
         anim.Play("WaterDrain");
     }
+        public void refillWater()
+    {
+        anim.Play("refill");
+    }
 }
