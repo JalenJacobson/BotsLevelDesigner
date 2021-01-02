@@ -140,7 +140,11 @@ public class SatTriggerCube : MonoBehaviour
                 ErrorMessage.text = "Activation Failed - Token Required";
                 ErrorMessage.color = redDanger;
             }
-        } 
+        }
+        else if(touching.name.Contains("Portal")) 
+        {
+            touching.SendMessage("Activate");
+        }
              
      }
 
