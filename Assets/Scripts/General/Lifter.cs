@@ -19,4 +19,9 @@ public class Lifter : MonoBehaviour
 
         }
     }
+
+    public void Activate()
+    {
+        anim.Play("Lifter");
+    }
 }
