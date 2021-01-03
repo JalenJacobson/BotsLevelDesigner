@@ -21280,10 +21280,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 0
-  gearBox2: 0
-  powerConnection1: 0
-  powerConnection2: 0
+  gearBox1: 1
+  gearBox2: 1
+  powerConnection1: 1
+  powerConnection2: 1
 --- !u!95 &602123779
 Animator:
   serializedVersion: 3
@@ -55126,10 +55126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 0
-  gearBox2: 0
-  powerConnection1: 0
-  powerConnection2: 0
+  gearBox1: 1
+  gearBox2: 1
+  powerConnection1: 1
+  powerConnection2: 1
 --- !u!95 &1487298272
 Animator:
   serializedVersion: 3
