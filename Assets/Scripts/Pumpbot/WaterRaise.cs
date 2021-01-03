@@ -19,10 +19,10 @@ public class WaterRaise : MonoBehaviour
 
     public void raiseWater()
     {
-        anim.Play("WaterRaise");
+        anim.Play("Drained");
     }
         public void emptyWater()
     {
-        anim.Play("Drained");
+        anim.Play("WaterRaise");
     }
 }
