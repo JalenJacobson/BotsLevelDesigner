@@ -14,6 +14,8 @@ public class SatTriggerCube : MonoBehaviour
     public bool connected = false;
     public Vector3 connectPos;
     public string token;
+    public bool tokenExpire = false;
+    public float tokenExpireTime;
 
     public Text Connection;
     public Text ErrorMessage;
@@ -29,7 +31,7 @@ public class SatTriggerCube : MonoBehaviour
     public GameObject Cancel;
     CancelButton CancelButton_Script;
 
-     public Color orangeGravityField;
+    public Color orangeGravityField;
     public Color greenConsole;
     public Color blueCircuitField;
     public Color redDanger;
@@ -99,40 +101,84 @@ public class SatTriggerCube : MonoBehaviour
          {
              Disconnect();
          }
-
-         if(touching != null && connected == true && Input.GetKeyDown("z"))
+        if(tokenExpire)
         {
-            if(touching.name.Contains("Download"))
+            if(tokenExpireTime > 0)
             {
-                DownloadToken();
+                tokenExpireTime -= Time.deltaTime;
+                ErrorMessage.text = "Token Expire in " + tokenExpireTime.ToString();
             }
-                
+            else 
+            {
+                token = "0";
+                tokenExpire = false;
+                ErrorMessage.text = "Token Expired";
+            }
+            
         }
 
-         if(token == touchingToken && connected == true && Input.GetKeyDown("z"))
-         {
-             Activate();
-         }
+
+        //  if(touching != null && Input.GetKeyDown("c"))
+        //  {
+        //      Connect();
+        //  }
+        //  if(touching != null && Input.GetKeyDown("d"))
+        //  {
+        //      Disconnect();
+        //  }
+
+        //  if(touching != null && connected == true && Input.GetKeyDown("z"))
+        // {
+        //     if(touching.name.Contains("Download"))
+        //     {
+        //         DownloadToken();
+        //     }
+                
+        // }
+
+        //  if(token == touchingToken && connected == true && Input.GetKeyDown("z"))
+        //  {
+        //      Activate();
+        //  }
      }
 
     void DownloadToken()
     {
-        token = touching.GetComponent<Sat_Download_1>().token;
-                print("download");
+        var downloadTokenScript = touching.GetComponent<Sat_Download_1>();
+        token = downloadTokenScript.token;
+        print("download");
+    }
+    void DownloadExpiringToken()
+    {
+        var downloadTokenScript = touching.GetComponent<Sat_Download_2>();
+        token = downloadTokenScript.token;
+        tokenExpire = downloadTokenScript.tokenExpire;
+        tokenExpireTime = downloadTokenScript.tokenExpireTime;
+
+        print("downloaded expiring");
     }
 
     public void Activate()
      {
         if(touching.name.Contains("Download"))
         {
-            DownloadToken();
-            ErrorMessage.text = "Token Downloaded";
+            if(touching.name.Contains("Expiring"))
+            {
+                DownloadExpiringToken();
+                ErrorMessage.text = "Expiring Token Downloaded";
+            }
+            else 
+            {
+                DownloadToken();
+                ErrorMessage.text = "Token Downloaded";
+            }
         }
         else if(touching.name.Contains("Upload"))
         {
             if(token == touchingToken)
             {
                 touching.SendMessage("Activate");
+                token = "0";
                 ErrorMessage.text = "Token Uploaded";
             }
             else
