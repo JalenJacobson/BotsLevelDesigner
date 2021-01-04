@@ -93,14 +93,6 @@ public class SatTriggerCube : MonoBehaviour
 
       void Update()
      {
-         if(touching != null && Input.GetKeyDown("c"))
-         {
-             Connect();
-         }
-         if(touching != null && Input.GetKeyDown("d"))
-         {
-             Disconnect();
-         }
         if(tokenExpire)
         {
             if(tokenExpireTime > 0)
