@@ -13,6 +13,8 @@ public class Gearbox_2 : CDI_Class
     GearMoverMove gearmover_script;
     public GameObject GearMoverGears;
     GearMoverGears gearmovergears_script;
+    public GameObject GearMoverStart;
+    GearMoverGears gearmoverstart_script;
     public GameObject GateGearObj2;
     GateGear2 gategearactivate_script;
 
@@ -24,6 +26,7 @@ public class Gearbox_2 : CDI_Class
         gategearactivate_script = GateGearObj2.GetComponent<GateGear2>();
         gearmover_script = GearMoverMove.GetComponent<GearMoverMove>();
         gearmovergears_script = GearMoverGears.GetComponent<GearMoverGears>();
+        gearmoverstart_script = GearMoverStart.GetComponent<GearMoverGears>();
         message = "Gate Gear 2 Activated";
     }
 
@@ -39,6 +42,7 @@ public class Gearbox_2 : CDI_Class
         gategearactivate_script.changeGearBox2();
         gearmover_script.changeGearBox2();
         gearmovergears_script.changeGearBox2();
+        gearmoverstart_script.changeGearBox2();
         anim.Play("GearTrigger");
         sndMessage.text = message;
     }

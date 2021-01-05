@@ -18163,6 +18163,7 @@ MonoBehaviour:
   GateDoors: {fileID: 1727446765}
   GearMoverMove: {fileID: 1549287000}
   GearMoverGears: {fileID: 1897554311}
+  GearMoverStart: {fileID: 2071557680}
   GateGearObj2: {fileID: 1964763454}
 --- !u!95 &487587476
 Animator:
@@ -20264,6 +20265,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4e947d5010f7dc49a5304fe34714a5d, type: 3}
+--- !u!1 &541754907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d38961f05a585034eb33c88a91e6f11f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1104987894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &541754908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541754907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.64, y: 3.47, z: 1.61}
+  m_Center: {x: 0, y: 1.88, z: 0}
 --- !u!1 &544236578
 GameObject:
   m_ObjectHideFlags: 0
@@ -34927,6 +34947,7 @@ MonoBehaviour:
   GateDoors: {fileID: 1727446765}
   GearMoverMove: {fileID: 919132149278786557}
   GearMoverGears: {fileID: 1897554311}
+  GearMoverStart: {fileID: 2071557680}
   GateGearObj2: {fileID: 1964763454}
 --- !u!95 &904753142
 Animator:
@@ -43758,6 +43779,100 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.64, y: 3.47, z: 1.61}
   m_Center: {x: 0, y: 1.88, z: 0}
+--- !u!1001 &1104987894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 111.42
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -279.58
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 446
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2369057
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.432184
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8046039
+      objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 992cfd6420d59ef4d8e80a586cfa7863, type: 2}
+    - target: {fileID: 919132149155446097, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_Name
+      value: Simple wall 1 (117)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: d38961f05a585034eb33c88a91e6f11f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88f0b375e6dd10840be7fa0c76053eed, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d38961f05a585034eb33c88a91e6f11f, type: 3}
 --- !u!1 &1107468470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4958538023392519991, guid: 806b0f3a546f74b4da061c0c5bafb432,
@@ -45535,7 +45650,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142331972}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095153c2e21d6234e8f701b3ddea358e, type: 3}
   m_Name: 
@@ -50903,6 +51018,7 @@ MonoBehaviour:
   GateDoors: {fileID: 1727446765}
   GearMoverMove: {fileID: 919132149278786557}
   GearMoverGears: {fileID: 1897554311}
+  GearMoverStart: {fileID: 2071557680}
   GateGearObj2: {fileID: 1964763454}
 --- !u!95 &1283670421
 Animator:
@@ -53963,6 +54079,7 @@ GameObject:
   - component: {fileID: 1375565295}
   - component: {fileID: 1375565294}
   - component: {fileID: 1375565296}
+  - component: {fileID: 1375565297}
   m_Layer: 0
   m_Name: polySurface3
   m_TagString: Untagged
@@ -54049,6 +54166,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4164511204261677510, guid: 929aa6b536fb20d4ca13fc6d86e1aa82, type: 3}
+--- !u!65 &1375565297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375565292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016676001, y: 0.0008509716, z: 0.0104471035}
+  m_Center: {x: 0.000031888485, y: -0.001, z: -0.00011587096}
 --- !u!1001 &1376272062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66518,7 +66648,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.51740754
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
@@ -66528,7 +66658,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6465096
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
@@ -74066,6 +74196,19 @@ MonoBehaviour:
   GearMoverBox: {fileID: 0}
   anim: {fileID: 0}
   gearBox2: 0
+--- !u!65 &1897554315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897554311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 0.01}
+  m_Center: {x: 0.03, y: -0.002, z: -0.005}
 --- !u!1001 &1899550321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81985,7 +82128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GearMoverBox: {fileID: 0}
   anim: {fileID: 0}
-  gearBox2: 0
+  gearBox2: 1
 --- !u!95 &2071557682
 Animator:
   serializedVersion: 3

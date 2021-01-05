@@ -12,7 +12,12 @@ public bool gearBox2 = false;
     {
         anim = GetComponent<Animator>();
 
-    }  
+    } 
+         void OnTriggerEnter(Collider other)
+     {
+  anim.Play("Stop");
+    
+     } 
     
     public void Update()
     {
