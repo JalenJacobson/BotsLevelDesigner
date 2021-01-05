@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,18 +29,26 @@ public class Pump_Gasconnection : MonoBehaviour
         
     }
 
-    public void Activate()
+    public void Activate1()
     {
-        firestop_Script.Play();
-        firestop2_Script.Play();
-        firestop3_Script.Play();
+        firestop_Script.Stop();
+
+    }
+    public void Activate2()
+    {
+        firestop2_Script.Stop();
+
+    }
+    public void Activate3()
+    {
+        firestop3_Script.Stop();
 
     }
     public void Deactivate()
     {
-        firestop_Script.Stop();
-        firestop2_Script.Stop();
-        firestop3_Script.Stop();
+        firestop_Script.Play();
+        firestop2_Script.Play();
+        firestop3_Script.Play();
 
     }
 }

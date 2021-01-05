@@ -27,7 +27,7 @@ public class PowerConnection_2 : CDI_Class
         
     }
 
-    public void Activate(Text sndMessage)
+    public override void Activate(Text sndMessage)
     {
         pos = 1; 
         doorsOpen_script.changePowerConnection2();

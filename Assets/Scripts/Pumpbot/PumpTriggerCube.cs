@@ -21,12 +21,17 @@ public class PumpTriggerCube : MonoBehaviour
     ActionPump Circle_Script;
     public GameObject Activate1Pump;
     Act1Script Act1Button_Script;
+    public GameObject Activate2;
+    Act1Script Act2Button_Script;
+    public GameObject Activate3;
+    Act1Script Act3Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
     public GameObject Cancel2;
     CancelButton CancelButton2_Script;
     public GameObject BlueWall;
     BlueWall BlueWall_Script;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +42,8 @@ public class PumpTriggerCube : MonoBehaviour
         Light_Script = ActionLight.GetComponent<ActionPump>();
         Circle_Script = ActionCircles.GetComponent<ActionPump>();
         Act1Button_Script = Activate1Pump.GetComponent<Act1Script>();
+        Act2Button_Script = Activate2.GetComponent<Act1Script>();
+        Act3Button_Script = Activate3.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
         CancelButton2_Script = Cancel2.GetComponent<CancelButton>();
         BlueWall_Script = BlueWall.GetComponent<BlueWall>();
@@ -62,7 +69,7 @@ public class PumpTriggerCube : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.name.Contains("Water")){
+        if(other.name.Contains("Water") || (other.name.Contains("pump") || (other.name.Contains("Gas")))){
              touching = other.gameObject;
   
         }
@@ -108,16 +115,29 @@ public class PumpTriggerCube : MonoBehaviour
      }
      public void Activate()
      {
-             touching.SendMessage("Activate");
+             touching.SendMessage("Activate1");
+     }
+    public void Activatefire()
+     {
+             touching.SendMessage("Activate2");
+     }
+    public void Deactivatefire()
+     {
+             touching.SendMessage("Activate3");
      }
 
      public void Connect()
      {
+       
+
+            Act2Button_Script.activate1();
+            Act3Button_Script.activate1();
              connected = !connected;  
              PumpMove_Script.toggleFixPosition();
              CancelButton2_Script.CancelStart();
              Bubble_Script2.actionBubble2Stop();
-             Act1Button_Script.activate1();     
+             Act1Button_Script.activate1(); 
+          
      }
      
      public void Disconnect()
@@ -127,7 +147,9 @@ public class PumpTriggerCube : MonoBehaviour
              CancelButton2_Script.CancelStop();
              Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
-            Act1Button_Script.activate1Stop();     
+            Act1Button_Script.activate1Stop();
+            Act2Button_Script.activate1Stop();
+            Act3Button_Script.activate1Stop();     
      }
 
           public void WaterWall()
