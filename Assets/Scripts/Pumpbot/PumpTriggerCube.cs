@@ -15,13 +15,11 @@ public class PumpTriggerCube : MonoBehaviour
     ActionPump Bubble_Script;
     public GameObject ActionPump2;
     ActionPump2 Bubble_Script2;
-    public GameObject ActionPump3;
-    ActionPump3 Bubble_Script3;
     public GameObject ActionLight;
     ActionPump Light_Script;
     public GameObject ActionCircles;
     ActionPump Circle_Script;
-    public GameObject Activate1;
+    public GameObject Activate1Pump;
     Act1Script Act1Button_Script;
     public GameObject Cancel;
     CancelButton CancelButton_Script;
@@ -36,10 +34,9 @@ public class PumpTriggerCube : MonoBehaviour
         PumpMove_Script = Pump.GetComponent<PumpMove>();
         Bubble_Script = ActionPump.GetComponent<ActionPump>();
         Bubble_Script2 = ActionPump2.GetComponent<ActionPump2>();
-        Bubble_Script3 = ActionPump3.GetComponent<ActionPump3>();
         Light_Script = ActionLight.GetComponent<ActionPump>();
         Circle_Script = ActionCircles.GetComponent<ActionPump>();
-        Act1Button_Script = Activate1.GetComponent<Act1Script>();
+        Act1Button_Script = Activate1Pump.GetComponent<Act1Script>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
         CancelButton2_Script = Cancel2.GetComponent<CancelButton>();
         BlueWall_Script = BlueWall.GetComponent<BlueWall>();
@@ -54,18 +51,13 @@ public class PumpTriggerCube : MonoBehaviour
             Light_Script.actionBubbleStart();
             Circle_Script.actionBubbleStart();
         }
-        if(other.name.Contains("pump"))
+        if(other.name.Contains("pump") || (other.name.Contains("Gas")))
         {
             Bubble_Script2.actionBubble2Start();
             Light_Script.actionBubbleStart();
             Circle_Script.actionBubbleStart();
         }
-        if(other.name.Contains("Gas"))
-        {
-            Bubble_Script3.actionBubble3Start();
-            Light_Script.actionBubbleStart();
-            Circle_Script.actionBubbleStart();
-        }
+
      }
 
     void OnTriggerStay(Collider other)
@@ -87,7 +79,6 @@ public class PumpTriggerCube : MonoBehaviour
             Circle_Script.actionBubbleStop();
             BlueWall_Script.Stop();
             CancelButton_Script.CancelStop();
-            Bubble_Script3.actionBubble3Stop();
             Bubble_Script2.actionBubble2Stop();
         }
 
@@ -125,7 +116,8 @@ public class PumpTriggerCube : MonoBehaviour
              connected = !connected;  
              PumpMove_Script.toggleFixPosition();
              CancelButton2_Script.CancelStart();
-             Bubble_Script2.actionBubble2Stop();     
+             Bubble_Script2.actionBubble2Stop();
+             Act1Button_Script.activate1();     
      }
      
      public void Disconnect()
@@ -134,24 +126,10 @@ public class PumpTriggerCube : MonoBehaviour
              PumpMove_Script.toggleFixPosition();
              CancelButton2_Script.CancelStop();
              Light_Script.actionBubbleStop();
-            Circle_Script.actionBubbleStop();     
+            Circle_Script.actionBubbleStop();
+            Act1Button_Script.activate1Stop();     
      }
-          public void Gas()
-     {
-             connected = !connected;  
-             PumpMove_Script.toggleFixPosition();
-             CancelButton2_Script.CancelStart();
-             Bubble_Script3.actionBubble3Stop();    
-     }
-          public void DisconnectGas()
-     {
-             connected = false;  
-             PumpMove_Script.toggleFixPosition();
-             CancelButton2_Script.CancelStop();
-             Light_Script.actionBubbleStop();
-             Circle_Script.actionBubbleStop();
-             Act1Button_Script.activate1Stop();     
-     }
+
           public void WaterWall()
      {
         Bubble_Script.actionBubbleStop();
