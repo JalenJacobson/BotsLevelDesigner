@@ -98,7 +98,7 @@ public class SatTriggerCube : MonoBehaviour
             if(tokenExpireTime > 0)
             {
                 tokenExpireTime -= Time.deltaTime;
-                ErrorMessage.text = "Token Expire in " + tokenExpireTime.ToString();
+                ErrorMessage.text = "Token Expire in " + tokenExpireTime.ToString("0.00");
             }
             else 
             {
@@ -172,6 +172,7 @@ public class SatTriggerCube : MonoBehaviour
                 touching.SendMessage("Activate");
                 token = "0";
                 ErrorMessage.text = "Token Uploaded";
+                tokenExpire = false;
             }
             else
             {

@@ -79,9 +79,8 @@ public class SatMove : Player
     }
     public override void waterExit()
     {
-        DangerState.text = "Danger State: None";
-        // DangerField.text = "Danger Area: None";
         resetConsoleDangerField();
+        resetConsoleDangerState();
         TimerBar_Script.timerStop();
         inWater = false;
         breathRemaining = 5f;

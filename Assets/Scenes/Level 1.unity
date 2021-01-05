@@ -76948,7 +76948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: 1
   tokenExpire: 1
-  tokenExpireTime: 45
+  tokenExpireTime: 10
 --- !u!65 &2008386781
 BoxCollider:
   m_ObjectHideFlags: 0
