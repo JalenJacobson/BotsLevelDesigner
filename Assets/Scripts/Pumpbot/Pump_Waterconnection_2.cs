@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pump_Waterconnection_1 : MonoBehaviour
+public class Pump_Gasconnection_1 : MonoBehaviour
 {
     // IDI's
     public GameObject Water_raise_1;

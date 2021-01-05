@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionPump2 : MonoBehaviour
+public class ActionPump3 : MonoBehaviour
 {
    public GameObject ActionCircles;
    public GameObject ActionLight;
-    public GameObject Button6;
+    public GameObject Button7;
    public Animator anim;
     // public bool displayBubble = false;
     public GameObject touching = null;
@@ -24,14 +24,14 @@ public class ActionPump2 : MonoBehaviour
     }
     
 
-   public void actionBubble2Start()
+   public void actionBubble3Start()
    {
        anim.Play("ActionLightAnim");
        anim.Play("ActionCirclesAnim");
        anim.Play("ActionPump2Open");
        print("start");
    }
-   public void actionBubble2Stop()
+   public void actionBubble3Stop()
    {
        anim.Play("ActionLightStop");
        anim.Play("ActionCirclesStop");
