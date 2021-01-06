@@ -19,4 +19,9 @@ public class Boxes : MonoBehaviour
 
         }
     }
+
+    public void Activate()
+    {
+        anim.Play("LiftBoxes");
+    }
 }

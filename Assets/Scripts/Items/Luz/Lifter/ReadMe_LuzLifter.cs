@@ -3,10 +3,7 @@
 // put the two scripts in that folder.
 // =================== IDI =====================
 // 1. include luzlifter object into scene.
-//  1a. create a new c# script titled Lifter + level + phase + item number with underscore in between.
-//  for example if I were adding a lifter to level 1 phase 3 and it was the second lifter, my script name would be Lifter_01_03_2
-//  - make new script class extend Lifter.
-//  - Add new script as component to IDI
+//  This IDI does not need its own Script. Simply add the Lifter script to the object.
 //  1b. Add animation as component to IDI
 //  - add controller to animation
 //  1c. add approprate box colliders

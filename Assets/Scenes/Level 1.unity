@@ -53637,44 +53637,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c2018f9736055754b94de9102cb4d390, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 514f23b5ef4e5a247b55df292845d11f, type: 3}
---- !u!114 &1283670419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148359528189}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e51ea59bad4415e9b0bf77f823e8c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayMessage: 0
-  message: press z to use
---- !u!114 &1283670420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148359528189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffb33440c26c48b182424b75931945f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: 
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
-  pos: 0
-  GateDoors: {fileID: 1727446765}
-  GearMoverMove: {fileID: 919132149278786557}
-  GearMoverGears: {fileID: 1897554311}
-  GearMoverStart: {fileID: 2071557680}
-  GateGearObj2: {fileID: 1964763454}
 --- !u!95 &1283670421
 Animator:
   serializedVersion: 3
@@ -55975,7 +55937,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1345448483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
+  m_Script: {fileID: 11500000, guid: f8a15da499dda4929bd890bb0ebec15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -55984,10 +55946,7 @@ MonoBehaviour:
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
-  pos: 0
-  GateDoors: {fileID: 1727446765}
-  GateLight1: {fileID: 1517262035}
-  PowerLight1: {fileID: 489530589}
+  LuzLifter: {fileID: 1417738250}
 --- !u!65 &1345448485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65350,7 +65309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1563264055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 65707fad75cc74ef99552a6db96e958e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -65359,10 +65318,7 @@ MonoBehaviour:
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
-  pos: 0
-  GateDoors: {fileID: 1727446765}
-  GateLight1: {fileID: 1517262035}
-  PowerLight1: {fileID: 489530589}
+  LuzLifter: {fileID: 1377722066}
 --- !u!65 &1563264057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82776,7 +82732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: 1
   tokenExpire: 1
-  tokenExpireTime: 10
+  tokenExpireTime: 45
 --- !u!65 &2008386781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90094,8 +90050,7 @@ GameObject:
   - component: {fileID: 1283670422}
   - component: {fileID: 1283670423}
   - component: {fileID: 1283670421}
-  - component: {fileID: 1283670419}
-  - component: {fileID: 1283670420}
+  - component: {fileID: 919132148359528190}
   m_Layer: 0
   m_Name: GearBoxTrigger (3)
   m_TagString: Untagged
@@ -90103,6 +90058,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148359528190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148359528189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984d980b18604431dbfbcd3664cd6ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
+  GearRaiser: {fileID: 925358168}
 --- !u!1 &919132148867879250
 GameObject:
   m_ObjectHideFlags: 0
