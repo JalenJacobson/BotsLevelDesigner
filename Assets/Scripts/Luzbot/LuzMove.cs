@@ -15,19 +15,51 @@ public class LuzMove : Player
         blueCircuitField = new Color(0.06799023f, 0.5f, 0.8584906f, 1.0f);
     }
 
-    public override void pumpAirBubbleEnter()
+     void Update()
     {
-        DangerState.text = "Danger State: Short Circuit - Delayed";
+        if(inWater == true)
+        {
+            if(touchingAirBubble == true)
+            {
+                // DangerState.text = "Danger State: Short Circuit - Delayed";
+                setConsoleDangerField("Circuit Field", blueCircuitField);
+                setConsoleDangerState("Short Circuit - Delayed", greenConsole);
+            }
+            else
+            {
+                // DangerState.text = "Danger State: Short Circuit - Danger";
+                setConsoleDangerField("Circuit Field", blueCircuitField);
+                setConsoleDangerState("Short Circuit - Danger", redDanger);
+                drowning();
+            }
+            
+        }
+
+        if(breathRemaining <= 0f)
+        {
+            returnToStart();
+            waterExit();
+        }
+    }
+    public override void drowning()
+    {
+        if (breathRemaining > 0)
+        {
+            breathRemaining -= Time.deltaTime;
+        }
+    }
+public virtual void pumpAirBubbleEnter()
+    {
         breathRemaining = .1f;
         touchingAirBubble = true;
     }
-   
+
     public override void waterExit()
     {
-        DangerState.text = "Danger State: None";
-        // DangerField.text = "Danger Area: None"; 
-        resetConsoleDangerField(); 
-        resetConsoleDangerState(); 
+        // DangerState.text = "Danger State: None";
+        // DangerField.text = "Danger Area: None";
+        resetConsoleDangerField();
+        resetConsoleDangerState();
         inWater = false;
         breathRemaining = .1f;
     }

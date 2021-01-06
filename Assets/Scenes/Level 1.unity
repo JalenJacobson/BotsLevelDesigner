@@ -8466,6 +8466,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34971ba744edf43dd89f8a8b823b3e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   LuzLifter: {fileID: 1573200876}
 --- !u!65 &244692464
 BoxCollider:
@@ -42537,7 +42543,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c817955fe4350147b61bfc23a840243,
         type: 3}
       propertyPath: m_Name
-      value: level_luz_powerconnection_1 (3)
+      value: level_luz_powerconnection_1
       objectReference: {fileID: 0}
     - target: {fileID: 1170970068873931921, guid: 4c817955fe4350147b61bfc23a840243,
         type: 3}
@@ -80482,6 +80488,7 @@ GameObject:
   - component: {fileID: 2044183741}
   - component: {fileID: 2044183740}
   - component: {fileID: 2044183739}
+  - component: {fileID: 2044183743}
   m_Layer: 0
   m_Name: Cube (17)
   m_TagString: Untagged
@@ -80563,6 +80570,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 131
   m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+--- !u!114 &2044183743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044183738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34971ba744edf43dd89f8a8b823b3e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  message: 
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
+  LuzLifter: {fileID: 0}
 --- !u!1 &2048863710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9622c488743022f4db7c108422b03b8a,
