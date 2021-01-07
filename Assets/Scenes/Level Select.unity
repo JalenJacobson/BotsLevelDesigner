@@ -2039,7 +2039,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
-  m_Center: {x: 0, y: 5, z: 0}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &409875557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,6 +2054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level_Manager: {fileID: 288849895}
   newScene: 2
+  Selector_Position: {fileID: 0}
 --- !u!1001 &411531404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2548,7 +2549,7 @@ GameObject:
   - component: {fileID: 499876959}
   - component: {fileID: 499876960}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: BotNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

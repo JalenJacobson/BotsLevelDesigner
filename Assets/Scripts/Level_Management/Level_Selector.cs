@@ -8,17 +8,22 @@ public class Level_Selector : MonoBehaviour
     Level_Manager LevelManager_script;
     public int newScene;
 
+    public Transform Selector_Position;
+
     void Start()
     {
         LevelManager_script = Level_Manager.GetComponent<Level_Manager>();
+        Selector_Position = GetComponent<Transform>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-       
+        print(Selector_Position.position);
         LevelManager_script.setSceneToGoTo(newScene);
-        // other.transform.position = levelBeaconPosition;
-        // other.transform.position = levelBeaconPosition;
+        other.transform.position = Selector_Position.position;
+        other.transform.position = Selector_Position.position;
+        print(other.name);
+        // other.gameObject.SendMessage("toggleFixPosition()");
 
     }
     
