@@ -36253,7 +36253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 904753140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffb33440c26c48b182424b75931945f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5047619d3b8b44da9838fc047918c099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -36262,12 +36262,9 @@ MonoBehaviour:
   greenConsole: {r: 0, g: 0, b: 0, a: 0}
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
-  pos: 0
   GateDoors: {fileID: 1727446765}
-  GearMoverMove: {fileID: 919132149278786557}
-  GearMoverGears: {fileID: 1897554311}
-  GearMoverStart: {fileID: 2071557680}
-  GateGearObj2: {fileID: 1964763454}
+  GateGearObj: {fileID: 1964763454}
+  mySound: {fileID: 0}
 --- !u!95 &904753142
 Animator:
   serializedVersion: 3
