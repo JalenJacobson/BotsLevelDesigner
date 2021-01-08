@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Level_Manager : MonoBehaviour
 {
     public int sceneToGoTo;
+    public Animator transition;
+    public float transitionTime = 1f;
     // private string selectedHero;
 
     void Start()
@@ -26,13 +28,22 @@ public class Level_Manager : MonoBehaviour
     public void LoadNextLevel()
     {
 
-        SceneManager.LoadScene(sceneToGoTo);
+        StartCoroutine(LoadLevel(sceneToGoTo));
         // sceneToGoTo = 1;
     }
 
     public void setSceneToGoTo(int nextScene)
     {
         sceneToGoTo = nextScene;
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
     }
 
 //================= Character Selection =====================
