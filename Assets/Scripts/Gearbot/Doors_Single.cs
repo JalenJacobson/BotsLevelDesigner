@@ -14,7 +14,6 @@ public class Doors_Single : Doors
         if (gearBox1 == true && powerConnection1 == true)
         {
             anim.Play("Doors");
-            print("doors should open");
 
         }
     }

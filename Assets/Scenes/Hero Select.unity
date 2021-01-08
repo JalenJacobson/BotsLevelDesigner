@@ -1600,6 +1600,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3739148410932969839, guid: 5b5f1292c8d734cf6a49677e279806d0,
+          type: 3}
+        m_MethodName: setPrefsPump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &423179829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,6 +2755,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 896850307}
         m_MethodName: ReadyStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3739148410932969839, guid: 5b5f1292c8d734cf6a49677e279806d0,
+          type: 3}
+        m_MethodName: setPrefsSat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4447,6 +4471,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3739148410932969839, guid: 5b5f1292c8d734cf6a49677e279806d0,
+          type: 3}
+        m_MethodName: setPrefsLuz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1116902596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4916,6 +4952,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 896850307}
         m_MethodName: ReadyStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3739148410932969839, guid: 5b5f1292c8d734cf6a49677e279806d0,
+          type: 3}
+        m_MethodName: setPrefsBrute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6348,6 +6396,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 896850307}
         m_MethodName: ReadyStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3739148410932969839, guid: 5b5f1292c8d734cf6a49677e279806d0,
+          type: 3}
+        m_MethodName: setPrefsGear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
