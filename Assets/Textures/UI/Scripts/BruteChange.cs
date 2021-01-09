@@ -16,10 +16,10 @@ public class BruteChange : MonoBehaviour
  // Update is called once per frame
     public void Play()
     {
-  anim.Play("BruteNameOn");
+    anim.Play("BruteNameOn");
     }
     public void Stop()
     {
-  anim.Play("BruteNameOff");
+    anim.Play("BruteNameOff");
     }
 }

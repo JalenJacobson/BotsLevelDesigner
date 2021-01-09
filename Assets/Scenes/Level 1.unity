@@ -8236,6 +8236,13 @@ MonoBehaviour:
   Pump: {fileID: 557766612}
   Sat: {fileID: 713974285}
   Main_Camera: {fileID: 963194225}
+  buttonGear: {fileID: 0}
+  buttonLuz: {fileID: 0}
+  buttonBrute: {fileID: 0}
+  buttonPump: {fileID: 0}
+  buttonSat: {fileID: 0}
+  gearButton_script: {fileID: 0}
+  bruteButton_script: {fileID: 0}
 --- !u!1 &237953119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9622c488743022f4db7c108422b03b8a,
@@ -9782,28 +9789,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1476826996}
         m_MethodName: Toggle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 261174802}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 623306148}
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16144,28 +16129,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 418215532}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1843772812}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &418215532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21854,28 +21817,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 564538904}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 261174802}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &564538903
 Animator:
   serializedVersion: 3
@@ -24402,28 +24343,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1476826996}
         m_MethodName: Toggle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 623306148}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 418215532}
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -75562,28 +75481,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1843772812}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 564538904}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &1843772811
 Animator:
   serializedVersion: 3
@@ -75615,7 +75512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac3d5094ea1bab49ae22626aed7d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 1843772811}
 --- !u!1001 &1845335655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96794,6 +96691,31 @@ PrefabInstance:
       propertyPath: Main_Camera
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 5202520283287015592, guid: cb307eb256401427f8bbec691b4ce1f2,
+        type: 3}
+      propertyPath: buttonGear
+      value: 
+      objectReference: {fileID: 623306143}
+    - target: {fileID: 5202520283287015592, guid: cb307eb256401427f8bbec691b4ce1f2,
+        type: 3}
+      propertyPath: buttonLuz
+      value: 
+      objectReference: {fileID: 418215527}
+    - target: {fileID: 5202520283287015592, guid: cb307eb256401427f8bbec691b4ce1f2,
+        type: 3}
+      propertyPath: buttonBrute
+      value: 
+      objectReference: {fileID: 1843772806}
+    - target: {fileID: 5202520283287015592, guid: cb307eb256401427f8bbec691b4ce1f2,
+        type: 3}
+      propertyPath: buttonPump
+      value: 
+      objectReference: {fileID: 564538898}
+    - target: {fileID: 5202520283287015592, guid: cb307eb256401427f8bbec691b4ce1f2,
+        type: 3}
+      propertyPath: buttonSat
+      value: 
+      objectReference: {fileID: 261174796}
     - target: {fileID: 5202520283287015593, guid: cb307eb256401427f8bbec691b4ce1f2,
         type: 3}
       propertyPath: m_LocalPosition.x
