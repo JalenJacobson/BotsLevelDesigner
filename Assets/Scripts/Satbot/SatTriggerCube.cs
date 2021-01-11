@@ -14,6 +14,7 @@ public class SatTriggerCube : MonoBehaviour
     public bool connected = false;
     public Vector3 connectPos;
     public string token;
+    
     public bool tokenExpire = false;
     public float tokenExpireTime;
 
@@ -74,20 +75,13 @@ public class SatTriggerCube : MonoBehaviour
 
      void OnTriggerExit(Collider other)
      {
-            touching = null;
-            touchingToken = null;
-                        if(other.name.Contains("Sat")){
+        touching = null;
+        touchingToken = null;
+        if(other.name.Contains("Sat"))
+        {
             Bubble_Script.actionBubbleStop();
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
-        }
-        if(other.name.Contains("Water"))
-        {
-            // TimerBarSat_Script.timerStop();
-        }
-        if(other.name.Contains("BlueWall"))
-        {
-            // TimerBarSat_Script.exitbluewall();
         }
      }
 
@@ -105,33 +99,8 @@ public class SatTriggerCube : MonoBehaviour
                 token = "0";
                 tokenExpire = false;
                 ErrorMessage.text = "Token Expired";
-            }
-            
+            }      
         }
-
-
-        //  if(touching != null && Input.GetKeyDown("c"))
-        //  {
-        //      Connect();
-        //  }
-        //  if(touching != null && Input.GetKeyDown("d"))
-        //  {
-        //      Disconnect();
-        //  }
-
-        //  if(touching != null && connected == true && Input.GetKeyDown("z"))
-        // {
-        //     if(touching.name.Contains("Download"))
-        //     {
-        //         DownloadToken();
-        //     }
-                
-        // }
-
-        //  if(token == touchingToken && connected == true && Input.GetKeyDown("z"))
-        //  {
-        //      Activate();
-        //  }
      }
 
     void DownloadToken()
@@ -169,10 +138,20 @@ public class SatTriggerCube : MonoBehaviour
         {
             if(token == touchingToken)
             {
-                touching.SendMessage("Activate");
-                token = "0";
-                ErrorMessage.text = "Token Uploaded";
-                tokenExpire = false;
+                if(touching.name.Contains("Endgame"))
+                {
+                    touching.SendMessage("Activate", "endGame");
+                    token = "0";
+                    ErrorMessage.text = "Token Uploaded";
+                    tokenExpire = false;
+                }
+                else
+                {
+                    touching.SendMessage("Activate", "forceGate");
+                    token = "0";
+                    ErrorMessage.text = "Token Uploaded";
+                    tokenExpire = false;
+                }
             }
             else
             {
@@ -189,13 +168,12 @@ public class SatTriggerCube : MonoBehaviour
 
      public void Connect()
      {
-         print("should work");
-             connected = !connected;  
-             SatMove_Script.toggleFixPosition();
-            Bubble_Script.actionBubbleStop();
-            Act1Button_Script.activate1();
-            Connection.text = "T";
-            CancelButton_Script.CancelStart();     
+        connected = !connected;  
+        SatMove_Script.toggleFixPosition();
+        Bubble_Script.actionBubbleStop();
+        Act1Button_Script.activate1();
+        Connection.text = "T";
+        CancelButton_Script.CancelStart();     
      }
      
      public void Disconnect()

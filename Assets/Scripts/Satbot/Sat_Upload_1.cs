@@ -21,8 +21,16 @@ public class Sat_Upload_1 : MonoBehaviour
         
     }
 
-    void Activate()
+    void Activate(string uploadType)
     {
-        forcegate_script.forceGateDown();
+        if(uploadType == "forceGate")
+        {
+            forcegate_script.forceGateDown();
+        }
+        else if(uploadType == "endGame")
+        {
+            print("activate endgame sequence");
+        }
+        
     }
 }
