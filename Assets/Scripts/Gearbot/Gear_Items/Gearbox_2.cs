@@ -38,8 +38,8 @@ public class Gearbox_2 : CDI_Class
     public override void Activate(Text sndMessage)
     {
         pos = 1; 
-        doorsOpen_script.changeGearBox2();
-        gategearactivate_script.changeGearBox2();
+        // doorsOpen_script.changeGearBox2();
+        // gategearactivate_script.changeGearBox2();
         gearmover_script.changeGearBox2();
         gearmovergears_script.changeGearBox2();
         gearmoverstart_script.changeGearBox2();
