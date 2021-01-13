@@ -67,7 +67,8 @@ public class GearTriggerCube : MonoBehaviour
 
      void OnTriggerExit(Collider other)
      {
-            if(other.name.Contains("Gear")){
+        if(other.name.Contains("Gear"))
+        {
             touching = null;
             Bubble_Script.actionBubbleStop();
             Light_Script.actionBubbleStop();
@@ -104,7 +105,7 @@ public class GearTriggerCube : MonoBehaviour
             GearMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
-            Connection.text = "T"; 
+            Connection.text = "T " + touching.name.ToString(); 
             CancelButton_Script.CancelStart();    
             
      }

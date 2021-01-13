@@ -18664,7 +18664,6 @@ MonoBehaviour:
   blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
-  GateDoors: {fileID: 1727446765}
   GearMoverMove: {fileID: 1549287000}
   GearMoverGears: {fileID: 1897554311}
   GearMoverStart: {fileID: 2071557680}
@@ -36280,7 +36279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 904753140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5047619d3b8b44da9838fc047918c099, type: 3}
+  m_Script: {fileID: 11500000, guid: 15133cef5101c48c79dcc5009924bd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -36336,20 +36335,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.005, z: 0.005}
   m_Center: {x: -0.01, y: 0.022, z: 0.006}
---- !u!114 &904753146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904753140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e51ea59bad4415e9b0bf77f823e8c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayMessage: 0
-  message: press z to use
 --- !u!1 &906007927
 GameObject:
   m_ObjectHideFlags: 0
@@ -69546,7 +69531,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -251.55
+      value: -245
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
@@ -69671,7 +69656,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
       propertyPath: m_Name
-      value: GearBoxTrigger
+      value: Gear_Gate_Gear_1
       objectReference: {fileID: 0}
     - target: {fileID: 1790868808166937211, guid: f0a9a85413b1b16439d0757c0b454054,
         type: 3}
@@ -70774,8 +70759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   gearBox1: 1
-  gearBox2: 1
-  powerConnection1: 1
+  gearBox2: 0
+  powerConnection1: 0
   powerConnection2: 1
 --- !u!95 &1727446767
 Animator:
@@ -80305,11 +80290,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1964763454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cb2bb76900d1a4d8d7682fd362ba7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a3578749d0421d43b8ca558c20e62db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 0
+  gearBox2: 0
 --- !u!95 &1964763456
 Animator:
   serializedVersion: 3
@@ -89402,7 +89387,7 @@ GameObject:
   - component: {fileID: 487587474}
   - component: {fileID: 487587475}
   m_Layer: 0
-  m_Name: GearBoxTrigger (2)
+  m_Name: GearBoxTrigger_GearMover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

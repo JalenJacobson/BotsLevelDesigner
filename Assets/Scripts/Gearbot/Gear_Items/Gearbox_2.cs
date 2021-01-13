@@ -7,8 +7,6 @@ public class Gearbox_2 : CDI_Class
 {
     // public Animator anim;
     public float pos = 0;
-    public GameObject GateDoors;
-    Doors doorsOpen_script;
     public GameObject GearMoverMove;
     GearMoverMove gearmover_script;
     public GameObject GearMoverGears;
@@ -21,7 +19,6 @@ public class Gearbox_2 : CDI_Class
     // Start is called before the first frame update
     void Start()
     {
-        doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
         gategearactivate_script = GateGearObj2.GetComponent<GateGear2>();
         gearmover_script = GearMoverMove.GetComponent<GearMoverMove>();
@@ -38,8 +35,6 @@ public class Gearbox_2 : CDI_Class
     public override void Activate(Text sndMessage)
     {
         pos = 1; 
-        // doorsOpen_script.changeGearBox2();
-        // gategearactivate_script.changeGearBox2();
         gearmover_script.changeGearBox2();
         gearmovergears_script.changeGearBox2();
         gearmoverstart_script.changeGearBox2();
