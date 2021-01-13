@@ -105,7 +105,7 @@ public class GearTriggerCube : MonoBehaviour
             GearMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
-            Connection.text = "T " + touching.name.ToString(); 
+            Connection.text = touching.name.ToString(); 
             CancelButton_Script.CancelStart();    
             
      }

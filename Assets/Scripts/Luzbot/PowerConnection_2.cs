@@ -18,7 +18,7 @@ public class PowerConnection_2 : CDI_Class
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         lightactivate_script = GateLight2.GetComponent<LightOn2>();
         powerlight_script = PowerLight2.GetComponent<LightOn2>();
-        message = "Gate Power 2 Activated";
+        // message = "Gate Power 2 Activated";
     }
 
     // Update is called once per frame

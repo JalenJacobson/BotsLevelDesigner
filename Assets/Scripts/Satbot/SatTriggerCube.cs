@@ -172,7 +172,7 @@ public class SatTriggerCube : MonoBehaviour
         SatMove_Script.toggleFixPosition();
         Bubble_Script.actionBubbleStop();
         Act1Button_Script.activate1();
-        Connection.text = "T";
+        Connection.text = touching.name.ToString();
         CancelButton_Script.CancelStart();     
      }
      

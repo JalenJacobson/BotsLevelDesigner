@@ -46,7 +46,7 @@ public class LuzTriggerCube : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
      {
-        if(other.name.Contains("luz"))
+        if(other.name.Contains("luz") || other.name.Contains("Power"))
         {
             Bubble_Script.actionBubbleStart();
             Light_Script.actionBubbleStart();
@@ -56,7 +56,7 @@ public class LuzTriggerCube : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.name.Contains("luz")){
+        if(other.name.Contains("luz") || other.name.Contains("Power")){
              touching = other.gameObject;
         }
     }
@@ -64,7 +64,7 @@ public class LuzTriggerCube : MonoBehaviour
      void OnTriggerExit(Collider other)
      {
             touching = null;
-        if(other.name.Contains("luz")){
+        if(other.name.Contains("luz") || other.name.Contains("Power")){
              
             Bubble_Script.actionBubbleStop();
             Light_Script.actionBubbleStop();
@@ -101,11 +101,11 @@ public class LuzTriggerCube : MonoBehaviour
 
      public void Connect()
      {
-             connected = !connected;  
-             LuzMove_Script.toggleFixPosition();
+            connected = !connected;  
+            LuzMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
-             Connection.text = "T";
+            Connection.text = touching.name.ToString();
             CancelButton_Script.CancelStart();       
      }
      

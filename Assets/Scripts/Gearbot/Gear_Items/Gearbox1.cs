@@ -16,7 +16,7 @@ public class Gearbox1 : CDI_Class
         doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
         gategearactivate_script = GateGearObj.GetComponent<GateGear>();
-        message = "Gate Gear 1 Activated";
+        // message = "Gate Gear 1 Activated";
     }
 
 
