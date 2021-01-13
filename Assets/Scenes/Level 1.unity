@@ -34980,7 +34980,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0da965fd6f109d545a12fa800e76d6ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 120
+      value: 139.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0da965fd6f109d545a12fa800e76d6ba,
         type: 3}
@@ -70057,10 +70057,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 1
-  gearBox2: 1
-  powerConnection1: 1
-  powerConnection2: 1
+  gearBox1: 0
+  gearBox2: 0
+  powerConnection1: 0
+  powerConnection2: 0
 --- !u!95 &1727446767
 Animator:
   serializedVersion: 3
@@ -80412,8 +80412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: 1
   forcegate_gate: {fileID: 1093462340}
-  StartPort: {fileID: 0}
-  levelcomplete_script: {fileID: 0}
+  StartPort: {fileID: 1387334949}
+  levelcomplete_script: {fileID: 1387334951}
 --- !u!65 &1981678017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96144,6 +96144,16 @@ PrefabInstance:
       propertyPath: forcegate_gate
       value: 
       objectReference: {fileID: 5265589510982132394}
+    - target: {fileID: 6554313185617337550, guid: 23449ddfa5e51417da33a9de0aa22d18,
+        type: 3}
+      propertyPath: StartPort
+      value: 
+      objectReference: {fileID: 1387334949}
+    - target: {fileID: 6554313185617337550, guid: 23449ddfa5e51417da33a9de0aa22d18,
+        type: 3}
+      propertyPath: levelcomplete_script
+      value: 
+      objectReference: {fileID: 1387334951}
     - target: {fileID: 6737139168410778728, guid: 23449ddfa5e51417da33a9de0aa22d18,
         type: 3}
       propertyPath: m_LocalPosition.x
