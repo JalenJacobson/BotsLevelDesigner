@@ -40,11 +40,6 @@ public class BruteTriggerCube : MonoBehaviour
     void OnTriggerEnter(Collider other)
      {
           canLift = true;
-        if(other.name.Contains("Water"))
-        {
-            // TimerBarBrute_Script.timerStart();
-        }
-
      }
 
     void OnTriggerStay(Collider other)
@@ -58,39 +53,25 @@ public class BruteTriggerCube : MonoBehaviour
             }
             Bubble_Script.actionBubbleStart();
             Light_Script.actionBubbleStart();
-            Circle_Script.actionBubbleStart();
-            
+            Circle_Script.actionBubbleStart();   
         }
-        if(other.name.Contains("BlueWall"))
-        {
-            // TimerBarBrute_Script.enterbluewall();
-        }
-              
     }
 
      void OnTriggerExit(Collider other)
      { 
-    var characterName = other.name;    
-    if(characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump" || characterName.Contains("Box"))
-    {
-        if(lifting == false)
-        {
-            canLift = false;
-            touching = null;
-        }
+        var characterName = other.name;    
+        if(characterName == "IdleLuz" || characterName == "Gears" || characterName == "SatBot" || characterName == "Pump" || characterName.Contains("Box"))
+        {   
+            if(lifting == false)
+            {
+                canLift = false;
+                touching = null;
+            }
         Bubble_Script.actionBubbleStop();
         Light_Script.actionBubbleStop();
         Circle_Script.actionBubbleStop();
         // lifting = false;
          }
-        if(other.name.Contains("Water"))
-        {
-            // TimerBarBrute_Script.timerStop();
-        }
-        if(other.name.Contains("BlueWall"))
-        {
-            // TimerBarBrute_Script.exitbluewall();
-        }
      }
 
      void Update()

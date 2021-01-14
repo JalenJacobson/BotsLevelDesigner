@@ -8,20 +8,21 @@ public class Level_Selector : MonoBehaviour
     Level_Manager LevelManager_script;
     public int newScene;
     
-    public Transform Selector_Position;
+    public Vector3 hoverPosition;
 
     void Start()
     {
         LevelManager_script = Level_Manager.GetComponent<Level_Manager>();
-        Selector_Position = GetComponent<Transform>();
+        hoverPosition = new Vector3(0.0f, 15.08f, 0f);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        print(Selector_Position.position);
         LevelManager_script.setSceneToGoTo(newScene);
         PlayerPrefs.SetInt("currentLevel", newScene);
-        other.transform.position = Selector_Position.position;
+        other.gameObject.transform.position = transform.TransformPoint(hoverPosition);
+        toggleNodeFixPosition(other.gameObject);
+        StartCoroutine(ExecuteAfterTime(1f, other.gameObject));
     }
 
     void Update()
@@ -34,5 +35,15 @@ public class Level_Selector : MonoBehaviour
         PlayerPrefs.SetInt("currentLevel", 1);
     }
 
-   
+    IEnumerator ExecuteAfterTime(float time, GameObject node)
+    {
+        yield return new WaitForSeconds(time);
+ 
+        toggleNodeFixPosition(node);
+ }  
+
+    public void toggleNodeFixPosition(GameObject node)
+    {
+       node.SendMessage("toggleFixPosition");
+    }
 }
