@@ -9,6 +9,8 @@ public class Gearbox1 : CDI_Class
     Doors doorsOpen_script;
     public GameObject GateGearObj;
     GateGear gategearactivate_script;
+
+    public bool holdToActivate;
     
 
     void Start()
@@ -19,13 +21,24 @@ public class Gearbox1 : CDI_Class
         // message = "Gate Gear 1 Activated";
     }
 
-
     public override void Activate(Text sndMessage)
     {
-        // pos = 1; 
-        doorsOpen_script.changeGearBox1();
-        gategearactivate_script.changeGearBox1();
-        anim.Play("GearTrigger");
-        sndMessage.text = message;
+            doorsOpen_script.changeGearBox1();
+            gategearactivate_script.changeGearBox1();
+            anim.Play("GearTrigger");
+            sndMessage.text = message;  
+    }
+
+    public void Deactivate()
+    {
+        if(!holdToActivate)
+        {
+            return;
+        }
+        else
+        {
+            doorsOpen_script.changeGearBox1();
+            print("deactivated");  
+        }
     }
 }
