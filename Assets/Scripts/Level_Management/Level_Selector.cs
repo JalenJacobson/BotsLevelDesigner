@@ -20,6 +20,7 @@ public class Level_Selector : MonoBehaviour
     {
         print(Selector_Position.position);
         LevelManager_script.setSceneToGoTo(newScene);
+        PlayerPrefs.SetInt("currentLevel", newScene);
         other.transform.position = Selector_Position.position;
     }
 
@@ -30,6 +31,7 @@ public class Level_Selector : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         LevelManager_script.setSceneToGoTo(1);
+        PlayerPrefs.SetInt("currentLevel", 1);
     }
 
    

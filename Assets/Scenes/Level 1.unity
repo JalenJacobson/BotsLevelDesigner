@@ -35746,6 +35746,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cd7af2faa8850d143b8248a505ff068e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9622c488743022f4db7c108422b03b8a, type: 3}
+--- !u!1 &884774842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3739148410932969836, guid: 5b5f1292c8d734cf6a49677e279806d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 760037554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &886755190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56945,6 +56951,8 @@ MonoBehaviour:
   playersReady: 0
   gameTimeRemaining: 300
   virusDelivered: 0
+  Level_Manager: {fileID: 884774842}
+  levelManager_script: {fileID: 0}
   consoleTimeRemaining: {fileID: 1715176051}
   redDanger: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1389992954
@@ -70057,10 +70065,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 0
-  gearBox2: 0
-  powerConnection1: 0
-  powerConnection2: 0
+  gearBox1: 1
+  gearBox2: 1
+  powerConnection1: 1
+  powerConnection2: 1
 --- !u!95 &1727446767
 Animator:
   serializedVersion: 3

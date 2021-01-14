@@ -9,12 +9,17 @@ public class LevelComplete : MonoBehaviour
     public int playersReady;
     public float gameTimeRemaining;
     public bool virusDelivered = false;
+
+    public GameObject Level_Manager;
+    public Level_Manager levelManager_script;
+
     public Text consoleTimeRemaining;
     public Color redDanger;
     
     // Start is called before the first frame update
     void Start()
     {
+        levelManager_script = Level_Manager.GetComponent<Level_Manager>();
         redDanger = new Color(1f, 0.1f, 0.0f, 1.0f);
     }
 
@@ -31,7 +36,7 @@ public class LevelComplete : MonoBehaviour
             else
             {
                 gameTimeRemaining = 0f;
-                print("Game Over");
+                levelManager_script.loadGameOverLevel();
             }
             if(playersReady == 5)
             {

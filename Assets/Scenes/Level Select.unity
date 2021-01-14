@@ -2139,7 +2139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level_Manager: {fileID: 288849895}
-  newScene: 2
+  newScene: 3
   Selector_Position: {fileID: 0}
 --- !u!1001 &411531404
 PrefabInstance:

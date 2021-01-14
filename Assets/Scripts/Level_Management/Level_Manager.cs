@@ -31,6 +31,31 @@ public class Level_Manager : MonoBehaviour
         StartCoroutine(LoadLevel(sceneToGoTo));
         // sceneToGoTo = 1;
     }
+    
+    public void loadCurrentLevel()
+    {
+        sceneToGoTo = PlayerPrefs.GetInt("currentLevel");
+        print(sceneToGoTo);
+        SceneManager.LoadScene(sceneToGoTo);
+        // this.StartCoroutine(LoadLevel(sceneToGoTo));
+        // sceneToGoTo = 1;
+    }
+    
+    public void loadLevelSelectLevel()
+    {
+        sceneToGoTo = 1;
+        SceneManager.LoadScene(sceneToGoTo);
+        // StartCoroutine(LoadLevel(sceneToGoTo));
+        // sceneToGoTo = 1;
+    }
+    
+    public void loadGameOverLevel()
+    {
+        sceneToGoTo = 2;
+        SceneManager.LoadScene(sceneToGoTo);
+        // StartCoroutine(LoadLevel(sceneToGoTo));
+        // sceneToGoTo = 1;
+    }
 
     public void setSceneToGoTo(int nextScene)
     {
