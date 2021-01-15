@@ -16,5 +16,9 @@ public class Doors_Single : Doors
             anim.Play("Doors");
 
         }
+        if (gearBox1 == false || powerConnection1 == false)    
+     {
+       anim.Play("DoorClose");
+    }
     }
 }

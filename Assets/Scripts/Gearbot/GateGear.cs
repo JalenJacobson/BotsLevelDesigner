@@ -20,6 +20,11 @@ public class GateGear : MonoBehaviour
             anim.Play("GateGear");
 
         }
+                if (gearBox1 == false)
+        {
+            anim.Play("Stop");
+
+        }
     }
 
     public void changeGearBox1()
