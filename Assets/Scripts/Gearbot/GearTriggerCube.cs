@@ -95,8 +95,12 @@ public class GearTriggerCube : MonoBehaviour
 
      public void Activate()
      {
-            touching.SendMessage("Activate", ErrorMessage);
+        touching.SendMessage("Activate", ErrorMessage);
             
+     }
+     public void Deactivate()
+     {
+         touching.SendMessage("Deactivate", ErrorMessage);
      }
 
      public void Connect()
