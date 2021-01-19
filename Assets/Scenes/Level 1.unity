@@ -2026,6 +2026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &62595240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d91fdc5e0ba6c4b44b6e738a9e9e24b0,
@@ -2620,6 +2621,7 @@ MonoBehaviour:
   GateDoors: {fileID: 602123777}
   GateLight1: {fileID: 854594952}
   PowerLight1: {fileID: 2058440497}
+  holdToActivate: 1
 --- !u!65 &86561340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6575,6 +6577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &188982352
 GameObject:
   m_ObjectHideFlags: 0
@@ -8224,6 +8227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &239987380
 Animator:
   serializedVersion: 3
@@ -11275,6 +11279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &302100168
 Animator:
   serializedVersion: 3
@@ -14767,7 +14772,7 @@ MonoBehaviour:
   redDanger: {r: 0, g: 0, b: 0, a: 0}
   GateDoors: {fileID: 602123777}
   GateGearObj: {fileID: 2073658797}
-  holdToActivate: 0
+  holdToActivate: 1
 --- !u!95 &385022797
 Animator:
   serializedVersion: 3
@@ -15720,6 +15725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &415653997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9622c488743022f4db7c108422b03b8a,
@@ -16464,6 +16470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &443249137
 Animator:
   serializedVersion: 3
@@ -17709,6 +17716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!114 &472103760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17722,6 +17730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!114 &472103761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17735,6 +17744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &472627918
 GameObject:
   m_ObjectHideFlags: 0
@@ -18624,6 +18634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1001 &492474156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21235,8 +21246,18 @@ MonoBehaviour:
   rotateSpeed: 10
   rb: {fileID: 557766614}
   toggleSelected: 0
-  startPos: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
   fixPosition: 0
+  startPos: {x: 0, y: 0, z: 0}
+  breathRemaining: 5
+  touchingAirBubble: 0
+  inWater: 0
+  DangerField: {fileID: 86818338}
+  DangerState: {fileID: 1087969012}
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
   joystick: {fileID: 1542152551}
   anim: {fileID: 0}
 --- !u!95 &557766617
@@ -27041,6 +27062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &678145310
 GameObject:
   m_ObjectHideFlags: 0
@@ -29373,6 +29395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &714363993
 Animator:
   serializedVersion: 3
@@ -30098,6 +30121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &735792531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 514f23b5ef4e5a247b55df292845d11f,
@@ -32833,6 +32857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &808181404
 Animator:
   serializedVersion: 3
@@ -36216,6 +36241,7 @@ GameObject:
   - component: {fileID: 912667363}
   - component: {fileID: 912667362}
   - component: {fileID: 912667361}
+  - component: {fileID: 912667366}
   m_Layer: 5
   m_Name: Activate1Luz
   m_TagString: Untagged
@@ -36355,18 +36381,50 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 912667363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 399056019}
-        m_MethodName: Activate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &912667366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912667359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 399056019}
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 399056019}
+          m_MethodName: Deactivate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &913063423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36913,7 +36971,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13c279f4de3388341ab81ea77202fba6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.96
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13c279f4de3388341ab81ea77202fba6,
         type: 3}
@@ -36923,7 +36981,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13c279f4de3388341ab81ea77202fba6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -279.53
+      value: -235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13c279f4de3388341ab81ea77202fba6,
         type: 3}
@@ -39383,6 +39441,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
+--- !u!136 &983613834
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983613830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.005
+  m_Height: 0.06
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.04, z: 0}
 --- !u!1 &984399047
 GameObject:
   m_ObjectHideFlags: 0
@@ -40260,6 +40333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &1012394837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 514f23b5ef4e5a247b55df292845d11f,
@@ -43128,6 +43202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!114 &1045728987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43141,6 +43216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!114 &1045728988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43154,6 +43230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!4 &1046069479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9622c488743022f4db7c108422b03b8a,
@@ -48764,6 +48841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1179026763
 Animator:
   serializedVersion: 3
@@ -49313,6 +49391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1193326470
 Animator:
   serializedVersion: 3
@@ -55924,6 +56003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &1366826066
 GameObject:
   m_ObjectHideFlags: 0
@@ -57330,6 +57410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1001 &1398193513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59123,6 +59204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1448712978
 Animator:
   serializedVersion: 3
@@ -59161,6 +59243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1450980731
 Animator:
   serializedVersion: 3
@@ -61319,6 +61402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1508720248
 Animator:
   serializedVersion: 3
@@ -65207,6 +65291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &1585414194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 598ff9ebc321f194dbfc8a922293b94d,
@@ -65643,6 +65728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1603689605
 Animator:
   serializedVersion: 3
@@ -68192,6 +68278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!114 &1682688999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68205,6 +68292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!114 &1682689000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68218,6 +68306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1001 &1683359932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69547,6 +69636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &1709185083
 Animator:
   serializedVersion: 3
@@ -69842,6 +69932,7 @@ MonoBehaviour:
   GateDoors: {fileID: 1487298270}
   GateLight1: {fileID: 1198770806}
   PowerLight1: {fileID: 2064231114}
+  holdToActivate: 1
 --- !u!65 &1714834041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71297,6 +71388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!1 &1766398446
 GameObject:
   m_ObjectHideFlags: 0
@@ -73328,6 +73420,7 @@ MonoBehaviour:
   GateDoors: {fileID: 1727446765}
   GateLight1: {fileID: 1517262035}
   PowerLight1: {fileID: 489530589}
+  holdToActivate: 0
 --- !u!65 &1807892251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86788,6 +86881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  activeFlame: 1
 --- !u!95 &2137665172
 Animator:
   serializedVersion: 3

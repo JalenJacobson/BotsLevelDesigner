@@ -86,7 +86,6 @@ public class Player : MonoBehaviour
 
     public virtual void highGravityEnter ()
     {
-        print(orangeGravityField);
         moveSpeed = 1;
         setConsoleDangerField("Gravity Field", orangeGravityField);
         setConsoleDangerState("Speed Reduced", orangeGravityField);

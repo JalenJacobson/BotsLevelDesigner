@@ -98,6 +98,10 @@ public class LuzTriggerCube : MonoBehaviour
      {
              touching.SendMessage("Activate", ErrorMessage);
      }
+     public void Deactivate()
+     {
+         touching.SendMessage("Deactivate", ErrorMessage);
+     }
 
      public void Connect()
      {
