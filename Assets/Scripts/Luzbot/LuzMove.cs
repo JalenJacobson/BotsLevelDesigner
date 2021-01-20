@@ -48,7 +48,7 @@ public class LuzMove : Player
             breathRemaining -= Time.deltaTime;
         }
     }
-public virtual void pumpAirBubbleEnter()
+    public override void pumpAirBubbleEnter()
     {
         breathRemaining = .1f;
         touchingAirBubble = true;
