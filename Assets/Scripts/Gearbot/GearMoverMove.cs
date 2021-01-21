@@ -15,20 +15,18 @@ public bool gearBox2 = false;
     
       void Start()
     {
-gearmover_script = GearMoverStandScript.GetComponent<GearMoverStandScript>();
+        gearmover_script = GearMoverStandScript.GetComponent<GearMoverStandScript>();
     }  
     
     public virtual void Update()
     {
-              float step = speed * Time.deltaTime;
-      if (gearBox2 == true){
-     transform.position = Vector3.MoveTowards(transform.position, target.position, step);  
-
-      }
+        float step = speed * Time.deltaTime;
+        if (gearBox2 == true){
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);  
+        }
         if (gearBox2 == false){
-     transform.position = Vector3.MoveTowards(transform.position, target2.position, step);  
-
-      }      
+            transform.position = Vector3.MoveTowards(transform.position, target2.position, step);  
+        }      
     }    
 
 

@@ -4795,7 +4795,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f873f8a9b68797d43abe08d6aafb4712,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -230.44
+      value: -234
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f873f8a9b68797d43abe08d6aafb4712,
         type: 3}
@@ -21398,7 +21398,7 @@ BoxCollider:
   m_GameObject: {fileID: 557766612}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.03, z: 0.01}
   m_Center: {x: 0, y: 0.018, z: 0}
@@ -21448,6 +21448,20 @@ MonoBehaviour:
   redDanger: {r: 0, g: 0, b: 0, a: 0}
   joystick: {fileID: 1542152551}
   anim: {fileID: 0}
+--- !u!136 &557766616
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557766612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.005
+  m_Height: 0.033
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!95 &557766617
 Animator:
   serializedVersion: 3
@@ -29483,19 +29497,6 @@ MonoBehaviour:
   joystick: {fileID: 1542152551}
   TimerBarSat: {fileID: 53314743}
   Rails: {fileID: 681757844}
---- !u!65 &713974287
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713974285}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.035, z: 0.02}
-  m_Center: {x: 0, y: 0.015, z: 0}
 --- !u!54 &713974288
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29537,6 +29538,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &713974293
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713974285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.01
+  m_Height: 0.034
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.015, z: 0}
 --- !u!1001 &714161695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41036,7 +41051,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 02c2ba418f9df66478aac30f56ab6a33,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -230.85
+      value: -231
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02c2ba418f9df66478aac30f56ab6a33,
         type: 3}
@@ -49251,7 +49266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1178019459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74810,7 +74825,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.023, y: 0.025, z: 0.013}
+  m_Size: {x: 0.018, y: 0.025, z: 0.013}
   m_Center: {x: 0, y: 0.015, z: 0}
 --- !u!54 &1825741823
 Rigidbody:
@@ -77986,19 +78001,6 @@ MonoBehaviour:
   joystick: {fileID: 1542152551}
   TimerBarGear: {fileID: 1632808356}
   TimerBar_Script: {fileID: 0}
---- !u!65 &1901047988
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901047986}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.04, z: 0.02}
-  m_Center: {x: 0, y: 0.015, z: -0.007}
 --- !u!54 &1901047989
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -78167,6 +78169,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1901047995
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901047986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.012
+  m_Height: 0.035
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.015, z: -0.004}
 --- !u!1 &1904162490 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 514f23b5ef4e5a247b55df292845d11f,
@@ -78798,7 +78814,7 @@ GameObject:
   - component: {fileID: 1921255321}
   - component: {fileID: 1921255320}
   m_Layer: 5
-  m_Name: MiniMap_Toggle
+  m_Name: MiniMap_Toggle_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80256,7 +80272,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b2834cb37e7a3374d83ae2a04488dc78,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -229.97
+      value: -234
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2834cb37e7a3374d83ae2a04488dc78,
         type: 3}

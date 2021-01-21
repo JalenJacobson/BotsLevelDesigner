@@ -41,4 +41,12 @@ public class Gearbox_2 : CDI_Class
         anim.Play("GearTrigger");
         sndMessage.text = message;
     }
+
+    public void Deactivate()
+    {
+        gearmover_script.changeGearBox2();
+        gearmovergears_script.changeGearBox2();
+        gearmoverstart_script.changeGearBox2();
+        anim.Play("GearTrigger");
+    }
 }

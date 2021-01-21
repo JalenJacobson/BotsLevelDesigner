@@ -15,15 +15,14 @@ public Animator anim;
     
     public void lift()
     {
-  anim.Play("GearStandLift");        
+      anim.Play("GearStandLift");        
     }
     public virtual void moveleft()
     {
-  anim.Play("MoveLeft");
-      } 
-      public virtual void moveright(){
-  anim.Play("MoveRight");
-    
+      anim.Play("MoveLeft");
+    } 
+    public virtual void moveright(){
+      anim.Play("MoveRight");
     }    
     
         public void down()
