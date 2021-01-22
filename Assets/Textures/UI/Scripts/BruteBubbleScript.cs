@@ -29,14 +29,12 @@ public class BruteBubbleScript : MonoBehaviour
        anim.Play("ActionLightAnim");
        anim.Play("ActionCirclesAnim");
        anim.Play("ActionBruteAnim");
-       print("start");
    }
    public void actionBubbleStop()
    {
-       anim.Play("ActionLightStop");
-       anim.Play("ActionCirclesStop");
+        anim.Play("ActionLightStop");
+        anim.Play("ActionCirclesStop");
         anim.Play("ActionBruteClose");
-       print("actionBubbleStop");
    }
    
 }
