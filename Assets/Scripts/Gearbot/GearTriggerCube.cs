@@ -36,7 +36,7 @@ public class GearTriggerCube : MonoBehaviour
     void Start()
     {
         GearMove_Script = Gears.GetComponent<GearMove>();
-        connectPos = new Vector3(0.0f, -0.5f, -1.0f);
+        connectPos = new Vector3(-0.01f, 0.005f, -0.003f);
         Bubble_Script = ActionBubbles.GetComponent<BubbleScript>();
         Light_Script = ActionLight.GetComponent<BubbleScript>();
         Circle_Script = ActionCircles.GetComponent<BubbleScript>();
@@ -105,7 +105,8 @@ public class GearTriggerCube : MonoBehaviour
 
      public void Connect()
      {
-            connected = !connected;  
+            connected = !connected; 
+            Gears.transform.position = touching.transform.TransformPoint(connectPos);
             GearMove_Script.toggleFixPosition();
             Bubble_Script.actionBubbleStop();
             Act1Button_Script.activate1();
