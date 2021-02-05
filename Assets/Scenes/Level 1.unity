@@ -89827,6 +89827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brute
       objectReference: {fileID: 0}
+    - target: {fileID: 6930037048275493942, guid: e926d74cbbf054fde829c03e5d927d64,
+        type: 3}
+      propertyPath: sceneId
+      value: 3081071499
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e926d74cbbf054fde829c03e5d927d64, type: 3}
 --- !u!4 &2804548327870130240
@@ -95109,6 +95114,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5098255743281105370, guid: 0c78713b37da04d57abc55cc1d8b3c42,
+        type: 3}
+      propertyPath: sceneId
+      value: 3614286886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717799532200421306, guid: 0c78713b37da04d57abc55cc1d8b3c42,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6952863904051167468, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
       propertyPath: Connection
@@ -95239,7 +95254,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gears
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5717799532200421306, guid: 0c78713b37da04d57abc55cc1d8b3c42, type: 3}
+    - {fileID: 5098255743281105370, guid: 0c78713b37da04d57abc55cc1d8b3c42, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c78713b37da04d57abc55cc1d8b3c42, type: 3}
 --- !u!1 &6967955201713712340
 GameObject:
