@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44434434, g: 0.4938081, b: 0.5731608, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -201,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
       propertyPath: m_Name
-      value: Start Beacon 1 (3)
+      value: Start Beacon 4
       objectReference: {fileID: 0}
     - target: {fileID: 2509802017764886665, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
@@ -369,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
       propertyPath: m_Name
-      value: Start Beacon 1 (2)
+      value: Start Beacon 3
       objectReference: {fileID: 0}
     - target: {fileID: 2509802017764886665, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
@@ -967,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
       propertyPath: m_Name
-      value: Start Beacon 1 (1)
+      value: Start Beacon 2
       objectReference: {fileID: 0}
     - target: {fileID: 2509802017764886665, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
@@ -1932,6 +1932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0dfd9fb62755940ae7e729360f0ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   PumpSelectButton: {fileID: 0}
   Pump: {fileID: 0}
   anim: {fileID: 0}
@@ -2699,7 +2701,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
       propertyPath: m_Name
-      value: Start Beacon 1 (4)
+      value: Start Beacon 5
       objectReference: {fileID: 0}
     - target: {fileID: 2509802017764886665, guid: 598ff9ebc321f194dbfc8a922293b94d,
         type: 3}
@@ -3096,6 +3098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5202dd3f875d504fa85120a512248c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   SatSelectButton: {fileID: 0}
   SatBot: {fileID: 0}
   anim: {fileID: 0}
@@ -3446,109 +3450,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 56.250004, y: 63.290005, z: 81.455}
---- !u!1 &758341420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 758341424}
-  - component: {fileID: 758341423}
-  - component: {fileID: 758341422}
-  - component: {fileID: 758341421}
-  m_Layer: 0
-  m_Name: Network_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &758341421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758341420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0
---- !u!114 &758341422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758341420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Port: 7777
-  NoDelay: 1
-  Interval: 10
-  FastResend: 2
-  CongestionWindow: 0
-  SendWindowSize: 128
-  ReceiveWindowSize: 128
-  debugLog: 0
-  debugGUI: 0
---- !u!114 &758341423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758341420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
-  runInBackground: 1
-  autoStartServerBuild: 1
-  showDebugMessages: 0
-  serverTickRate: 30
-  offlineScene: 
-  onlineScene: 
-  transport: {fileID: 758341422}
-  networkAddress: localhost
-  maxConnections: 5
-  disconnectInactiveConnections: 0
-  disconnectInactiveTimeout: 60
-  authenticator: {fileID: 0}
-  playerPrefab: {fileID: 0}
-  autoCreatePlayer: 1
-  playerSpawnMethod: 0
-  spawnPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!4 &758341424
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758341420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 118.86, y: 0.55, z: -240.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764475205
 GameObject:
   m_ObjectHideFlags: 0
@@ -5020,6 +4921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0dfd9fb62755940ae7e729360f0ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   PumpSelectButton: {fileID: 0}
   Pump: {fileID: 0}
   anim: {fileID: 0}
@@ -5092,6 +4995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2148137dc05bbd243a31762d38196fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   LuzSelectButton: {fileID: 0}
   Luz: {fileID: 0}
   anim: {fileID: 0}
@@ -5326,6 +5231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f93272ea0792d4f80abaeaa3f0a84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   BruteSelectButton: {fileID: 0}
   Brute: {fileID: 0}
   anim: {fileID: 0}
@@ -5709,6 +5616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f93272ea0792d4f80abaeaa3f0a84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   BruteSelectButton: {fileID: 0}
   Brute: {fileID: 0}
   anim: {fileID: 0}
@@ -6032,6 +5941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5202dd3f875d504fa85120a512248c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   SatSelectButton: {fileID: 0}
   SatBot: {fileID: 0}
   anim: {fileID: 0}
@@ -6326,6 +6237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2148137dc05bbd243a31762d38196fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   LuzSelectButton: {fileID: 0}
   Luz: {fileID: 0}
   anim: {fileID: 0}
@@ -6552,6 +6465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931b3aae3e99d9e4a9db279dab63a8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   GearsSelectButton: {fileID: 0}
   Gears: {fileID: 0}
   anim: {fileID: 0}
@@ -6572,6 +6487,54 @@ MonoBehaviour:
   Gears: {fileID: 0}
   anim: {fileID: 0}
   touching: {fileID: 0}
+--- !u!1 &1522028779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522028780}
+  - component: {fileID: 1522028781}
+  m_Layer: 0
+  m_Name: UpdateSelected
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1522028780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522028779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.52335584, y: -0.17714071, z: 120.856384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522028781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522028779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0462e7b6f0dcf40e3acd533e659a84fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gears: {fileID: 919132147794512123}
+  Luz: {fileID: 919132148830739449}
+  Brute: {fileID: 919132149480783412}
+  Pump: {fileID: 919132148623166643}
+  Sat: {fileID: 919132149137789085}
 --- !u!1 &1542522691
 GameObject:
   m_ObjectHideFlags: 0
@@ -7170,6 +7133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931b3aae3e99d9e4a9db279dab63a8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  isLocalPlayer: 0
   GearsSelectButton: {fileID: 0}
   Gears: {fileID: 0}
   anim: {fileID: 0}

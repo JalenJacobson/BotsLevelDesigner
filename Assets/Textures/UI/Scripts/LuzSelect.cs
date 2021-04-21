@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LuzSelect : MonoBehaviour
+public class LuzSelect : HeroSelectPlayer
 {
     public GameObject LuzSelectButton;
     public GameObject Luz;
@@ -14,6 +14,7 @@ public class LuzSelect : MonoBehaviour
  // Use this for initialization
  void Start () {
         anim = GetComponent<Animator>();
+        name = "Luz";
  }
  
  // Update is called once per frame
@@ -24,18 +25,20 @@ public class LuzSelect : MonoBehaviour
     
    public void Up()
    {
-       anim.Play("LuzSelectUp");
-
+        anim.Play("LuzSelectUp");
+        
    }
    public void Down()
    {
        anim.Play("LuzSelectDown");
 
    }
-      public void LuzUp()
-   {
-       anim.Play("LuzUp");
-
-   }
+    public void LuzUp()
+    {
+        anim.Play("LuzUp");
+        isLocalPlayer = true;
+        isSelected = true;
+        sendState();
+    }
 }
    

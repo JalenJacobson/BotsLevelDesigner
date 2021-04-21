@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PumpSelect : MonoBehaviour
+public class PumpSelect : HeroSelectPlayer
 {
     public GameObject PumpSelectButton;
     public GameObject Pump;
@@ -14,6 +14,7 @@ public class PumpSelect : MonoBehaviour
  // Use this for initialization
  void Start () {
         anim = GetComponent<Animator>();
+        name = "Pump";
  }
  
  // Update is called once per frame
@@ -25,6 +26,7 @@ public class PumpSelect : MonoBehaviour
    public void Up()
    {
        anim.Play("PumpSelectUp");
+       
 
    }
    public void Down()
@@ -32,10 +34,12 @@ public class PumpSelect : MonoBehaviour
        anim.Play("PumpSelectDown");
 
    }
-      public void PumpUp()
-   {
-       anim.Play("PumpUp");
-
-   }
+    public void PumpUp()
+    {
+        anim.Play("PumpUp");
+        isLocalPlayer = true;
+        isSelected = true;
+        sendState();
+    }
 }
    

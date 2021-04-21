@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GearsSelect : MonoBehaviour
+public class GearsSelect : HeroSelectPlayer
 {
     public GameObject GearsSelectButton;
     public GameObject Gears;
@@ -14,6 +14,7 @@ public class GearsSelect : MonoBehaviour
  // Use this for initialization
  void Start () {
         anim = GetComponent<Animator>();
+        name = "Gears";
  }
  
  // Update is called once per frame
@@ -25,6 +26,7 @@ public class GearsSelect : MonoBehaviour
    public void Up()
    {
        anim.Play("GearsSelectUp");
+       
 
    }
    public void Down()
@@ -32,10 +34,12 @@ public class GearsSelect : MonoBehaviour
        anim.Play("GearsSelectDown");
 
    }
-      public void Gear()
-   {
-       anim.Play("GearUp");
-
-   }
+    public void Gear()
+    {
+        anim.Play("GearUp");
+        isLocalPlayer = true;
+        isSelected = true;
+        sendState();
+    }
 }
    

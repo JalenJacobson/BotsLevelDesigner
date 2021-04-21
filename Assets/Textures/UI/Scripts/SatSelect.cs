@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SatSelect : MonoBehaviour
+public class SatSelect : HeroSelectPlayer
 {
     public GameObject SatSelectButton;
     public GameObject SatBot;
@@ -14,6 +14,9 @@ public class SatSelect : MonoBehaviour
  // Use this for initialization
  void Start () {
         anim = GetComponent<Animator>();
+        isLocalPlayer = true;
+        isSelected = true;
+        name = "Sat";
  }
  
  // Update is called once per frame
@@ -25,6 +28,7 @@ public class SatSelect : MonoBehaviour
    public void Up()
    {
        anim.Play("SatSelectUp");
+       
 
    }
    public void Down()
@@ -32,10 +36,12 @@ public class SatSelect : MonoBehaviour
        anim.Play("SatSelectDown");
 
    }
-      public void Sat()
-   {
-       anim.Play("SatUp");
-
-   }
+    public void Sat()
+    {
+        anim.Play("SatUp");
+        isLocalPlayer = true;
+        isSelected = true;
+        sendState();
+    }
 }
    
