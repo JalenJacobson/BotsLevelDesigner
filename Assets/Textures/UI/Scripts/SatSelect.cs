@@ -14,15 +14,20 @@ public class SatSelect : HeroSelectPlayer
  // Use this for initialization
  void Start () {
         anim = GetComponent<Animator>();
-        isLocalPlayer = true;
-        isSelected = true;
         name = "Sat";
+        isUp = false;
+        isLocalPlayer = false;
+        isSelected = false;
+        sendState();
  }
  
  // Update is called once per frame
     void Update()
     {
-
+        if(!isUp && isSelected)
+        {
+            satUp();
+        }
     }
     
    public void Up()
@@ -36,12 +41,18 @@ public class SatSelect : HeroSelectPlayer
        anim.Play("SatSelectDown");
 
    }
-    public void Sat()
+
+    public void Select()
     {
-        anim.Play("SatUp");
         isLocalPlayer = true;
         isSelected = true;
         sendState();
+    }
+
+    public void satUp()
+    {
+        isUp = true;
+        anim.Play("SatUp");
     }
 }
    

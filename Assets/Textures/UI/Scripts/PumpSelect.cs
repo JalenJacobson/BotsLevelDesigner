@@ -15,12 +15,19 @@ public class PumpSelect : HeroSelectPlayer
  void Start () {
         anim = GetComponent<Animator>();
         name = "Pump";
+        isUp = false;
+        isLocalPlayer = false;
+        isSelected = false;
+        sendState();
  }
  
  // Update is called once per frame
     void Update()
     {
-
+        if(!isUp && isSelected)
+        {
+            pumpUp();
+        }
     }
     
    public void Up()
@@ -34,12 +41,18 @@ public class PumpSelect : HeroSelectPlayer
        anim.Play("PumpSelectDown");
 
    }
-    public void PumpUp()
+
+    public void Select()
     {
-        anim.Play("PumpUp");
         isLocalPlayer = true;
         isSelected = true;
         sendState();
+    }
+
+    public void pumpUp()
+    {
+        isUp = true;
+        anim.Play("PumpUp");
     }
 }
    

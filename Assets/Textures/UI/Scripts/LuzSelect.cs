@@ -15,12 +15,23 @@ public class LuzSelect : HeroSelectPlayer
  void Start () {
         anim = GetComponent<Animator>();
         name = "Luz";
+        isUp = false;
+        isLocalPlayer = false;
+        isSelected = false;
+        sendState();
  }
  
  // Update is called once per frame
     void Update()
     {
-
+        if(!isUp && isSelected)
+        {
+            luzUp();
+        }
+        else if(isUp && !isSelected)
+        {
+            luzDown();
+        }
     }
     
    public void Up()
@@ -33,12 +44,24 @@ public class LuzSelect : HeroSelectPlayer
        anim.Play("LuzSelectDown");
 
    }
-    public void LuzUp()
+
+    public void toggleSelect()
     {
-        anim.Play("LuzUp");
-        isLocalPlayer = true;
-        isSelected = true;
+        isLocalPlayer = !isLocalPlayer;
+        isSelected = !isSelected;
         sendState();
+    }
+
+    public void luzUp()
+    {
+        isUp = true;
+        anim.Play("LuzUp");
+    }
+
+    public void luzDown()
+    {
+        isUp = false;
+        anim.Play("LuzStart");
     }
 }
    

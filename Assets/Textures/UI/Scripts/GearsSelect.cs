@@ -15,12 +15,23 @@ public class GearsSelect : HeroSelectPlayer
  void Start () {
         anim = GetComponent<Animator>();
         name = "Gears";
+        isUp = false;
+        isLocalPlayer = false;
+        isSelected = false;
+        sendState();
  }
  
  // Update is called once per frame
     void Update()
     {
-
+        if(!isUp && isSelected)
+        {
+            gearsUp();
+        }
+        else if(isUp && !isSelected)
+        {
+            gearsDown();
+        }
     }
     
    public void Up()
@@ -34,12 +45,24 @@ public class GearsSelect : HeroSelectPlayer
        anim.Play("GearsSelectDown");
 
    }
-    public void Gear()
+
+    public void toggleSelect()
     {
-        anim.Play("GearUp");
-        isLocalPlayer = true;
-        isSelected = true;
+        isLocalPlayer = !isLocalPlayer;
+        isSelected = !isSelected;
         sendState();
+    }
+
+    public void gearsUp()
+    {
+        isUp = true;
+        anim.Play("GearUp");
+    }
+
+    public void gearsDown()
+    {
+        isUp = false;
+        anim.Play("GearDown");
     }
 }
    
