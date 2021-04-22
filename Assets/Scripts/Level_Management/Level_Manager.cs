@@ -16,12 +16,25 @@ public class Level_Manager : MonoBehaviour
     public bool startTheGame;
     public bool gameStarted;
 
+    public int playersInParty;
+    public int playersReady;
+
     private int frameCount = 0;
     // private string selectedHero;
 
-    void Start()
+    public async void Start()
     {
         sceneToGoTo = 1;
+        addPlayerToParty();
+        
+    }
+
+    public async void addPlayerToParty()
+    {
+        updateScene();
+        print(playersInParty);
+        playersInParty ++;
+        print(playersInParty);
         // selectedHeroName = PlayerPrefs.GetString("selectedHero");
         // print(selectedHeroName);
         sendState();
@@ -40,17 +53,22 @@ public class Level_Manager : MonoBehaviour
         }
 
         frameCount++;
-        if(frameCount%10 == 0)
+        if(frameCount%100 == 0)
         {
             updateScene();
         }
+    }
+
+    public void ready()
+    {
+        playersReady ++;
+        sendState();
     }
 
     public void startGame()
     {
         startTheGame = true;
         sendState();
-
     }
 
     public void LoadNextLevel()
@@ -110,6 +128,8 @@ public class Level_Manager : MonoBehaviour
         scene.name = "levelmanager";
         scene.sceneNumber = sceneToGoTo;
         scene.startTheGame = startTheGame;
+        scene.playersInParty = playersInParty;
+        scene.playersReady = playersReady;
         
     
         string json = JsonUtility.ToJson(scene);
@@ -120,17 +140,18 @@ public class Level_Manager : MonoBehaviour
         var responseString = await response.Content.ReadAsStringAsync();
     }
 
-    async void updateScene()
+    public async void updateScene()
     {
         // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
         var positionResponse = await client.PostAsync("http://localhost:7000/scene", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
-        print(positionResponseString);
         var scene = JsonUtility.FromJson<SceneUpdate>(positionResponseString);
-        print(scene.levelmanager.startTheGame);
+        print(scene.levelmanager.playersInParty);
         startTheGame = scene.levelmanager.startTheGame;
-        
+        playersInParty = scene.levelmanager.playersInParty;
+        playersReady = scene.levelmanager.playersReady;
+        print(playersInParty);
     }
 
 //================= Character Selection =====================
@@ -252,6 +273,9 @@ public class Scene
     public string name;
     public int sceneNumber;
     public bool startTheGame;
+
+    public int playersInParty;
+    public int playersReady;
 }
 
 [Serializable]
