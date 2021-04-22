@@ -28,6 +28,10 @@ public class PumpSelect : HeroSelectPlayer
         {
             pumpUp();
         }
+        else if(isUp && !isSelected)
+        {
+            pumpDown();
+        }
     }
     
    public void Up()
@@ -42,10 +46,10 @@ public class PumpSelect : HeroSelectPlayer
 
    }
 
-    public void Select()
+    public void toggleSelect()
     {
-        isLocalPlayer = true;
-        isSelected = true;
+        isLocalPlayer = !isLocalPlayer;
+        isSelected = !isSelected;
         sendState();
     }
 
@@ -53,6 +57,12 @@ public class PumpSelect : HeroSelectPlayer
     {
         isUp = true;
         anim.Play("PumpUp");
+    }
+
+    public void pumpDown()
+    {
+        isUp = false;
+        anim.Play("PumpStart");
     }
 }
    

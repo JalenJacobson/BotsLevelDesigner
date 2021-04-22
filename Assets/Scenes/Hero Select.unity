@@ -2057,7 +2057,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1112660109}
-        m_MethodName: Select
+        m_MethodName: toggleSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3205,7 +3205,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1375402813}
-        m_MethodName: Select
+        m_MethodName: toggleSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4265,8 +4265,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1112660110}
-        m_MethodName: Select
+      - m_Target: {fileID: 1112660109}
+        m_MethodName: toggleSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4480,7 +4480,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1461189342}
-        m_MethodName: LoadNextLevel
+        m_MethodName: startGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7674,8 +7674,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1375402814}
-        m_MethodName: Select
+      - m_Target: {fileID: 1375402813}
+        m_MethodName: toggleSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

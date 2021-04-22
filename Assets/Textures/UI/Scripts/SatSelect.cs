@@ -28,6 +28,10 @@ public class SatSelect : HeroSelectPlayer
         {
             satUp();
         }
+        else if(isUp && !isSelected)
+        {
+            satDown();
+        }
     }
     
    public void Up()
@@ -42,10 +46,10 @@ public class SatSelect : HeroSelectPlayer
 
    }
 
-    public void Select()
+    public void toggleSelect()
     {
-        isLocalPlayer = true;
-        isSelected = true;
+        isLocalPlayer = !isLocalPlayer;
+        isSelected = !isSelected;
         sendState();
     }
 
@@ -53,6 +57,12 @@ public class SatSelect : HeroSelectPlayer
     {
         isUp = true;
         anim.Play("SatUp");
+    }
+
+    public void satDown()
+    {
+        isUp = false;
+        anim.Play("SatDown");
     }
 }
    
