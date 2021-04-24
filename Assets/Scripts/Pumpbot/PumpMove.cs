@@ -16,6 +16,7 @@ public class PumpMove : Player
 
     void Start()
     {
+        name = "Pump";
         startPos = new Vector3(69f, 0.48f, -230f);
         transform.position = startPos;
         anim = GetComponent<Animator>();
@@ -47,6 +48,8 @@ public class PumpMove : Player
         }
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
+        print("PUMPSENDPOS");
+        sendPos();
     }
 
     // public void toggleSelectedState (){

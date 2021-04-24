@@ -12,6 +12,7 @@ public class BruteMove : Player
 
     void Start()
     {
+        name = "Brute";
         moveSpeed = 7f;
         startPos = new Vector3(63.5f, 0.77f, -230f);
         transform.position = startPos;

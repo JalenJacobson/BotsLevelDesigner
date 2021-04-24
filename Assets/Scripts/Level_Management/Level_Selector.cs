@@ -20,9 +20,9 @@ public class Level_Selector : MonoBehaviour
     {
         LevelManager_script.setSceneToGoTo(newScene);
         PlayerPrefs.SetInt("currentLevel", newScene);
-        other.gameObject.transform.position = transform.TransformPoint(hoverPosition);
-        toggleNodeFixPosition(other.gameObject);
-        StartCoroutine(ExecuteAfterTime(.5f, other.gameObject));
+        // other.gameObject.transform.position = transform.TransformPoint(hoverPosition);
+        // toggleNodeFixPosition(other.gameObject);
+        // StartCoroutine(ExecuteAfterTime(.5f, other.gameObject));
     }
 
     void Update()

@@ -157,23 +157,23 @@ public class Level_Manager : MonoBehaviour
 //================= Character Selection =====================
     public void setPrefsGear()
     {
-        PlayerPrefs.SetInt("selectedHero", 1);
+        PlayerPrefs.SetInt("selectedHero", 0);
     }
     public void setPrefsLuz()
     {
-        PlayerPrefs.SetInt("selectedHero", 2);
+        PlayerPrefs.SetInt("selectedHero", 1);
     }
     public void setPrefsBrute()
     {
-        PlayerPrefs.SetInt("selectedHero", 3);
+        PlayerPrefs.SetInt("selectedHero", 2);
     }
     public void setPrefsPump()
     {
-        PlayerPrefs.SetInt("selectedHero", 4);
+        PlayerPrefs.SetInt("selectedHero", 3);
     }
     public void setPrefsSat()
     {
-        PlayerPrefs.SetInt("selectedHero", 5);
+        PlayerPrefs.SetInt("selectedHero", 4);
     }
     
     // public void deselectAll()

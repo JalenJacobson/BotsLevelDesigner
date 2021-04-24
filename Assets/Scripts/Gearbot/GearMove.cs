@@ -9,6 +9,7 @@ public class GearMove : Player
 
     void Start()
     {
+        name = "Gears";
         startPos = new Vector3(47f, 1.44f, -231f);
         transform.position = startPos;
         TimerBar_Script = TimerBarGear.GetComponent<TimeBarGear>();

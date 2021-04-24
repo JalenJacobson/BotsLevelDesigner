@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Net.Http;
+using System;
+using System.Text;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +12,12 @@ public class Player : MonoBehaviour
     public float rotateSpeed = 10;
     public Rigidbody rb;
     public bool toggleSelected;
+
+    public bool isLocalPlayer;
+    public bool isBeingCarried;
+    public string name;
+    public GameObject Brute;
+    public Vector3 liftPos;
     public Vector3 direction;
     public bool fixPosition = false;
     public Vector3 startPos;
@@ -22,6 +31,7 @@ public class Player : MonoBehaviour
     public Color blueCircuitField;
     public Color redDanger;
 
+    private static readonly HttpClient client = new HttpClient();
 
     public Joystick joystick;
 
@@ -33,7 +43,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (toggleSelected == true && fixPosition == false){
+        if (isLocalPlayer == true && fixPosition == false){
             Movement();
         }
     }
@@ -72,6 +82,43 @@ public class Player : MonoBehaviour
         }
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
+
+        sendPos();
+    }
+
+    async public void sendPos()
+    {
+        // var currentPos = transform.position.Round(2);
+        // time = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+        var robot = new RobotPosition();
+        robot.name = name;
+        robot.position = new Position();
+        robot.position.position = transform.position;
+        robot.position.rotation = transform.rotation;
+    
+        string json = JsonUtility.ToJson(robot);
+
+        // var response = await client.PostAsync("http://74.207.254.19:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://localhost:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
+
+        var responseString = await response.Content.ReadAsStringAsync();
+    }
+
+    public async void sendState()
+    {
+        // time = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+        var robot = new RobotState();
+        robot.name = name;
+        robot.state = new State();
+        robot.state.isBeingCarried = isBeingCarried;
+        robot.state.toggleSelected = toggleSelected;
+    
+        string json = JsonUtility.ToJson(robot);
+
+        // var response = await client.PostAsync("http://74.207.254.19:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://localhost:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
+
+        var responseString = await response.Content.ReadAsStringAsync();
     }
 
     public void toggleSelectedState (){
@@ -155,4 +202,35 @@ public class Player : MonoBehaviour
         DangerState.text = "None";
         DangerState.color = greenConsole;
     }
+}
+
+
+[Serializable]
+public class Position
+{
+    public Vector3 position;
+    public Quaternion rotation;
+}
+
+[Serializable]
+public class RobotPosition
+{
+    public string name;
+    public Position position;
+}
+
+[Serializable]
+public class RobotState
+{
+    public string name;
+    public State state;
+}
+
+[Serializable]
+public class State
+{
+    // public bool isLocalPlayer;
+    // public bool toggleSelected;
+    public bool isBeingCarried;
+    public bool toggleSelected;
 }

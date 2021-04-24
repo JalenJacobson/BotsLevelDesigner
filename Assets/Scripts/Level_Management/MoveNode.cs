@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoveNode : MonoBehaviour
+public class MoveNode : Player
 {
     public float moveSpeed = 10;
     public float rotateSpeed = 10;
@@ -27,13 +27,14 @@ public class MoveNode : MonoBehaviour
 
     void Start()
     {
+        name = "node";
         startPos = new Vector3(-143.47f, 4.22f, -895.7f);
         transform.position = startPos;
     }
 
     void FixedUpdate()
     {
-        if (toggleSelected == true && fixPosition == false){
+        if (isLocalPlayer == true && fixPosition == false){
             Movement();
         }
     }

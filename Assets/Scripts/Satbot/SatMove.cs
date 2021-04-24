@@ -15,6 +15,7 @@ public class SatMove : Player
 
     void Start()
     {
+        name = "Sat";
         startPos = new Vector3(58f, 1.3f, -230f);
         transform.position = startPos;
         Rails_Script = Rails.GetComponent<SatBotAnim>();
@@ -39,6 +40,7 @@ public class SatMove : Player
         }
 
         rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * direction);
+        sendPos();
     }
 
     void Update()

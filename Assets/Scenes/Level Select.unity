@@ -1409,6 +1409,28 @@ MonoBehaviour:
   rotateSpeed: 15
   rb: {fileID: 499876966}
   toggleSelected: 1
+  isLocalPlayer: 1
+  isBeingCarried: 0
+  name: 
+  Brute: {fileID: 0}
+  liftPos: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
+  fixPosition: 0
+  startPos: {x: 0, y: 0, z: 0}
+  breathRemaining: 5
+  touchingAirBubble: 0
+  inWater: 0
+  DangerField: {fileID: 0}
+  DangerState: {fileID: 0}
+  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
+  greenConsole: {r: 0, g: 0, b: 0, a: 0}
+  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
+  redDanger: {r: 0, g: 0, b: 0, a: 0}
+  joystick: {fileID: 486609888}
+  moveSpeed: 70
+  rotateSpeed: 15
+  rb: {fileID: 499876966}
+  toggleSelected: 1
   direction: {x: 0, y: 0, z: 0}
   fixPosition: 0
   startPos: {x: 0, y: 0, z: 0}
