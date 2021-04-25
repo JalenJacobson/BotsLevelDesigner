@@ -107,23 +107,42 @@ public class UpdateBotPosition : MonoBehaviour
 
         // print("HEEEEEEEEEYEYEYE  " + robots.Pump.position.position);
         // Gears
-        GearMove_Script.rb.MovePosition(robots.Gears.position.position);
-        Gears.transform.rotation = Quaternion.Slerp(Gears.transform.rotation, robots.Gears.position.rotation,  Time.deltaTime * rotationSpeed);
+        if(robots.Gears.position != null)
+        {
+            print("hellotherjay1");
+            GearMove_Script.rb.MovePosition(robots.Gears.position.position);
+            Gears.transform.rotation = Quaternion.Slerp(Gears.transform.rotation, robots.Gears.position.rotation,  Time.deltaTime * rotationSpeed);
+        }
+        
         // Luz
-        LuzMove_Script.rb.MovePosition(robots.Luz.position.position);
-        Luz.transform.rotation = Quaternion.Slerp(Luz.transform.rotation, robots.Luz.position.rotation,  Time.deltaTime * rotationSpeed);
-        // LuzMove_Script.isBeingCarried = robots.Luz.state.isBeingCarried;
+        if(robots.Luz.position != null)
+        {
+            print("hellotherjay2");
+            LuzMove_Script.rb.MovePosition(robots.Luz.position.position);
+            Luz.transform.rotation = Quaternion.Slerp(Luz.transform.rotation, robots.Luz.position.rotation,  Time.deltaTime * rotationSpeed);
+        }
+        
         // Brute
-        BruteMove_Script.rb.MovePosition(robots.Brute.position.position);
-        Brute.transform.rotation = Quaternion.Slerp(Brute.transform.rotation, robots.Brute.position.rotation,  Time.deltaTime * rotationSpeed);
+        if(robots.Brute.position != null)
+        {
+            print("hellotherjay3");
+            BruteMove_Script.rb.MovePosition(robots.Brute.position.position);
+            Brute.transform.rotation = Quaternion.Slerp(Brute.transform.rotation, robots.Brute.position.rotation,  Time.deltaTime * rotationSpeed);
+        }
         // Pump
-        
-        PumpMove_Script.rb.MovePosition(robots.Pump.position.position);
-        
-        Pump.transform.rotation = Quaternion.Slerp(Pump.transform.rotation, robots.Pump.position.rotation,  Time.deltaTime * rotationSpeed);
+        if(robots.Pump.position != null)
+        {
+            print("hellotherjay4");
+            PumpMove_Script.rb.MovePosition(robots.Pump.position.position);
+            Pump.transform.rotation = Quaternion.Slerp(Pump.transform.rotation, robots.Pump.position.rotation,  Time.deltaTime * rotationSpeed);
+        }
         // Sat
-        SatMove_Script.rb.MovePosition(robots.Sat.position.position);
-        Sat.transform.rotation = Quaternion.Slerp(Sat.transform.rotation, robots.Sat.position.rotation,  Time.deltaTime * rotationSpeed);
+        if(robots.Sat.position != null)
+        {
+            print("hellotherjay5");
+            SatMove_Script.rb.MovePosition(robots.Sat.position.position);
+            Sat.transform.rotation = Quaternion.Slerp(Sat.transform.rotation, robots.Sat.position.rotation,  Time.deltaTime * rotationSpeed);
+        }
     }
     async void updateStates()
     {

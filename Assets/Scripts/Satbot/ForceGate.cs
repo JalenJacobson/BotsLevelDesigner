@@ -5,6 +5,7 @@ using UnityEngine;
 public class ForceGate : MonoBehaviour
 {
    public Animator anim;
+   public bool forceGateDownBool;
 
     // Use this for initialization
     void Start () 
@@ -15,7 +16,10 @@ public class ForceGate : MonoBehaviour
     // Update is called once per frame
     void Update () 
     {
-        
+       if(forceGateDownBool)
+       {
+           forceGateDown();
+       } 
     }
 
     public void forceGateDown()
