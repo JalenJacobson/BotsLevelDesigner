@@ -4,6 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    {
+        "name": "nodeserver",
+        "program": "c:/Users/jalen/OneDrive/Desktop/BotServer/botserver/server.js",
+        "request": "launch",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "pwa-node"
+    },
         {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",

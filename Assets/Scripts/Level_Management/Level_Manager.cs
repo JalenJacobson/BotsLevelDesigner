@@ -55,7 +55,7 @@ public class Level_Manager : MonoBehaviour
         frameCount++;
         if(frameCount%100 == 0)
         {
-            updateScene();
+         updateScene();
         }
     }
 
