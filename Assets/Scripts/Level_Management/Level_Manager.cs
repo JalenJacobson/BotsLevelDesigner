@@ -49,7 +49,7 @@ public class Level_Manager : MonoBehaviour
 
         if(sceneToGoTo != 1 && Input.GetKeyDown("q"))
         {
-            LoadNextLevel();
+            startGame();
         }
 
         frameCount++;
