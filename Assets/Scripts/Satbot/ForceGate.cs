@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForceGate : MonoBehaviour
+public class ForceGate : IDI_Base
 {
    public Animator anim;
-   public bool forceGateDownBool;
 
     // Use this for initialization
     void Start () 
     {
         anim = GetComponent<Animator>();
     }
+
+    public void toggleActive()
+    {
+        active = !active;
+        sendState();
+    }
  
     // Update is called once per frame
     void Update () 
     {
-       if(forceGateDownBool)
+       if(active)
        {
            forceGateDown();
        } 

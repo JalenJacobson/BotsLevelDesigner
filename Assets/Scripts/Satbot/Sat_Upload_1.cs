@@ -24,18 +24,23 @@ public class Sat_Upload_1 : MonoBehaviour
     {
         
     }
-
-    void Activate(string uploadType)
+    
+    void Activate()
     {
-        if(uploadType == "forceGate")
-        {
-            forcegate_script.forceGateDown();
-        }
-        else if(uploadType == "endGame")
-        {
-            print("activate endgame sequence");
-            levelcomplete_script.deliverVirus();
-        }
-        
+        forcegate_script.toggleActive();
     }
+
+    // void Activate(string uploadType)
+    // {
+    //     if(uploadType == "forceGate")
+    //     {
+    //         forcegate_script.forceGateDown();
+    //     }
+    //     else if(uploadType == "endGame")
+    //     {
+    //         print("activate endgame sequence");
+    //         levelcomplete_script.deliverVirus();
+    //     }
+        
+    // }
 }
