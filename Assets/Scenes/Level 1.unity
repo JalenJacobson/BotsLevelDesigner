@@ -49071,7 +49071,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 28d434fd76bcf354cb7d0450d87c80b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 83.12
+      value: 83.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28d434fd76bcf354cb7d0450d87c80b5,
         type: 3}
@@ -49081,7 +49081,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 28d434fd76bcf354cb7d0450d87c80b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -286.28
+      value: -286.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28d434fd76bcf354cb7d0450d87c80b5,
         type: 3}
@@ -49286,6 +49286,7 @@ MonoBehaviour:
   redDanger: {r: 0, g: 0, b: 0, a: 0}
   GateDoors: {fileID: 1727446765}
   GateGearObj: {fileID: 1964763454}
+  gategearactivate_script: {fileID: 0}
 --- !u!95 &1277760930
 Animator:
   serializedVersion: 3
@@ -71243,7 +71244,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c2ae0a722042ec84498f45254f6dff98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 83.13
+      value: 83.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2ae0a722042ec84498f45254f6dff98,
         type: 3}
@@ -71253,7 +71254,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c2ae0a722042ec84498f45254f6dff98,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -282.22
+      value: -282.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2ae0a722042ec84498f45254f6dff98,
         type: 3}
@@ -71401,6 +71402,8 @@ MonoBehaviour:
   GateDoors: {fileID: 1727446765}
   GateLight2: {fileID: 1520800728}
   PowerLight2: {fileID: 2141404944}
+  GatePowerConnection2: {fileID: 1865917386}
+  GatePowerConnection2_script: {fileID: 0}
 --- !u!65 &1924221001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87409,7 +87412,7 @@ PrefabInstance:
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.62820876
+      value: -0.6282088
       objectReference: {fileID: 0}
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
@@ -87419,7 +87422,7 @@ PrefabInstance:
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7780448
+      value: 0.7780449
       objectReference: {fileID: 0}
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}

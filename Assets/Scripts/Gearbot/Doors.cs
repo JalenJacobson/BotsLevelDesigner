@@ -34,8 +34,8 @@ public IDI_Base GateGearObj2_script;
  
  // Update is called once per frame
  public virtual void Update () {
-        // if (GatePowerConnection1_script.active == true && GatePowerConnection2_script.active == true && GateGearObj_script.active == true && GateGearObj2_script.active == true)
-        if (GatePowerConnection1_script.active == true  && GateGearObj_script.active == true)
+        if (GatePowerConnection1_script.active == true && GatePowerConnection2_script.active == true && GateGearObj_script.active == true && GateGearObj2_script.active == true)
+        // if (GatePowerConnection1_script.active == true  && GateGearObj_script.active == true)
         {
             anim.Play("Doors");
 

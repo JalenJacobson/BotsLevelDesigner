@@ -12,12 +12,18 @@ public class PowerConnection_2 : CDI_Class
     LightOn2 lightactivate_script;
     public GameObject PowerLight2;
     LightOn2 powerlight_script;
+
+
+    public GameObject GatePowerConnection2;
+
+    public IDI_Base GatePowerConnection2_script;
     // Start is called before the first frame update
     void Start()
     {
         // doorsOpen_script = GateDoors.GetComponent<Doors>();
         lightactivate_script = GateLight2.GetComponent<LightOn2>();
         powerlight_script = PowerLight2.GetComponent<LightOn2>();
+        GatePowerConnection2_script = GatePowerConnection2.GetComponent<IDI_Base>();
         // message = "Gate Power 2 Activated";
     }
 
@@ -29,8 +35,8 @@ public class PowerConnection_2 : CDI_Class
 
     public override void Activate(Text sndMessage)
     {
-        pos = 1; 
-        // doorsOpen_script.changePowerConnection2();
+        
+        GatePowerConnection2_script.toggleActive();
         lightactivate_script.changePowerConnection2();
         powerlight_script.changePowerConnection2();
         sndMessage.text = message;
