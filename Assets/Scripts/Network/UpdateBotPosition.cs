@@ -98,8 +98,8 @@ public class UpdateBotPosition : MonoBehaviour
     {
 
         
-        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        var positionResponse = await client.PostAsync("http://localhost:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://localhost:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var robots = JsonUtility.FromJson<RobotsPositions>(positionResponseString);
@@ -146,8 +146,8 @@ public class UpdateBotPosition : MonoBehaviour
     }
     async void updateStates()
     {
-        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        var positionResponse = await client.PostAsync("http://localhost:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://localhost:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var robots = JsonUtility.FromJson<RobotsStates>(positionResponseString);
@@ -166,6 +166,7 @@ public class UpdateBotPosition : MonoBehaviour
         // Pump
         PumpMove_Script.isBeingCarried = robots.Pump.state.isBeingCarried;
         PumpMove_Script.toggleSelected = robots.Pump.state.toggleSelected;
+        PumpMove_Script.blueWall = robots.Pump.state.blueWall;
         // Sat
         SatMove_Script.isBeingCarried = robots.Sat.state.isBeingCarried;
         SatMove_Script.toggleSelected = robots.Sat.state.toggleSelected;

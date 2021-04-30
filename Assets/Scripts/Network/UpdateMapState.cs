@@ -61,8 +61,8 @@ public class UpdateMapState : MonoBehaviour
     {
 
         print("running function");
-        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        var positionResponse = await client.PostAsync("http://localhost:7000/mapstates", new StringContent("{}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/mapstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://localhost:7000/mapstates", new StringContent("{}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var response = JsonUtility.FromJson<MapStateResponse>(positionResponseString);

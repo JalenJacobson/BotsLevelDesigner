@@ -23,11 +23,6 @@ public class BruteTriggerCube : MonoBehaviour
     public GameObject Brute;
     MoveBruteW AnimArms_Script;
 
-    public float force; 
-    public float boxWeight;
-    public float forceIncreaser = 1f;
-    public float forceReducer = .5f;
-    public float forceReducerConstant;
     // public GameObject TimerBarBrute;
     // TimeBarBrute TimerBarBrute_Script;
 
@@ -40,7 +35,6 @@ public class BruteTriggerCube : MonoBehaviour
         Circle_Script = ActionCircles.GetComponent<BruteBubbleScript>();
         CancelButton_Script = Cancel.GetComponent<CancelButton>();
         AnimArms_Script = Brute.GetComponent<MoveBruteW>();
-        force = 0f;
         // TimerBarBrute_Script = TimerBarBrute.GetComponent<TimeBarBrute>();
     }
 
@@ -62,26 +56,6 @@ public class BruteTriggerCube : MonoBehaviour
             Light_Script.actionBubbleStart();
             Circle_Script.actionBubbleStart();   
         }
-        if(characterName.Contains("Box"))
-        {
-            if(touching == null)
-            {
-                touching = other.gameObject; 
-            }
-            Bubble_Script.actionBubbleStart();
-            Light_Script.actionBubbleStart();
-            Circle_Script.actionBubbleStart(); 
-            boxWeight = touching.GetComponent<Box>().weight;
-            
-            if(force > boxWeight)
-            {
-                touching.SendMessage("unfreeze");
-            }
-            else if(force < boxWeight)
-            {
-                touching.SendMessage("freeze");
-            }
-        }
         
     }
 
@@ -100,13 +74,6 @@ public class BruteTriggerCube : MonoBehaviour
         Circle_Script.actionBubbleStop();
         // lifting = false;
         }
-        if(characterName.Contains("Box"))
-        {
-            boxWeight = 0f;
-            // force = 0f;
-            forceIncreaser = 1.25f;
-            forceReducer = .2f;
-        }
      }
 
      void Update()
@@ -120,33 +87,7 @@ public class BruteTriggerCube : MonoBehaviour
             Bubble_Script.actionBubbleStop();
             AnimArms_Script.Lift(); 
         }
-        if(force > 0)
-        {
-            force = force - forceReducer * Time.deltaTime;
-        }
         
-        if(force > 30f)
-        {
-            forceReducerConstant = 3f;
-        }
-        else if(force > 25f)
-        {
-            forceReducerConstant = 2.75f;
-        }
-        else if(force > 15f)
-        {
-            forceReducerConstant = 2.55f;
-        }
-        else{forceReducerConstant = 2.5f;}
-
-        if(forceIncreaser < 1.25)
-        {
-            forceIncreaser = forceIncreaser + .1f * Time.deltaTime;
-        }
-        if(forceReducer > .5)
-        {
-            forceReducer = forceReducer - .1f * Time.deltaTime;
-        }
         
      }
 
@@ -165,28 +106,9 @@ public class BruteTriggerCube : MonoBehaviour
         {
             lifting = !lifting;
         }
-        else if(touching.name.Contains("Box"))
-        {
-            increaseForce();
-        }
     }
 
-    public void increaseForce()
-    {
-        force = force + (1f * forceIncreaser);
-        if(forceIncreaser > .5)
-        {
-            forceIncreaser = forceIncreaser - .05f;
-            
-        }
-        if(forceReducer < forceReducerConstant)
-        {
-            forceReducer = forceReducer + .1f;
-        }
-        
-    }
 }
 
 
-// I can do about 5 clicks in a second. if I want it to reach a 0 point I need the amount of increase of 5 clicks to be about the same as the amout of decrease of 1 second.
-//so if, at the 0 point I am getting .5 per click for 2.5 increase then I need the decrease to be 2.5 in one second. 
+ 

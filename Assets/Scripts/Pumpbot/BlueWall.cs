@@ -31,10 +31,10 @@ public class BlueWall : MonoBehaviour
  // Update is called once per frame
     public void Play()
     {
-  anim.Play("BlueWallOpen");
+      anim.Play("BlueWallOpen");
     }
     public void Stop()
     {
-  anim.Play("BlueWallClose");
+      anim.Play("BlueWallClose");
     }
 }

@@ -84,7 +84,8 @@ public class PumpTriggerCube : MonoBehaviour
             Bubble_Script.actionBubbleStop();
             Light_Script.actionBubbleStop();
             Circle_Script.actionBubbleStop();
-            BlueWall_Script.Stop();
+            // BlueWall_Script.Stop();
+            PumpMove_Script.BlueWallClose();
             CancelButton_Script.CancelStop();
             Bubble_Script2.actionBubble2Stop();
         }

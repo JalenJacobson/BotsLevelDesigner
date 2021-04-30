@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public bool toggleSelected;
 
+    public bool blueWall;
     public bool isLocalPlayer;
     public bool isBeingCarried;
     public string name;
@@ -98,8 +99,8 @@ public class Player : MonoBehaviour
     
         string json = JsonUtility.ToJson(robot);
 
-        // var response = await client.PostAsync("http://74.207.254.19:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
-        var response = await client.PostAsync("http://localhost:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://74.207.254.19:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        // var response = await client.PostAsync("http://localhost:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
 
         var responseString = await response.Content.ReadAsStringAsync();
     }
@@ -112,11 +113,13 @@ public class Player : MonoBehaviour
         robot.state = new State();
         robot.state.isBeingCarried = isBeingCarried;
         robot.state.toggleSelected = toggleSelected;
+        print("THIS SHOULD OPEN WALL " + blueWall);
+        robot.state.blueWall = blueWall;
     
         string json = JsonUtility.ToJson(robot);
 
-        // var response = await client.PostAsync("http://74.207.254.19:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
-        var response = await client.PostAsync("http://localhost:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://74.207.254.19:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        // var response = await client.PostAsync("http://localhost:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
 
         var responseString = await response.Content.ReadAsStringAsync();
     }
@@ -230,7 +233,7 @@ public class RobotState
 public class State
 {
     // public bool isLocalPlayer;
-    // public bool toggleSelected;
+    public bool blueWall;
     public bool isBeingCarried;
     public bool toggleSelected;
 }

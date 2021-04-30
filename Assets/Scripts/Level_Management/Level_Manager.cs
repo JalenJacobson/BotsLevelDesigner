@@ -134,16 +134,16 @@ public class Level_Manager : MonoBehaviour
     
         string json = JsonUtility.ToJson(scene);
 
-        // var response = await client.PostAsync("http://74.207.254.19:7000/scene/save", new StringContent(json, Encoding.UTF8, "application/json"));
-        var response = await client.PostAsync("http://localhost:7000/scene/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://74.207.254.19:7000/scene/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        // var response = await client.PostAsync("http://localhost:7000/scene/save", new StringContent(json, Encoding.UTF8, "application/json"));
 
         var responseString = await response.Content.ReadAsStringAsync();
     }
 
     public async void updateScene()
     {
-        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        var positionResponse = await client.PostAsync("http://localhost:7000/scene", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/scene", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://localhost:7000/scene", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var scene = JsonUtility.FromJson<SceneUpdate>(positionResponseString);

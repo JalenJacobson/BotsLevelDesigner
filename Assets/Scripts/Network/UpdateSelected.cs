@@ -43,8 +43,8 @@ public class UpdateSelected : MonoBehaviour
 
     async void updateSelected()
     {
-        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        var positionResponse = await client.PostAsync("http://localhost:7000/selectedstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/selectedstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://localhost:7000/selectedstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var robots = JsonUtility.FromJson<RobotsSelectedStates>(positionResponseString);
