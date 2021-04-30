@@ -5192,14 +5192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5047619d3b8b44da9838fc047918c099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: Gate 1.1 Gearbox Activated (1/2)
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
-  GateDoors: {fileID: 1487298270}
   GateGearObj: {fileID: 1469960275}
+  anim: {fileID: 0}
   holdToActivate: 0
 --- !u!65 &131989255
 BoxCollider:
@@ -11452,8 +11446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cb2bb76900d1a4d8d7682fd362ba7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  name: 
   anim: {fileID: 0}
-  gearBox1: 0
 --- !u!1 &301857817
 GameObject:
   m_ObjectHideFlags: 0
@@ -14592,16 +14587,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: Gate 1.1 Powerbox Activated (1/2)
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 602123777}
   GateLight1: {fileID: 854594952}
   PowerLight1: {fileID: 1993537604}
+  GatePowerConnection1: {fileID: 0}
+  GatePowerConnection1_script: {fileID: 0}
   holdToActivate: 0
 --- !u!65 &363496494
 BoxCollider:
@@ -18453,6 +18444,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+--- !u!1 &492261743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2754453958994698858, guid: 3e3644737d0dc3946835e6d96f3a3663,
+    type: 3}
+  m_PrefabInstance: {fileID: 672028708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &492261747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492261743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972d61858c6ad4fa4a0bced3972e002a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  name: 
 --- !u!1001 &492474156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20206,7 +20217,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28d434fd76bcf354cb7d0450d87c80b5,
         type: 3}
       propertyPath: m_TagString
-      value: IDI
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1170970068873931921, guid: 28d434fd76bcf354cb7d0450d87c80b5,
         type: 3}
@@ -20287,14 +20298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5047619d3b8b44da9838fc047918c099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: Gate 1.1 Gearbox Activated (1/2)
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
-  GateDoors: {fileID: 1727446765}
   GateGearObj: {fileID: 300896348}
+  anim: {fileID: 0}
   holdToActivate: 0
 --- !u!65 &523015250
 BoxCollider:
@@ -23708,10 +23713,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 1
-  gearBox2: 1
-  powerConnection1: 1
-  powerConnection2: 1
+  GatePowerConnection1: {fileID: 0}
+  GatePowerConnection2: {fileID: 0}
+  GateGearObj: {fileID: 0}
+  GateGearObj2: {fileID: 0}
+  GatePowerConnection1_script: {fileID: 0}
+  GatePowerConnection2_script: {fileID: 0}
+  GateGearObj_script: {fileID: 0}
+  GateGearObj2_script: {fileID: 0}
 --- !u!95 &602123779
 Animator:
   serializedVersion: 3
@@ -26609,6 +26618,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc319b7f152051147b07d4ca70bb934d, type: 2}
+    - target: {fileID: -2754453958994698858, guid: 3e3644737d0dc3946835e6d96f3a3663,
+        type: 3}
+      propertyPath: m_Name
+      value: GatePowerConnection1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2754453958994698858, guid: 3e3644737d0dc3946835e6d96f3a3663,
+        type: 3}
+      propertyPath: m_TagString
+      value: IDI
+      objectReference: {fileID: 0}
     - target: {fileID: -2750567037024036603, guid: 3e3644737d0dc3946835e6d96f3a3663,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27169,6 +27188,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc319b7f152051147b07d4ca70bb934d, type: 2}
+    - target: {fileID: 8691211179152311710, guid: 3e3644737d0dc3946835e6d96f3a3663,
+        type: 3}
+      propertyPath: m_Name
+      value: GatePowerConnection2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691211179152311710, guid: 3e3644737d0dc3946835e6d96f3a3663,
+        type: 3}
+      propertyPath: m_TagString
+      value: IDI
+      objectReference: {fileID: 0}
     - target: {fileID: 8735060796875339892, guid: 3e3644737d0dc3946835e6d96f3a3663,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30687,16 +30716,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: Gate 1.1 Powerbox Activated (1/2)
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 1487298270}
   GateLight1: {fileID: 1198770806}
   PowerLight1: {fileID: 1502923560}
+  GatePowerConnection1: {fileID: 0}
+  GatePowerConnection1_script: {fileID: 0}
   holdToActivate: 0
 --- !u!65 &756085376
 BoxCollider:
@@ -47208,16 +47233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e1e0278685408296ab0c92ba92d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: Gate 1.1 Powerbox Activated (1/2)
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
   pos: 0
   GateDoors: {fileID: 1727446765}
   GateLight1: {fileID: 1517262035}
   PowerLight1: {fileID: 489530589}
+  GatePowerConnection1: {fileID: 492261743}
+  GatePowerConnection1_script: {fileID: 0}
   holdToActivate: 0
 --- !u!65 &1161568548
 BoxCollider:
@@ -59097,8 +59118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cb2bb76900d1a4d8d7682fd362ba7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  name: 
   anim: {fileID: 0}
-  gearBox1: 0
 --- !u!95 &1469960278
 Animator:
   serializedVersion: 3
@@ -59793,10 +59815,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 1
-  gearBox2: 1
-  powerConnection1: 1
-  powerConnection2: 1
+  GatePowerConnection1: {fileID: 0}
+  GatePowerConnection2: {fileID: 0}
+  GateGearObj: {fileID: 0}
+  GateGearObj2: {fileID: 0}
+  GatePowerConnection1_script: {fileID: 0}
+  GatePowerConnection2_script: {fileID: 0}
+  GateGearObj_script: {fileID: 0}
+  GateGearObj2_script: {fileID: 0}
 --- !u!95 &1487298272
 Animator:
   serializedVersion: 3
@@ -66045,14 +66071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5047619d3b8b44da9838fc047918c099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  message: Gate 1.1 Gearbox Activated (1/2)
-  orangeGravityField: {r: 0, g: 0, b: 0, a: 0}
-  greenConsole: {r: 0, g: 0, b: 0, a: 0}
-  blueCircuitField: {r: 0, g: 0, b: 0, a: 0}
-  redDanger: {r: 0, g: 0, b: 0, a: 0}
-  GateDoors: {fileID: 602123777}
   GateGearObj: {fileID: 2073658797}
+  anim: {fileID: 0}
   holdToActivate: 0
 --- !u!65 &1649821824
 BoxCollider:
@@ -68354,10 +68374,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  gearBox1: 0
-  gearBox2: 1
-  powerConnection1: 0
-  powerConnection2: 1
+  GatePowerConnection1: {fileID: 492261743}
+  GatePowerConnection2: {fileID: 1865917386}
+  GateGearObj: {fileID: 300896348}
+  GateGearObj2: {fileID: 1964763454}
+  GatePowerConnection1_script: {fileID: 0}
+  GatePowerConnection2_script: {fileID: 0}
+  GateGearObj_script: {fileID: 0}
+  GateGearObj2_script: {fileID: 0}
 --- !u!95 &1727446767
 Animator:
   serializedVersion: 3
@@ -69837,6 +69861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GateGearObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22a586ade0b746b43a75c7b75ecd6e89,
+        type: 3}
+      propertyPath: m_TagString
+      value: IDI
       objectReference: {fileID: 0}
     - target: {fileID: 1303784006805970783, guid: 22a586ade0b746b43a75c7b75ecd6e89,
         type: 3}
@@ -73172,6 +73201,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.64, y: 3.47, z: 1.61}
   m_Center: {x: 0, y: 1.88, z: 0}
+--- !u!1 &1865917386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8691211179152311710, guid: 3e3644737d0dc3946835e6d96f3a3663,
+    type: 3}
+  m_PrefabInstance: {fileID: 672028708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1865917390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865917386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ef5bbf360ce470e91201c4078dd715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  name: 
 --- !u!1 &1866456713
 GameObject:
   m_ObjectHideFlags: 0
@@ -77208,8 +77257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3578749d0421d43b8ca558c20e62db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
+  name: 
   anim: {fileID: 0}
-  gearBox2: 0
 --- !u!95 &1964763456
 Animator:
   serializedVersion: 3
@@ -81132,6 +81182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GateGearObj2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22a586ade0b746b43a75c7b75ecd6e89,
+        type: 3}
+      propertyPath: m_TagString
+      value: IDI
+      objectReference: {fileID: 0}
     - target: {fileID: 1303784006805970783, guid: 22a586ade0b746b43a75c7b75ecd6e89,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -82407,8 +82462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cb2bb76900d1a4d8d7682fd362ba7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  name: 
   anim: {fileID: 0}
-  gearBox1: 0
 --- !u!95 &2073658800
 Animator:
   serializedVersion: 3
@@ -86253,6 +86309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: forceGateDownBool
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 633777696338048382, guid: 89cade42e883c45c7bdc585b81aae756,
+        type: 3}
+      propertyPath: active
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1099186213529871082, guid: 89cade42e883c45c7bdc585b81aae756,
         type: 3}
@@ -90206,17 +90267,17 @@ PrefabInstance:
     - target: {fileID: 3563291131630150489, guid: a918cc0f7b55e45e2a5c373147a3b50c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.6053387
       objectReference: {fileID: 0}
     - target: {fileID: 3563291131630150489, guid: a918cc0f7b55e45e2a5c373147a3b50c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.000000050291295
       objectReference: {fileID: 0}
     - target: {fileID: 3563291131630150489, guid: a918cc0f7b55e45e2a5c373147a3b50c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.79596806
       objectReference: {fileID: 0}
     - target: {fileID: 3563291131630150489, guid: a918cc0f7b55e45e2a5c373147a3b50c,
         type: 3}
@@ -93340,7 +93401,7 @@ PrefabInstance:
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.6282087
       objectReference: {fileID: 0}
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
@@ -93350,7 +93411,7 @@ PrefabInstance:
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7780449
       objectReference: {fileID: 0}
     - target: {fileID: 7491511065970450180, guid: 0c78713b37da04d57abc55cc1d8b3c42,
         type: 3}

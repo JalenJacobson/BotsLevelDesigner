@@ -13,7 +13,7 @@ public class Gearbox_doors_2 : CDI_Class
 
     void Start()
     {
-        doorsOpen_script = GateDoors.GetComponent<Doors>();
+        // doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
         gategearactivate_script = GateGearObj.GetComponent<GateGear2>();
         // message = "Gate Gear 2 Activated";
@@ -23,8 +23,8 @@ public class Gearbox_doors_2 : CDI_Class
     public override void Activate(Text sndMessage)
     {
         // pos = 1; 
-        doorsOpen_script.changeGearBox2();
-        gategearactivate_script.changeGearBox2();
+        // doorsOpen_script.changeGearBox2();
+        // gategearactivate_script.changeGearBox2();
         anim.Play("GearTrigger");
         sndMessage.text = message;
     }

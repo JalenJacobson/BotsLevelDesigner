@@ -22,6 +22,11 @@ public class IDI_Base : MonoBehaviour
         
     }
 
+    public void toggleActive()
+    {
+        active = !active;
+        sendState();
+    }
     public async void sendState()
     {
         

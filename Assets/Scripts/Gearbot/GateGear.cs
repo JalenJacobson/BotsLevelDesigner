@@ -2,34 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GateGear : MonoBehaviour
+public class GateGear : IDI_Base
 {
    public Animator anim;
 
-   public bool gearBox1 = false;
+   
 
  // Use this for initialization
- void Start () {
+    void Start () 
+    {
         anim = GetComponent<Animator>();
- }
+        name = "GateGear";
+    }
+
+    public void toggleActive()
+    {
+        active = !active;
+        sendState();
+    }
  
  // Update is called once per frame
- void Update () {
-        if (gearBox1 == true)
-        {
-            anim.Play("GateGear");
-
-        }
-                if (gearBox1 == false)
-        {
-            anim.Play("Stop");
-
-        }
-    }
-
-    public void changeGearBox1()
+    void Update () 
     {
-        print("worked");
-        gearBox1 = !gearBox1; 
+        
     }
+
+    // public void changeGearBox1()
+    // {
+    //     print("worked");
+    //     gearBox1 = !gearBox1; 
+    // }
 }

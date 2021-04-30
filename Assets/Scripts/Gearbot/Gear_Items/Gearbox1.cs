@@ -3,42 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Gearbox1 : CDI_Class
+public class Gearbox1 : MonoBehaviour
 {
-    public GameObject GateDoors;
-    Doors doorsOpen_script;
+    // public GameObject GateDoors;
+    // Doors doorsOpen_script;
     public GameObject GateGearObj;
-    GateGear gategearactivate_script;
+    IDI_Base gategearactivate_script;
+    public Animator anim;
 
     public bool holdToActivate;
     
 
     void Start()
     {
-        doorsOpen_script = GateDoors.GetComponent<Doors>();
+        // doorsOpen_script = GateDoors.GetComponent<Doors>();
         anim = GetComponent<Animator>();
-        gategearactivate_script = GateGearObj.GetComponent<GateGear>();
+        gategearactivate_script = GateGearObj.GetComponent<IDI_Base>();
         // message = "Gate Gear 1 Activated";
     }
 
-    public override void Activate(Text sndMessage)
+    public void Activate(Text sndMessage)
     {
-            doorsOpen_script.changeGearBox1();
-            gategearactivate_script.changeGearBox1();
+            // doorsOpen_script.changeGearBox1();
+            gategearactivate_script.toggleActive();
             anim.Play("GearTrigger");
-            sndMessage.text = message;  
+            // sndMessage.text = message;  
     }
 
     public void Deactivate()
     {
-        if(!holdToActivate)
-        {
-            return;
-        }
-        else
-        {
-            doorsOpen_script.changeGearBox1();
-            print("deactivated");  
-        }
+        // if(!holdToActivate)
+        // {
+        //     return;
+        // }
+        // else
+        // {
+        //     doorsOpen_script.changeGearBox1();
+        //     print("deactivated");  
+        // }
     }
 }

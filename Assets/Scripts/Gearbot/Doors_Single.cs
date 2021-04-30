@@ -10,15 +10,16 @@ public class Doors_Single : Doors
         
     // }
 
-    public override void Update () {
-        if (gearBox1 == true && powerConnection1 == true)
-        {
-            anim.Play("Doors");
+    public override void Update () 
+    {
+        // if (gearBox1 == true && powerConnection1 == true)
+        // {
+        //     anim.Play("Doors");
 
-        }
-        if (gearBox1 == false || powerConnection1 == false)    
-     {
-       anim.Play("DoorClose");
-    }
+        // }
+        // if (gearBox1 == false || powerConnection1 == false)    
+        // {
+        //     anim.Play("DoorClose");
+        // }
     }
 }
