@@ -9,6 +9,9 @@ public class UpdateBoxesPositions : MonoBehaviour
 {
     public GameObject[] boxes;
     public List<Box_Base> boxes_scripts;
+
+     public GameObject Brute;
+    public Player BruteMove_Script;
     private static readonly HttpClient client = new HttpClient();
 
     public int frameCount = 0;
@@ -18,6 +21,8 @@ public class UpdateBoxesPositions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BruteMove_Script = Brute.GetComponent<Player>();
+
         boxes = GameObject.FindGameObjectsWithTag("Box");
         
         for(int i = 0; i<boxes.Length; i++)
@@ -30,7 +35,7 @@ public class UpdateBoxesPositions : MonoBehaviour
     void Update()
     {
         frameCount++;
-        if(frameCount%10 == 0)
+        if(frameCount%100 == 0 && BruteMove_Script.isLocalPlayer != true)
         {
             updateBoxStates();
         }
@@ -54,8 +59,6 @@ public class UpdateBoxesPositions : MonoBehaviour
 
     async void updateBoxStates()
     {
-
-        print("running function");
         var positionResponse = await client.PostAsync("http://74.207.254.19:7000/boxstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
         // var positionResponse = await client.PostAsync("http://localhost:7000/boxstates", new StringContent("{}", Encoding.UTF8, "application/json"));
 
