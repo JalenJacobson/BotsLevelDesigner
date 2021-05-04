@@ -37,7 +37,7 @@ public class UpdateBoxesPositions : MonoBehaviour
         frameCount++;
         if(frameCount%100 == 0 && BruteMove_Script.isLocalPlayer != true)
         {
-            updateBoxStates();
+            // updateBoxStates();
         }
         
     }
@@ -59,8 +59,8 @@ public class UpdateBoxesPositions : MonoBehaviour
 
     async void updateBoxStates()
     {
-        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/boxstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        // var positionResponse = await client.PostAsync("http://localhost:7000/boxstates", new StringContent("{}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/boxstates", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://localhost:7000/boxstates", new StringContent("{}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var response = JsonUtility.FromJson<BoxStateResponse>(positionResponseString);

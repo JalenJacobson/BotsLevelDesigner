@@ -47,6 +47,16 @@ public class Player : MonoBehaviour
         if (isLocalPlayer == true && fixPosition == false){
             Movement();
         }
+
+        if(isBeingCarried)
+        {
+            transform.position = Brute.transform.TransformPoint(liftPos);
+            GetComponent<Rigidbody>().useGravity = false;
+        }
+        else if(!isBeingCarried)
+        {
+           GetComponent<Rigidbody>().useGravity = true; 
+        }
     }
     void Update()
     {
@@ -99,8 +109,8 @@ public class Player : MonoBehaviour
     
         string json = JsonUtility.ToJson(robot);
 
-        var response = await client.PostAsync("http://74.207.254.19:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
-        // var response = await client.PostAsync("http://localhost:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        // var response = await client.PostAsync("http://74.207.254.19:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://localhost:7000/position/save", new StringContent(json, Encoding.UTF8, "application/json"));
 
         var responseString = await response.Content.ReadAsStringAsync();
     }
@@ -118,8 +128,8 @@ public class Player : MonoBehaviour
     
         string json = JsonUtility.ToJson(robot);
 
-        var response = await client.PostAsync("http://74.207.254.19:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
-        // var response = await client.PostAsync("http://localhost:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        // var response = await client.PostAsync("http://74.207.254.19:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://localhost:7000/state/save", new StringContent(json, Encoding.UTF8, "application/json"));
 
         var responseString = await response.Content.ReadAsStringAsync();
     }
@@ -132,6 +142,41 @@ public class Player : MonoBehaviour
     {
         print("togglefixpos");
         fixPosition = !fixPosition;
+    }
+
+    public void toggleIsBeingCarried()
+    {
+        if(!isBeingCarried)
+        {
+            isBeingCarried = !isBeingCarried;
+            sendState();   
+        }
+        else if(isBeingCarried)
+        {
+            if(isLocalPlayer)
+            {
+                isBeingCarried = !isBeingCarried;
+                sendState();   
+            }
+            else if(!isLocalPlayer)
+            {
+                StartCoroutine(ExecuteAfterTime(3));
+            }
+        }
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        var rb = GetComponent<Rigidbody>();
+        isBeingCarried = !isBeingCarried;
+        sendPos();
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+        isLocalPlayer = true;
+        sendState();
+        yield return new WaitForSeconds(time);
+        isLocalPlayer = false;
+        rb.constraints = RigidbodyConstraints.None;
+        sendState();
     }
 
     public virtual void highGravityEnter ()

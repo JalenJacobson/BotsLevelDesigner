@@ -96,28 +96,19 @@ public class UpdateBotPosition : MonoBehaviour
 
     async void updatePositions()
     {
-
-        
-        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        // var positionResponse = await client.PostAsync("http://localhost:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://localhost:7000/positions", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var robots = JsonUtility.FromJson<RobotsPositions>(positionResponseString);
-        // var robots = JsonUtility.FromJson<Robots>("{ \"Gears\":{\"name\":\"Gears\"}}");
-
-        // print("HEEEEEEEEEYEYEYE  " + robots.Pump.position.position);
-        // Gears
         if(robots.Gears.position != null)
         {
-            print("hellotherjay1");
             GearMove_Script.rb.MovePosition(robots.Gears.position.position);
             Gears.transform.rotation = Quaternion.Slerp(Gears.transform.rotation, robots.Gears.position.rotation,  Time.deltaTime * rotationSpeed);
         }
-        
         // Luz
         if(robots.Luz.position != null)
         {
-            print("hellotherjay2");
             LuzMove_Script.rb.MovePosition(robots.Luz.position.position);
             Luz.transform.rotation = Quaternion.Slerp(Luz.transform.rotation, robots.Luz.position.rotation,  Time.deltaTime * rotationSpeed);
         }
@@ -125,14 +116,12 @@ public class UpdateBotPosition : MonoBehaviour
         // Brute
         if(robots.Brute.position != null)
         {
-            print("hellotherjay3");
             BruteMove_Script.rb.MovePosition(robots.Brute.position.position);
             Brute.transform.rotation = Quaternion.Slerp(Brute.transform.rotation, robots.Brute.position.rotation,  Time.deltaTime * rotationSpeed);
         }
         // Pump
         if(robots.Pump.position != null)
         {
-            print("hellotherjay4");
             PumpMove_Script.rb.MovePosition(robots.Pump.position.position);
             Pump.transform.rotation = Quaternion.Slerp(Pump.transform.rotation, robots.Pump.position.rotation,  Time.deltaTime * rotationSpeed);
         }
@@ -146,14 +135,10 @@ public class UpdateBotPosition : MonoBehaviour
     }
     async void updateStates()
     {
-        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        // var positionResponse = await client.PostAsync("http://localhost:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-
+        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://localhost:7000/states", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var robots = JsonUtility.FromJson<RobotsStates>(positionResponseString);
-        
-        // var robots = JsonUtility.FromJson<Robots>("{ \"Gears\":{\"name\":\"Gears\"}}");
-        // print("CHEEEECK THIIIIIIIS" + robots.Gears.position.rotation);
         // Gears
         GearMove_Script.isBeingCarried = robots.Gears.state.isBeingCarried;
         GearMove_Script.toggleSelected = robots.Gears.state.toggleSelected;
@@ -161,7 +146,7 @@ public class UpdateBotPosition : MonoBehaviour
         LuzMove_Script.isBeingCarried = robots.Luz.state.isBeingCarried;
         LuzMove_Script.toggleSelected = robots.Luz.state.toggleSelected;
         // Brute
-        BruteMove_Script.isBeingCarried = robots.Brute.state.isBeingCarried;
+        // BruteMove_Script.isBeingCarried = robots.Brute.state.isBeingCarried;
         BruteMove_Script.toggleSelected = robots.Brute.state.toggleSelected;
         // Pump
         PumpMove_Script.isBeingCarried = robots.Pump.state.isBeingCarried;

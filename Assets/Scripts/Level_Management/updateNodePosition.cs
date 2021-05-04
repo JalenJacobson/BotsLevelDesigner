@@ -27,20 +27,13 @@ public class updateNodePosition : MonoBehaviour
 
     async void updatePositions()
     {
-
-        
-        var positionResponse = await client.PostAsync("http://74.207.254.19:7000/positions/node", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
-        // var positionResponse = await client.PostAsync("http://localhost:7000/positions/node", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        // var positionResponse = await client.PostAsync("http://74.207.254.19:7000/positions/node", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
+        var positionResponse = await client.PostAsync("http://localhost:7000/positions/node", new StringContent("{\"name\": \"gears\"}", Encoding.UTF8, "application/json"));
 
         var positionResponseString = await positionResponse.Content.ReadAsStringAsync();
         var node = JsonUtility.FromJson<RobotPosition>(positionResponseString);
-        // var robots = JsonUtility.FromJson<Robots>("{ \"Gears\":{\"name\":\"Gears\"}}");
-        print(node.position.position);
-        // print("HEEEEEEEEEYEYEYE  " + robots.Pump.position.position);
-        // Gears
         if(node.position != null)
         {
-            print("hellotherjay1");
             NodeMove_Script.rb.MovePosition(node.position.position);
             Node.transform.rotation = Quaternion.Slerp(Node.transform.rotation, node.position.rotation,  Time.deltaTime * rotationSpeed);
         }

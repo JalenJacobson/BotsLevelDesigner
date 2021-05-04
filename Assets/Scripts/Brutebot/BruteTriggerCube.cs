@@ -97,6 +97,7 @@ public class BruteTriggerCube : MonoBehaviour
         Circle_Script.actionBubbleStop();
         CancelButton_Script.CancelStop();
         lifting = !lifting;
+        touching.SendMessage("toggleIsBeingCarried");
         AnimArms_Script.Drop();  
      }
     
@@ -105,6 +106,7 @@ public class BruteTriggerCube : MonoBehaviour
         if(touching.name == "IdleLuz" || touching.name == "Gears" || touching.name == "SatBot" || touching.name == "Pump")
         {
             lifting = !lifting;
+            touching.SendMessage("toggleIsBeingCarried");
         }
     }
 

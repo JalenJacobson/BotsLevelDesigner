@@ -36,8 +36,8 @@ public class Box_Base : MonoBehaviour
     
         string json = JsonUtility.ToJson(box);
 
-        var response = await client.PostAsync("http://74.207.254.19:7000/boxstate/save", new StringContent(json, Encoding.UTF8, "application/json"));
-        // var response = await client.PostAsync("http://localhost:7000/boxstate/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        // var response = await client.PostAsync("http://74.207.254.19:7000/boxstate/save", new StringContent(json, Encoding.UTF8, "application/json"));
+        var response = await client.PostAsync("http://localhost:7000/boxstate/save", new StringContent(json, Encoding.UTF8, "application/json"));
 
         var responseString = await response.Content.ReadAsStringAsync();
     }
